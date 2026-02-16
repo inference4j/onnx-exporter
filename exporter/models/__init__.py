@@ -13,3 +13,5 @@ from exporter.models import wav2vec2_base_960h  # noqa: F401
 from exporter.models import silero_vad  # noqa: F401
 from exporter.models import clip_vit_base_patch32  # noqa: F401
 from exporter.models import craft_mlt_25k  # noqa: F401
+from exporter.models import phi_3_mini  # noqa: F401
+from exporter.models import deepseek_r1_qwen_1_5b  # noqa: F401
