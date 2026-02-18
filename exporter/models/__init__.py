@@ -15,3 +15,4 @@ from exporter.models import clip_vit_base_patch32  # noqa: F401
 from exporter.models import craft_mlt_25k  # noqa: F401
 from exporter.models import phi_3_mini  # noqa: F401
 from exporter.models import deepseek_r1_qwen_1_5b  # noqa: F401
+from exporter.models import whisper_small  # noqa: F401

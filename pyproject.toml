@@ -9,6 +9,9 @@ dependencies = [
     "onnxruntime>=1.16.0",
 ]
 
+[tool.setuptools.packages.find]
+include = ["exporter*"]
+
 [project.optional-dependencies]
 export = [
     "torch>=2.0.0",
