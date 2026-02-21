@@ -18,3 +18,4 @@ from exporter.models import deepseek_r1_qwen_1_5b  # noqa: F401
 from exporter.models import whisper_small  # noqa: F401
 from exporter.models import phi_3_5_vision  # noqa: F401
 from exporter.models import gpt2  # noqa: F401
+from exporter.models import smollm2_360m_instruct  # noqa: F401
