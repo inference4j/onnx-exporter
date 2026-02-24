@@ -19,3 +19,7 @@ from exporter.models import whisper_small  # noqa: F401
 from exporter.models import phi_3_5_vision  # noqa: F401
 from exporter.models import gpt2  # noqa: F401
 from exporter.models import smollm2_360m_instruct  # noqa: F401
+from exporter.models import smollm2_1_7b_instruct  # noqa: F401
+from exporter.models import qwen2_5_1_5b_instruct  # noqa: F401
+from exporter.models import gemma_2_2b_it  # noqa: F401
+from exporter.models import tinyllama_1_1b_chat  # noqa: F401

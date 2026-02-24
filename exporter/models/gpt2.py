@@ -133,7 +133,7 @@ an inference-only AI library for Java.
 ## Usage with inference4j
 
 ```java
-try (Gpt2TextGenerator gen = Gpt2TextGenerator.builder().build()) {
+try (var gen = OnnxTextGenerator.gpt2().build()) {
     GenerationResult result = gen.generate("Once upon a time");
     System.out.println(result.text());
 }

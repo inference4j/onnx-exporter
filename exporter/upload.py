@@ -51,5 +51,6 @@ def process(model: BaseModel, dry_run: bool = False) -> None:
         )
         print(f"  Uploaded to https://huggingface.co/{model.repo_id}")
     finally:
-        shutil.rmtree(staging_dir)
-        print(f"  Cleaned up staging directory")
+        if not dry_run:
+            shutil.rmtree(staging_dir)
+            print(f"  Cleaned up staging directory")
