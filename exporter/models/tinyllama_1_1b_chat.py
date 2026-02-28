@@ -8,6 +8,7 @@ from exporter.registry import register
 class TinyLlama_1_1B_Chat(ExportedModel):
     name = "tinyllama-1.1b-chat"
     repo_id = "inference4j/tinyllama-1.1b-chat"
+    source_repo = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
 
     def stage(self, staging_dir: Path) -> None:
         import numpy as np

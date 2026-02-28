@@ -8,6 +8,7 @@ from exporter.registry import register
 class Gemma2_2B_IT(ExportedModel):
     name = "gemma-2-2b-it"
     repo_id = "inference4j/gemma-2-2b-it"
+    source_repo = "google/gemma-2-2b-it"
 
     def stage(self, staging_dir: Path) -> None:
         import numpy as np

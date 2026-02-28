@@ -14,6 +14,7 @@ HF_MODEL_ID = "openai/whisper-small"
 class WhisperSmall(ExportedModel):
     name = "whisper-small"
     repo_id = "inference4j/whisper-small-genai"
+    source_repo = "openai/whisper-small"
 
     def stage(self, staging_dir: Path) -> None:
         """Export Whisper Small to genai-compatible ONNX format.

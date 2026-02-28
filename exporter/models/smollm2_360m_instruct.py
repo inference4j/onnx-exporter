@@ -8,6 +8,7 @@ from exporter.registry import register
 class SmolLM2_360M_Instruct(ExportedModel):
     name = "smollm2-360m-instruct"
     repo_id = "inference4j/smollm2-360m-instruct"
+    source_repo = "HuggingFaceTB/SmolLM2-360M-Instruct"
 
     def stage(self, staging_dir: Path) -> None:
         import numpy as np

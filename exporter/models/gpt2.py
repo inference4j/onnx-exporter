@@ -8,6 +8,7 @@ from exporter.registry import register
 class Gpt2(ExportedModel):
     name = "gpt2"
     repo_id = "inference4j/gpt2"
+    source_repo = "openai-community/gpt2"
 
     def stage(self, staging_dir: Path) -> None:
         import numpy as np

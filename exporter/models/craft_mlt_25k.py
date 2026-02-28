@@ -145,6 +145,7 @@ def _build_craft():
 class CraftMlt25k(ExportedModel):
     name = "craft-mlt-25k"
     repo_id = "inference4j/craft-mlt-25k"
+    source_repo = "clovaai/CRAFT"
 
     def stage(self, staging_dir: Path) -> None:
         import gdown

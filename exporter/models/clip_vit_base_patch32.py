@@ -57,6 +57,7 @@ class _TextEncoder:
 class ClipVitBasePatch32(ExportedModel):
     name = "clip-vit-base-patch32"
     repo_id = "inference4j/clip-vit-base-patch32"
+    source_repo = "openai/clip-vit-base-patch32"
 
     def stage(self, staging_dir: Path) -> None:
         import numpy as np

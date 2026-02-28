@@ -8,6 +8,7 @@ from exporter.registry import register
 class Qwen2_5_1_5B_Instruct(ExportedModel):
     name = "qwen2.5-1.5b-instruct"
     repo_id = "inference4j/qwen2.5-1.5b-instruct"
+    source_repo = "Qwen/Qwen2.5-1.5B-Instruct"
 
     def stage(self, staging_dir: Path) -> None:
         import numpy as np

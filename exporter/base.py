@@ -38,6 +38,7 @@ class BaseModel(ABC):
     """Abstract base for all model definitions."""
     name: str
     repo_id: str
+    source_repo: str = ""
     card: ModelCard
 
     @abstractmethod

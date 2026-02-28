@@ -23,3 +23,15 @@ from exporter.models import smollm2_1_7b_instruct  # noqa: F401
 from exporter.models import qwen2_5_1_5b_instruct  # noqa: F401
 from exporter.models import gemma_2_2b_it  # noqa: F401
 from exporter.models import tinyllama_1_1b_chat  # noqa: F401
+from exporter.models import flan_t5_small  # noqa: F401
+from exporter.models import flan_t5_base  # noqa: F401
+from exporter.models import flan_t5_large  # noqa: F401
+from exporter.models import distilbart_cnn_12_6  # noqa: F401
+from exporter.models import bart_large_cnn  # noqa: F401
+from exporter.models import opus_mt_en_fr  # noqa: F401
+from exporter.models import opus_mt_en_es  # noqa: F401
+from exporter.models import opus_mt_en_de  # noqa: F401
+from exporter.models import coedit_base  # noqa: F401
+from exporter.models import coedit_large  # noqa: F401
+from exporter.models import t5_small_awesome_text2sql  # noqa: F401
+from exporter.models import t5_text2sql_spider  # noqa: F401

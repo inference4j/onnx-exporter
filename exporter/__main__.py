@@ -8,6 +8,15 @@ from exporter import registry
 import exporter.models  # noqa: F401
 
 
+def _fetch_published_repos(org="inference4j"):
+    """Fetch the set of repo IDs published under a HuggingFace org."""
+    try:
+        from huggingface_hub import list_models
+        return {m.id for m in list_models(author=org)}
+    except Exception:
+        return None
+
+
 def cmd_list(_args):
     """Print a table of all registered models."""
     models = registry.all_models()
@@ -15,15 +24,36 @@ def cmd_list(_args):
         print("No models registered.")
         return
 
+    published = _fetch_published_repos()
+    show_status = published is not None
+
+    from exporter.base import MirroredModel
+
     # Column widths
     name_w = max(len(m.name) for m in models)
     type_w = 8  # "mirrored" or "exported"
-    print(f"{'Name':<{name_w}}  {'Type':<{type_w}}  Repo ID")
-    print(f"{'-' * name_w}  {'-' * type_w}  {'-' * 40}")
+    status_w = 10
+    source_w = max((len(m.source_repo) for m in models if m.source_repo), default=6)
+
+    header = f"{'Name':<{name_w}}  {'Type':<{type_w}}  "
+    sep = f"{'-' * name_w}  {'-' * type_w}  "
+    if show_status:
+        header += f"{'Published':<{status_w}}  "
+        sep += f"{'-' * status_w}  "
+    header += f"{'Source':<{source_w}}  Repo ID"
+    sep += f"{'-' * source_w}  {'-' * 40}"
+
+    print(header)
+    print(sep)
     for m in models:
-        from exporter.base import MirroredModel
         model_type = "mirrored" if isinstance(m, MirroredModel) else "exported"
-        print(f"{m.name:<{name_w}}  {model_type:<{type_w}}  {m.repo_id}")
+        source = m.source_repo or "—"
+        line = f"{m.name:<{name_w}}  {model_type:<{type_w}}  "
+        if show_status:
+            status = "yes" if m.repo_id in published else "no"
+            line += f"{status:<{status_w}}  "
+        line += f"{source:<{source_w}}  {m.repo_id}"
+        print(line)
 
 
 def cmd_run(args):
