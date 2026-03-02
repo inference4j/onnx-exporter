@@ -25,21 +25,32 @@ class OpusMtEnFr(ExportedModel):
             no_post_process=False,
         )
 
-        # Convert SentencePiece tokenizer to tokenizer.json BEFORE cleanup
-        # (MarianMT models ship source.spm + target.spm, not tokenizer.json)
+        # Build tokenizer.json from vocab.json (model IDs) + source.spm (BPE merges).
+        # MarianMT merges source + target SPM vocabularies into a shared vocab.json
+        # with ~65K entries. The raw SentencePieceExtractor produces SPM-internal IDs
+        # (0-31999) which differ from the model's IDs, so we use vocab.json for the
+        # vocabulary mapping and only extract BPE merges from the SPM model.
         tok_dst = staging_dir / "tokenizer.json"
         if not tok_dst.exists():
-            source_spm = staging_dir / "source.spm"
-            if source_spm.exists():
-                from transformers.convert_slow_tokenizer import SentencePieceExtractor
-                from tokenizers import Tokenizer
-                from tokenizers.models import BPE
+            import json
+            from transformers.convert_slow_tokenizer import SentencePieceExtractor
+            from tokenizers import Tokenizer
+            from tokenizers.models import BPE
 
-                print("  Converting SentencePiece tokenizer to tokenizer.json...")
-                extractor = SentencePieceExtractor(str(source_spm))
-                vocab, merges = extractor.extract(None)
-                tokenizer = Tokenizer(BPE(vocab, merges, unk_token="<unk>"))
-                tokenizer.save(str(tok_dst))
+            source_spm = staging_dir / "source.spm"
+            vocab_json = staging_dir / "vocab.json"
+            if not vocab_json.exists():
+                vocab_json = Path(hf_hub_download(repo_id=model_id, filename="vocab.json"))
+
+            print("  Building tokenizer.json from vocab.json + source.spm merges...")
+            with open(vocab_json) as f:
+                model_vocab = json.load(f)
+
+            extractor = SentencePieceExtractor(str(source_spm))
+            _, merges = extractor.extract(None)
+
+            tokenizer = Tokenizer(BPE(model_vocab, merges, unk_token="<unk>"))
+            tokenizer.save(str(tok_dst))
 
         # Clean up non-essential files
         for name in ("decoder_model_merged.onnx", "generation_config.json",

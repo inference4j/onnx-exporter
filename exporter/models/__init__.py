@@ -35,3 +35,7 @@ from exporter.models import coedit_base  # noqa: F401
 from exporter.models import coedit_large  # noqa: F401
 from exporter.models import t5_small_awesome_text2sql  # noqa: F401
 from exporter.models import t5_text2sql_spider  # noqa: F401
+from exporter.models import distilbert_ner  # noqa: F401
+from exporter.models import bert_base_ner  # noqa: F401
+from exporter.models import bge_base_en_v1_5  # noqa: F401
+from exporter.models import gte_base_en_v1_5  # noqa: F401
