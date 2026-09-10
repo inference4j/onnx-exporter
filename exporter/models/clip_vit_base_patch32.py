@@ -68,8 +68,8 @@ class ClipVitBasePatch32(ExportedModel):
 
         # Load model
         print(f"  Loading {HF_MODEL_ID}...")
-        model = CLIPModel.from_pretrained(HF_MODEL_ID)
-        processor = CLIPProcessor.from_pretrained(HF_MODEL_ID)
+        model = CLIPModel.from_pretrained(HF_MODEL_ID, revision=self.revision)
+        processor = CLIPProcessor.from_pretrained(HF_MODEL_ID, revision=self.revision)
         model.eval()
 
         # Export vision encoder

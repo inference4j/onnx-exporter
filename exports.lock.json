@@ -1,0 +1,2102 @@
+{
+  "T5-LM-Large-text2sql-spider": {
+    "repo_id": "inference4j/T5-LM-Large-text2sql-spider",
+    "source": {
+      "type": "hf",
+      "repo": "gaussalgo/T5-LM-Large-text2sql-spider",
+      "revision": "f0a1f3ec0a40a26a7e94619d62c2992a82bf83bc"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 813,
+        "blob_id": "e2e3e022c9c69c6ad4abe3b5e26caf086012cce9"
+      },
+      "generation_config.json": {
+        "size": 142,
+        "blob_id": "49f05ecdcda8ba78b292f78ba2f83016d348cf62"
+      },
+      "model.safetensors": {
+        "size": 3132668808,
+        "sha256": "c17447b50a6eca8ca5dc2455c7b3bba0162d7e380984601d26b72caca815920e",
+        "blob_id": "9da46ab4c5d2af06ad1c2e1dbd96c1b3fafb0a09"
+      },
+      "pytorch_model.bin": {
+        "size": 3132785797,
+        "sha256": "60b99a78617a0abe72d7c4030b54716dbc3ab43a5d530e7fc315f190ac86d805",
+        "blob_id": "82b9b411e73c2cac0789f481bccf47e5e25bde56"
+      },
+      "special_tokens_map.json": {
+        "size": 2201,
+        "blob_id": "2c19eb6e3b583f52d34b903b5978d3d30b6b7682"
+      },
+      "spiece.model": {
+        "size": 791656,
+        "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+        "blob_id": "317a5ccbde45300f5d1d970d4d449af2108b147e"
+      },
+      "tokenizer.json": {
+        "size": 2422262,
+        "blob_id": "07d5435c5b9d527dc63b78594c603f962410bc7b"
+      },
+      "tokenizer_config.json": {
+        "size": 3444,
+        "blob_id": "cea210ca4aa5e7abc130a5ad480948f8315b8c3c"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 2366,
+        "blob_id": "746fe3be57f1980683c237404fc2eec209a8b590"
+      },
+      "chat_template.jinja": {
+        "size": 1041,
+        "blob_id": "7be73618e2636a524b331a7037369ad8c4a77c47"
+      },
+      "config.json": {
+        "size": 745,
+        "blob_id": "808b589238b14e1447a4311306d2b04ffe3b35b0"
+      },
+      "decoder_model.onnx": {
+        "size": 1900001851,
+        "sha256": "352f7316dd381b1e326577aea0183f7e09852340f04c499b867c3c4a3896b398",
+        "blob_id": "83fa8ca36d3b76855baac09fff6b33a429a30531"
+      },
+      "decoder_with_past_model.onnx": {
+        "size": 1698604355,
+        "sha256": "99afdd41369f574fc64b4d16d0ebdb291f44c64f2cfce71d0b8f0cb4c270c669",
+        "blob_id": "1aa1c06b2ecf745f8db1401592926d704171b7f4"
+      },
+      "encoder_model.onnx": {
+        "size": 1365296186,
+        "sha256": "4225eabda107b4eedf5ddb53ff860fc575a397a30764f228f589884ead46d076",
+        "blob_id": "8c7693d3c50d023b8f7e3300be6db163e4b2c073"
+      },
+      "tokenizer.json": {
+        "size": 2422332,
+        "blob_id": "e92f7b5f974035d6140e7ffda0cbc25ab3c915cb"
+      }
+    },
+    "exported_at": "2026-02-28T23:31:31+00:00"
+  },
+  "all-MiniLM-L12-v2": {
+    "repo_id": "inference4j/all-MiniLM-L12-v2",
+    "source": {
+      "type": "hf",
+      "repo": "sentence-transformers/all-MiniLM-L12-v2",
+      "revision": "a50ef00143b4d5391434df20ae11632588ac25be"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "onnx/model.onnx": {
+        "size": 133126567,
+        "sha256": "84c56795d395593cbee215e2d635a8f0ad3199ae99f99299c44cf1eaecff3ad4",
+        "blob_id": "8e09f5e3577b96ebdb90e128abcfe0b4ec71857e"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "published": {
+      "model.onnx": {
+        "size": 133126567,
+        "sha256": "84c56795d395593cbee215e2d635a8f0ad3199ae99f99299c44cf1eaecff3ad4",
+        "blob_id": "8e09f5e3577b96ebdb90e128abcfe0b4ec71857e"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "exported_at": null
+  },
+  "all-MiniLM-L6-v2": {
+    "repo_id": "inference4j/all-MiniLM-L6-v2",
+    "source": {
+      "type": "hf",
+      "repo": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "onnx/model.onnx": {
+        "size": 90405214,
+        "sha256": "6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452",
+        "blob_id": "7d35d33d315a1ce897ce7cca38d42234e1d55add"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "published": {
+      "model.onnx": {
+        "size": 90405214,
+        "sha256": "6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452",
+        "blob_id": "7d35d33d315a1ce897ce7cca38d42234e1d55add"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "exported_at": null
+  },
+  "all-mpnet-base-v2": {
+    "repo_id": "inference4j/all-mpnet-base-v2",
+    "source": {
+      "type": "hf",
+      "repo": "sentence-transformers/all-mpnet-base-v2",
+      "revision": "e8c3b32edf5434bc2275fc9bab85f82640a19130"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "onnx/model.onnx": {
+        "size": 435826548,
+        "sha256": "74187b16d9c946fea252e120cfd7a12c5779d8b8b86838a2e4c56573c47941bd",
+        "blob_id": "f2c572c400f18dfce7d6dd28788b47c8b6fc8d33"
+      },
+      "vocab.txt": {
+        "size": 231536,
+        "blob_id": "1c51ab79a2298a340952d3e6012042a9c84bbe4d"
+      }
+    },
+    "published": {
+      "model.onnx": {
+        "size": 435826548,
+        "sha256": "74187b16d9c946fea252e120cfd7a12c5779d8b8b86838a2e4c56573c47941bd",
+        "blob_id": "f2c572c400f18dfce7d6dd28788b47c8b6fc8d33"
+      },
+      "vocab.txt": {
+        "size": 231536,
+        "blob_id": "1c51ab79a2298a340952d3e6012042a9c84bbe4d"
+      }
+    },
+    "exported_at": null
+  },
+  "bart-large-cnn": {
+    "repo_id": "inference4j/bart-large-cnn",
+    "source": {
+      "type": "hf",
+      "repo": "facebook/bart-large-cnn",
+      "revision": "37f520fa929c961707657b28798b30c003dd100b"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 1585,
+        "blob_id": "2d297163111d6483909070dc6de8d34236c72636"
+      },
+      "generation_config.json": {
+        "size": 363,
+        "blob_id": "f729590ec05c715e3b922996b3a7b5c1c73fb1f7"
+      },
+      "merges.txt": {
+        "size": 456318,
+        "blob_id": "226b0752cac7789c48f0cb3ec53eda48b7be36cc"
+      },
+      "model.safetensors": {
+        "size": 1625222120,
+        "sha256": "40041830399afb5348525ef8354b007ecec4286fdf3524f7e6b54377e17096cb",
+        "blob_id": "91da10981d54ff0cf125f95ea7361be982e40b97"
+      },
+      "pytorch_model.bin": {
+        "size": 1625270765,
+        "sha256": "2ac2745c02ac987d82c78a14b426de58d5e4178ae8039ba1c6881eccff3e82f1",
+        "blob_id": "4b172e0314c8dd01c9d190a3dd88c649298a9b10"
+      },
+      "tokenizer.json": {
+        "size": 1355863,
+        "blob_id": "ad0bcbeb288f0d1373d88e0762e66357f55b8311"
+      },
+      "vocab.json": {
+        "size": 898823,
+        "blob_id": "5606f48548d99a9829d10a96cd364b816b02cd21"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1412,
+        "blob_id": "efa556d65db286a3c55d7e09f5ee88633aef84cb"
+      },
+      "config.json": {
+        "size": 1585,
+        "blob_id": "d0822afdf21cba868ed8b0a3f6c3b6492c8dbd9d"
+      },
+      "decoder_model.onnx": {
+        "size": 1222805764,
+        "sha256": "ee2f468f76c5cf971baa3c9c7643cdb68eae2b0cfafbca3d4a7521dfda3bd067",
+        "blob_id": "eadbc91668019c4e2ec2741d8ebf2f88107f5a5b"
+      },
+      "decoder_with_past_model.onnx": {
+        "size": 1122000148,
+        "sha256": "bf83b21384c46139c445444747191169a04aa769e1b165004c73c04caac039e2",
+        "blob_id": "42f39fa88c1d77b2415296095121b1732cccbd23"
+      },
+      "encoder_model.onnx": {
+        "size": 814868677,
+        "sha256": "9d4be719088e992b5f18e25a5b10800a6934ae0fc5c67cd5e236e1f4bca61204",
+        "blob_id": "61f3daceecc0402b182a2c30eb1c504e91afd28f"
+      },
+      "merges.txt": {
+        "size": 456318,
+        "blob_id": "226b0752cac7789c48f0cb3ec53eda48b7be36cc"
+      },
+      "vocab.json": {
+        "size": 798293,
+        "blob_id": "4ebe4bb3f3114daf2e4cc349f24873a1175a35d7"
+      }
+    },
+    "exported_at": "2026-02-28T16:23:40+00:00"
+  },
+  "bert-base-NER": {
+    "repo_id": "inference4j/bert-base-NER",
+    "source": {
+      "type": "hf",
+      "repo": "Xenova/bert-base-NER",
+      "revision": "24c7e5aba9ae350923357a6f0b92571be34037ec"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "config.json": {
+        "size": 999,
+        "blob_id": "3468d1d58f51f87b6e58025a0bfbc513afbc8e4b"
+      },
+      "onnx/model.onnx": {
+        "size": 431172606,
+        "sha256": "9784f160524c01c12145872ed76c3361b0f90285b484678ad92b2c30be57b408",
+        "blob_id": "173370c86019288eae45cfe85a7112f5b1737b69"
+      },
+      "vocab.txt": {
+        "size": 213450,
+        "blob_id": "2ea941cc79a6f3d7985ca6991ef4f67dad62af04"
+      }
+    },
+    "published": {
+      "config.json": {
+        "size": 999,
+        "blob_id": "3468d1d58f51f87b6e58025a0bfbc513afbc8e4b"
+      },
+      "model.onnx": {
+        "size": 431172606,
+        "sha256": "9784f160524c01c12145872ed76c3361b0f90285b484678ad92b2c30be57b408",
+        "blob_id": "173370c86019288eae45cfe85a7112f5b1737b69"
+      },
+      "vocab.txt": {
+        "size": 213450,
+        "blob_id": "2ea941cc79a6f3d7985ca6991ef4f67dad62af04"
+      }
+    },
+    "exported_at": null
+  },
+  "bge-base-en-v1.5": {
+    "repo_id": "inference4j/bge-base-en-v1.5",
+    "source": {
+      "type": "hf",
+      "repo": "Xenova/bge-base-en-v1.5",
+      "revision": "4d6cd88e18e51a5e020c2c305726d76ada9c03cf"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "onnx/model.onnx": {
+        "size": 435811539,
+        "sha256": "9bc579acdba21c253c62a9bf866891355a63ffa3442b52c8a37d75b2ccb91848",
+        "blob_id": "4098cb65fbcefd634583ae070363b30780d60e0d"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "published": {
+      "model.onnx": {
+        "size": 435811539,
+        "sha256": "9bc579acdba21c253c62a9bf866891355a63ffa3442b52c8a37d75b2ccb91848",
+        "blob_id": "4098cb65fbcefd634583ae070363b30780d60e0d"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "exported_at": null
+  },
+  "clip-vit-base-patch32": {
+    "repo_id": "inference4j/clip-vit-base-patch32",
+    "source": {
+      "type": "hf",
+      "repo": "openai/clip-vit-base-patch32",
+      "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 4186,
+        "blob_id": "a2a88b96561196777ca173b15309ea859f4d2ce0"
+      },
+      "merges.txt": {
+        "size": 524657,
+        "blob_id": "bbfec752c9a675946c6dce106def6f35c882dcc2"
+      },
+      "preprocessor_config.json": {
+        "size": 316,
+        "blob_id": "5a12a1eb250987a4eee0e3e7d7338c4b22724be1"
+      },
+      "pytorch_model.bin": {
+        "size": 605247071,
+        "sha256": "a63082132ba4f97a80bea76823f544493bffa8082296d62d71581a4feff1576f",
+        "blob_id": "c0c935a331cf52e21ce35cee6b9aaa411635bb7a"
+      },
+      "special_tokens_map.json": {
+        "size": 389,
+        "blob_id": "9bfb42aa97dcd61e89f279ccaee988bccb4fabae"
+      },
+      "tokenizer.json": {
+        "size": 2224041,
+        "blob_id": "564c0ebd5ce29c4ee4864004aee693deadd3128c"
+      },
+      "tokenizer_config.json": {
+        "size": 592,
+        "blob_id": "4fdaf6842dd5a725b940c92b6b692490ce59d548"
+      },
+      "vocab.json": {
+        "size": 862328,
+        "blob_id": "182766ce89b439768edadda342519f33802f5364"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 2666,
+        "blob_id": "68fb7205cd33059af68cdd85e743b2cb41ec7f6e"
+      },
+      "merges.txt": {
+        "size": 524657,
+        "blob_id": "bbfec752c9a675946c6dce106def6f35c882dcc2"
+      },
+      "text_model.onnx": {
+        "size": 253812304,
+        "sha256": "ec9cfa29fc10a5c6dd5e7efd3b4aab7351a1961a134721622e5eaa57dd44981f",
+        "blob_id": "71aa223d6509d020afc4d672473f9c960cc6b5ee"
+      },
+      "vision_model.onnx": {
+        "size": 351484834,
+        "sha256": "e8518f8b64e5abdd0bdb44e336a4e1367f48803c5a60462baea32dc0d18a2fd7",
+        "blob_id": "a34bc428349d98cb9a68d695fe092a4457c7fb0b"
+      },
+      "vocab.json": {
+        "size": 862328,
+        "blob_id": "182766ce89b439768edadda342519f33802f5364"
+      }
+    },
+    "exported_at": "2026-02-15T18:05:25+00:00"
+  },
+  "coedit-base": {
+    "repo_id": "inference4j/coedit-base",
+    "source": {
+      "type": "hf",
+      "repo": "jbochi/coedit-base",
+      "revision": "bef93f1b9bae24f9383580764820d5de1adafcdc"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 1557,
+        "blob_id": "613ca08e9643b5bf3d34b8553aca4ba7d5c5fb0b"
+      },
+      "generation_config.json": {
+        "size": 112,
+        "blob_id": "bce11467e8f5eeb24041e1730f992794235b1f02"
+      },
+      "model.safetensors": {
+        "size": 990345064,
+        "sha256": "893c586bd9e4dc13184c64df68ed6579fd4ec238d4f1c5bd5ac5f7c1c09c2fb7",
+        "blob_id": "c3c39f92cfaea21e4a6e2ad53702af2c466bc00b"
+      },
+      "special_tokens_map.json": {
+        "size": 2201,
+        "blob_id": "2c19eb6e3b583f52d34b903b5978d3d30b6b7682"
+      },
+      "tokenizer.json": {
+        "size": 2422256,
+        "blob_id": "f0a7a66541fb96522c18e8d1ea325d60b0bad191"
+      },
+      "tokenizer_config.json": {
+        "size": 20771,
+        "blob_id": "6cfb25540277ee2564f1ee4ec85cb3ab2594d1e8"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1792,
+        "blob_id": "95736cff9a834216a25b1ea5a88fa5b5ae45162b"
+      },
+      "config.json": {
+        "size": 1509,
+        "blob_id": "95f9ead56efc5428eeec3f5410d43a7092a0d55a"
+      },
+      "decoder_model.onnx": {
+        "size": 650875887,
+        "sha256": "4fb5e78580cba702c0553ebb39ae10a9ce04e8bb5daf77ef8154cc44af83d098",
+        "blob_id": "992b07155dfdfccfe9a6f8b9619874a209119145"
+      },
+      "decoder_with_past_model.onnx": {
+        "size": 594217559,
+        "sha256": "72e3d4b9c0b36f41f342716f82fa1f47aa4ddb18871a7e13a0adcf40a4d22fd9",
+        "blob_id": "ba0b269f7dbefe6b8c435264c1b046e6e1f89a0e"
+      },
+      "encoder_model.onnx": {
+        "size": 438705681,
+        "sha256": "848c35a4b02d06e335a23875d6b835ae41a3ace804d10a13ee6a7cd6ca6790c5",
+        "blob_id": "7020509e7aa0ddb3e5cc661886129ec564ca854f"
+      },
+      "tokenizer.json": {
+        "size": 2422234,
+        "blob_id": "41a5ffa2657f77be129f7d2f791e45aab6c145ae"
+      }
+    },
+    "exported_at": "2026-02-28T16:22:06+00:00"
+  },
+  "coedit-large": {
+    "repo_id": "inference4j/coedit-large",
+    "source": {
+      "type": "hf",
+      "repo": "grammarly/coedit-large",
+      "revision": "5637bcdf9d8d4419f97c8cfea36f7d35c79232b6"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 787,
+        "blob_id": "de362a5bc8e1e2cfecef6a11f136e5ebd6f733bc"
+      },
+      "generation_config.json": {
+        "size": 142,
+        "blob_id": "01ac0c2b4699bd8e5c28b6b0c22f0d928430a738"
+      },
+      "model.safetensors": {
+        "size": 3132439432,
+        "sha256": "c692f68bca5c6899801bc9fad626fefd3359ccd95e26dccae4dd72186fd98852",
+        "blob_id": "7bf8d51dbcf58e9c9ae23e3354af6bc5b46db130"
+      },
+      "pytorch_model.bin": {
+        "size": 3132556293,
+        "sha256": "8a65c121b7a284783286d1b502d76b05ef886f7baf8b7169af9a2f11d2ac4d74",
+        "blob_id": "5040abde0a29c9824f500cab4e4e3bcd3e9510f7"
+      },
+      "special_tokens_map.json": {
+        "size": 2201,
+        "blob_id": "2c19eb6e3b583f52d34b903b5978d3d30b6b7682"
+      },
+      "spiece.model": {
+        "size": 791656,
+        "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+        "blob_id": "317a5ccbde45300f5d1d970d4d449af2108b147e"
+      },
+      "tokenizer.json": {
+        "size": 2422262,
+        "blob_id": "c9871b9ab777e0e40f3ce11c0cebd514a0c44002"
+      },
+      "tokenizer_config.json": {
+        "size": 2497,
+        "blob_id": "a283166f8f31106cbdd0950493cb5147bb2c4eab"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1495,
+        "blob_id": "6efae2c85ce1760ae80df87148d9f79510f323b4"
+      },
+      "config.json": {
+        "size": 767,
+        "blob_id": "54f36b4ac791e96845edb077f5b8cea3283da42f"
+      },
+      "decoder_model.onnx": {
+        "size": 1899772475,
+        "sha256": "88eca8ec7b6851307bc1f529aef4d91d16628594a905a80d90f676868441dda0",
+        "blob_id": "ded8bfb8a699f360909df62432b4887420455ad2"
+      },
+      "decoder_with_past_model.onnx": {
+        "size": 1698374979,
+        "sha256": "de52f72025365f7b20fff956a6aba0739c758596f46d4096e3ad22c7fdaf031f",
+        "blob_id": "f78b2a3444397c788c692c831ffa18c242452597"
+      },
+      "encoder_model.onnx": {
+        "size": 1365181498,
+        "sha256": "9f85005973bab0025145b4f74500614b23725c0dc986a2c359da10f6012f707a",
+        "blob_id": "a9a0f53767022bdaee27d32f58968d66216310a5"
+      },
+      "tokenizer.json": {
+        "size": 2422332,
+        "blob_id": "5aa9313635fd811dbfa9d01dcf0e7456d4214077"
+      }
+    },
+    "exported_at": "2026-02-28T16:18:38+00:00"
+  },
+  "craft-mlt-25k": {
+    "repo_id": "inference4j/craft-mlt-25k",
+    "source": {
+      "type": "gdrive",
+      "repo": "https://drive.google.com/uc?id=1Jk4eGD7crsqCCg9C9VjCLkMN3ze8kutZ",
+      "revision": null
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {},
+    "published": {},
+    "exported_at": null
+  },
+  "deepseek-r1-distill-qwen-1.5b": {
+    "repo_id": "inference4j/deepseek-r1-distill-qwen-1.5b",
+    "source": {
+      "type": "hf",
+      "repo": "onnxruntime/DeepSeek-R1-Distill-ONNX",
+      "revision": "de94d9ab358821809153fa662b54630710524efb"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "deepseek-r1-distill-qwen-1.5B/cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/genai_config.json": {
+        "size": 1477,
+        "sha256": "dc87bc52132e57d152c937c72394cdfb9d202ee3a9ea1a1c2769588f1e59dc5f",
+        "blob_id": "0a83664728d087f3fa4a8f1e3eafc015ac171be2"
+      },
+      "deepseek-r1-distill-qwen-1.5B/cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/model.onnx": {
+        "size": 196782,
+        "sha256": "905c518a61d91d39bc624d17edefcf9c4dedba0e9dae4a1949c3af8ea53fc851",
+        "blob_id": "4562e39f090c9b5858de3e31d38b787720d043a1"
+      },
+      "deepseek-r1-distill-qwen-1.5B/cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/model.onnx.data": {
+        "size": 1965914112,
+        "sha256": "31729113e4cb78c0ca74137eb5c1ff3911c24d5097c795eba4a018fe981a8a47",
+        "blob_id": "7bb2a295059a64b639059ac365947a5a63705b54"
+      },
+      "deepseek-r1-distill-qwen-1.5B/cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/special_tokens_map.json": {
+        "size": 485,
+        "sha256": "59cda48bbe8bab9d61ffb410e6e3c07b6d98bff73cee7c88ff8b51f95f21ab1c",
+        "blob_id": "55004e9eddc866f8c7786057b895e52f619cecfd"
+      },
+      "deepseek-r1-distill-qwen-1.5B/cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/tokenizer.json": {
+        "size": 11422778,
+        "sha256": "e20ddafc659ba90242154b55275402edeca0715e5dbb30f56815a4ce081f4893",
+        "blob_id": "1a2db243e47cbc113f6b2ddcc388aeeb8fe1a94c"
+      },
+      "deepseek-r1-distill-qwen-1.5B/cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/tokenizer_config.json": {
+        "size": 6754,
+        "sha256": "b869a935677e8f9dc3896cb69982de89843c1bbff27194eb83542c0e3f82babc",
+        "blob_id": "b77d56d6f345933190886b76d1eca4796ee8a91e"
+      }
+    },
+    "published": {
+      "genai_config.json": {
+        "size": 1477,
+        "blob_id": "c808742ad4ad2a360ab689f83971d8310a303d0c"
+      },
+      "model.onnx": {
+        "size": 196782,
+        "sha256": "905c518a61d91d39bc624d17edefcf9c4dedba0e9dae4a1949c3af8ea53fc851",
+        "blob_id": "4562e39f090c9b5858de3e31d38b787720d043a1"
+      },
+      "model.onnx.data": {
+        "size": 1965914112,
+        "sha256": "31729113e4cb78c0ca74137eb5c1ff3911c24d5097c795eba4a018fe981a8a47",
+        "blob_id": "7bb2a295059a64b639059ac365947a5a63705b54"
+      },
+      "special_tokens_map.json": {
+        "size": 485,
+        "blob_id": "1d385d62cf08bca35254547902b792c243656ec1"
+      },
+      "tokenizer.json": {
+        "size": 11422778,
+        "sha256": "e20ddafc659ba90242154b55275402edeca0715e5dbb30f56815a4ce081f4893",
+        "blob_id": "1a2db243e47cbc113f6b2ddcc388aeeb8fe1a94c"
+      },
+      "tokenizer_config.json": {
+        "size": 6754,
+        "blob_id": "b068ffca3220a746ba50cc69f850e544217e3a86"
+      }
+    },
+    "exported_at": null
+  },
+  "depth-anything-v2-small": {
+    "repo_id": "inference4j/depth-anything-v2-small",
+    "source": {
+      "type": "hf",
+      "repo": "onnx-community/depth-anything-v2-small",
+      "revision": "4472b7362082ad9968fee890ca0f1e5aca36b93d"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "onnx/model.onnx": {
+        "size": 99060839,
+        "sha256": "afb6a5c28f3b6bf1618c6e43f02073ef9dfdc70e937502d51603e57b0a1df10c",
+        "blob_id": "95a8023be105e159cb56e437fb40528f26be5ebc"
+      }
+    },
+    "published": {
+      "model.onnx": {
+        "size": 99060839,
+        "sha256": "afb6a5c28f3b6bf1618c6e43f02073ef9dfdc70e937502d51603e57b0a1df10c",
+        "blob_id": "95a8023be105e159cb56e437fb40528f26be5ebc"
+      }
+    },
+    "exported_at": null
+  },
+  "distilbart-cnn-12-6": {
+    "repo_id": "inference4j/distilbart-cnn-12-6",
+    "source": {
+      "type": "hf",
+      "repo": "sshleifer/distilbart-cnn-12-6",
+      "revision": "a4f8f3ea906ed274767e9906dbaede7531d660ff"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 1802,
+        "blob_id": "fade82e22ec4f4b61f6f2eb3986ce4a64a8e23df"
+      },
+      "merges.txt": {
+        "size": 456318,
+        "blob_id": "226b0752cac7789c48f0cb3ec53eda48b7be36cc"
+      },
+      "pytorch_model.bin": {
+        "size": 1222317369,
+        "sha256": "3bac65d18c99463302d12ca75c2220ea714f9c81ce235f205fa818efe71df6ea",
+        "blob_id": "ba701927790145ce9b9ef967b418a310d7272284"
+      },
+      "tokenizer_config.json": {
+        "size": 26,
+        "blob_id": "be4d21d94f3b4687e5a54d84bf6ab46ed0f8defd"
+      },
+      "vocab.json": {
+        "size": 898822,
+        "blob_id": "0a39732b2d8be8e493cab3da68b68cc3e28221de"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1481,
+        "blob_id": "f087fa0225c20817d4891ddf278d9179aec4d3cf"
+      },
+      "config.json": {
+        "size": 1802,
+        "blob_id": "b5623cafc4858d4a5639e1e08ac39539e9041291"
+      },
+      "decoder_model.onnx": {
+        "size": 819503824,
+        "sha256": "3d07573868c03d0dc938ca54eee38a3c7855b4d7063c9c277b0f6d3fb761ca98",
+        "blob_id": "24eaedb6b2c22d19f1dbfdec8ac40984a6e43643"
+      },
+      "decoder_with_past_model.onnx": {
+        "size": 769100877,
+        "sha256": "a62480780bafb8b29a6a38d3bc6b5ec5cf444985e0a09d906dafe335e1af7014",
+        "blob_id": "3e07504c64eef5712a4461182dee34b97c8bc0a6"
+      },
+      "encoder_model.onnx": {
+        "size": 814868677,
+        "sha256": "9d4be719088e992b5f18e25a5b10800a6934ae0fc5c67cd5e236e1f4bca61204",
+        "blob_id": "61f3daceecc0402b182a2c30eb1c504e91afd28f"
+      },
+      "merges.txt": {
+        "size": 456318,
+        "blob_id": "226b0752cac7789c48f0cb3ec53eda48b7be36cc"
+      },
+      "vocab.json": {
+        "size": 798293,
+        "blob_id": "4ebe4bb3f3114daf2e4cc349f24873a1175a35d7"
+      }
+    },
+    "exported_at": "2026-02-28T16:07:21+00:00"
+  },
+  "distilbert-NER": {
+    "repo_id": "inference4j/distilbert-NER",
+    "source": {
+      "type": "hf",
+      "repo": "onnx-community/distilbert-NER-ONNX",
+      "revision": "3a19fe9404a4469d91aa3d551558a97f68872f67"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "config.json": {
+        "size": 965,
+        "blob_id": "66a92793b02a539cba34b291e466ce4809bb23cf"
+      },
+      "onnx/model.onnx": {
+        "size": 260924462,
+        "sha256": "b5f77096d0d9f425d34a2e263f8a2dfb845cdc757dc00c7a1e69e9cbb93115d5",
+        "blob_id": "93038e5d19a8a5b52521f6404bef4721d05611d8"
+      },
+      "vocab.txt": {
+        "size": 213450,
+        "blob_id": "2ea941cc79a6f3d7985ca6991ef4f67dad62af04"
+      }
+    },
+    "published": {
+      "config.json": {
+        "size": 965,
+        "blob_id": "66a92793b02a539cba34b291e466ce4809bb23cf"
+      },
+      "model.onnx": {
+        "size": 260924462,
+        "sha256": "b5f77096d0d9f425d34a2e263f8a2dfb845cdc757dc00c7a1e69e9cbb93115d5",
+        "blob_id": "93038e5d19a8a5b52521f6404bef4721d05611d8"
+      },
+      "vocab.txt": {
+        "size": 213450,
+        "blob_id": "2ea941cc79a6f3d7985ca6991ef4f67dad62af04"
+      }
+    },
+    "exported_at": null
+  },
+  "distilbert-base-uncased-finetuned-sst-2-english": {
+    "repo_id": "inference4j/distilbert-base-uncased-finetuned-sst-2-english",
+    "source": {
+      "type": "hf",
+      "repo": "Xenova/distilbert-base-uncased-finetuned-sst-2-english",
+      "revision": "0b6928efcb76139cae2c6881d49cda67fe119f42"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "config.json": {
+        "size": 735,
+        "blob_id": "3c36342ef1f74de2797d667c68c6b7b988d0b87c"
+      },
+      "onnx/model.onnx": {
+        "size": 267955711,
+        "sha256": "252cf7048af94a1599019fef35961b2bd3d6db13df0b0a4b032b92baeae31939",
+        "blob_id": "6011e2717381f05e907ea1303e3f765aaba9ed31"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "published": {
+      "config.json": {
+        "size": 735,
+        "blob_id": "3c36342ef1f74de2797d667c68c6b7b988d0b87c"
+      },
+      "model.onnx": {
+        "size": 267955711,
+        "sha256": "252cf7048af94a1599019fef35961b2bd3d6db13df0b0a4b032b92baeae31939",
+        "blob_id": "6011e2717381f05e907ea1303e3f765aaba9ed31"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "exported_at": null
+  },
+  "efficientnet-lite4": {
+    "repo_id": "inference4j/efficientnet-lite4",
+    "source": {
+      "type": "hf",
+      "repo": "onnx/EfficientNet-Lite4",
+      "revision": "69e036d205618d72e83b24b23cb9e0f7db05e720"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "efficientnet-lite4-11.onnx": {
+        "size": 51946641,
+        "sha256": "d111689907c06eea7c82e4833ddef758da6453b9d4cf60b7e99ca05c7cbd9c12",
+        "blob_id": "c7595b25f9d27b32835d247a93e8be8f413e9ae7"
+      }
+    },
+    "published": {
+      "model.onnx": {
+        "size": 51946641,
+        "sha256": "d111689907c06eea7c82e4833ddef758da6453b9d4cf60b7e99ca05c7cbd9c12",
+        "blob_id": "c7595b25f9d27b32835d247a93e8be8f413e9ae7"
+      }
+    },
+    "exported_at": null
+  },
+  "flan-t5-base": {
+    "repo_id": "inference4j/flan-t5-base",
+    "source": {
+      "type": "hf",
+      "repo": "google/flan-t5-base",
+      "revision": "7bcac572ce56db69c1ea7c8af255c5d7c9672fc2"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 1404,
+        "blob_id": "d41e16cd4cd58621695da4f94132f516d07251af"
+      },
+      "generation_config.json": {
+        "size": 147,
+        "blob_id": "d52815623b46b7db1c4b957b5a83a8ad30b0146a"
+      },
+      "model.safetensors": {
+        "size": 990345061,
+        "sha256": "1dfb70afdcedceb9f9fae2f9b68e004ad934361fb35b9b2bd50b45ea90790fc8",
+        "blob_id": "56384aed8801379e98a4b0670968deb78d7b9257"
+      },
+      "pytorch_model.bin": {
+        "size": 990402637,
+        "sha256": "521ad557548700c7f342a804b51c7c17440c33662c387883c0a39ebbdec17a28",
+        "blob_id": "f40b9b153ba54100ac31503b807bfc36628510ad"
+      },
+      "special_tokens_map.json": {
+        "size": 2201,
+        "blob_id": "2c19eb6e3b583f52d34b903b5978d3d30b6b7682"
+      },
+      "spiece.model": {
+        "size": 791656,
+        "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+        "blob_id": "317a5ccbde45300f5d1d970d4d449af2108b147e"
+      },
+      "tokenizer.json": {
+        "size": 2424064,
+        "blob_id": "fc669fbad1a6a82119ca3e1fa75db33ee22ca47d"
+      },
+      "tokenizer_config.json": {
+        "size": 2537,
+        "blob_id": "e3685b0cb5c8909cf3e7d72ffc16ca94c861bdfb"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1465,
+        "blob_id": "c8f68eaf446e5792f2c08af371afbf4f6577f4ee"
+      },
+      "config.json": {
+        "size": 1509,
+        "blob_id": "95f9ead56efc5428eeec3f5410d43a7092a0d55a"
+      },
+      "decoder_model.onnx": {
+        "size": 650875887,
+        "sha256": "212d494d0c26230dcc3b2f5cc9ad5d0c0f560b5a7b89b1ac328cbc52555a4722",
+        "blob_id": "56184024d0e3f5912b3122a259fba4dcb9d46a32"
+      },
+      "decoder_with_past_model.onnx": {
+        "size": 594217559,
+        "sha256": "22196a19f51d93b42586eb87c816edb09ee7c9126d8a1d5ff592e3965e7828be",
+        "blob_id": "e7849f25588d6ea55b0600c187a8019a11ca9b58"
+      },
+      "encoder_model.onnx": {
+        "size": 438705681,
+        "sha256": "96b0a619f4a2f3d481de87360442976debd9aed806576182875f537157eec0cf",
+        "blob_id": "b8b98b23a84e80a00a3ec50d07b775f6b6f14b5c"
+      },
+      "tokenizer.json": {
+        "size": 2422234,
+        "blob_id": "41a5ffa2657f77be129f7d2f791e45aab6c145ae"
+      }
+    },
+    "exported_at": "2026-02-28T16:01:59+00:00"
+  },
+  "flan-t5-large": {
+    "repo_id": "inference4j/flan-t5-large",
+    "source": {
+      "type": "hf",
+      "repo": "google/flan-t5-large",
+      "revision": "0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 662,
+        "blob_id": "52d6c53a0bc88c7d1fe251e9643ce8aaf1c13e2e"
+      },
+      "generation_config.json": {
+        "size": 147,
+        "blob_id": "d52815623b46b7db1c4b957b5a83a8ad30b0146a"
+      },
+      "model.safetensors": {
+        "size": 3132668804,
+        "sha256": "a9dd06ce490f139af36e9eb77dd3758b4fd07a08a73d5a1abe5ff2591e2d388e",
+        "blob_id": "10cdca734df93fc1ff9a6bb287ed6d642aa514b9"
+      },
+      "pytorch_model.bin": {
+        "size": 3132781861,
+        "sha256": "93249e5f2b058ccddd0f4f5ef82aad80e262133eb103f1b42dc2da4b9bc97b36",
+        "blob_id": "052d15561dc74846d50d29942b7ad730b5763d40"
+      },
+      "special_tokens_map.json": {
+        "size": 2201,
+        "blob_id": "2c19eb6e3b583f52d34b903b5978d3d30b6b7682"
+      },
+      "spiece.model": {
+        "size": 791656,
+        "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+        "blob_id": "317a5ccbde45300f5d1d970d4d449af2108b147e"
+      },
+      "tokenizer.json": {
+        "size": 2424064,
+        "blob_id": "fc669fbad1a6a82119ca3e1fa75db33ee22ca47d"
+      },
+      "tokenizer_config.json": {
+        "size": 2539,
+        "blob_id": "031ce30f2198693aabefeac9588257b81658d7f4"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1472,
+        "blob_id": "80ef7b77245221b324955ec21462c7922dcc149c"
+      },
+      "config.json": {
+        "size": 767,
+        "blob_id": "a2ca34c5a5819421ad5e30f078ca99651d446faf"
+      },
+      "decoder_model.onnx": {
+        "size": 1900001851,
+        "sha256": "ae736f6c89069983cfd85b4c24a3036b59727e73ff3a9bd410694165767870f4",
+        "blob_id": "59b6d51dce1adc3e649fbe803a0b314a7264cef0"
+      },
+      "decoder_with_past_model.onnx": {
+        "size": 1698604355,
+        "sha256": "ee4c97b8401958c3b5be33592d74d6cfbda7f57e228dea2d7c5f834e5c319002",
+        "blob_id": "8e259c743b81ee644d187140fcdef5a4f4a52470"
+      },
+      "encoder_model.onnx": {
+        "size": 1365296186,
+        "sha256": "e58fb978ce524805c39cbc9abc92a59ce18ef834d0bbb0d15a6ad4d0a3608ae9",
+        "blob_id": "6d5fe6da300adc7926379e3749a227eca19d9ee2"
+      },
+      "tokenizer.json": {
+        "size": 2422234,
+        "blob_id": "41a5ffa2657f77be129f7d2f791e45aab6c145ae"
+      }
+    },
+    "exported_at": "2026-02-28T16:06:00+00:00"
+  },
+  "flan-t5-small": {
+    "repo_id": "inference4j/flan-t5-small",
+    "source": {
+      "type": "hf",
+      "repo": "google/flan-t5-small",
+      "revision": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 1401,
+        "blob_id": "360a0073f29a105ced4a366cda27e668b11bb73b"
+      },
+      "generation_config.json": {
+        "size": 147,
+        "blob_id": "d52815623b46b7db1c4b957b5a83a8ad30b0146a"
+      },
+      "model.safetensors": {
+        "size": 307867048,
+        "sha256": "495fa51e204676f1a857a9fc13c4c89f3f5ba9f480b898cebca02add25e6d749",
+        "blob_id": "dc000c67b8384d01ad1fac698440e698205bdead"
+      },
+      "pytorch_model.bin": {
+        "size": 307905733,
+        "sha256": "4a8c0174fa3ee6fe2ffd0f6e21992d4ca4ad1e9b12bd14155b57479e27f56292",
+        "blob_id": "ac312e9432a64e49c6025978df15cfecff106d0f"
+      },
+      "special_tokens_map.json": {
+        "size": 2201,
+        "blob_id": "2c19eb6e3b583f52d34b903b5978d3d30b6b7682"
+      },
+      "spiece.model": {
+        "size": 791656,
+        "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+        "blob_id": "317a5ccbde45300f5d1d970d4d449af2108b147e"
+      },
+      "tokenizer.json": {
+        "size": 2424064,
+        "blob_id": "fc669fbad1a6a82119ca3e1fa75db33ee22ca47d"
+      },
+      "tokenizer_config.json": {
+        "size": 2539,
+        "blob_id": "db13bf98b7714acc4dea7621ff7f4ab93f64258e"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1470,
+        "blob_id": "3f27ad501568e87520b196ef84b46593c3f0653b"
+      },
+      "config.json": {
+        "size": 1506,
+        "blob_id": "152520a724f04df64c16646a8882c12b039621ad"
+      },
+      "decoder_model.onnx": {
+        "size": 232577642,
+        "sha256": "1f65e029938345ee2cfa2c059a3532c9b2f165cbd22d256b66206feb132d92f2",
+        "blob_id": "c275cb2170f2d9852fb1e9c421677ff38633222e"
+      },
+      "decoder_with_past_model.onnx": {
+        "size": 219971365,
+        "sha256": "a2696cf3978727ccf37aaca27cc88c0f2ee017b4c79072ba9b51eb1c71c7e2bb",
+        "blob_id": "fb36d986059e7ed2c8ebd0923ebf24c67ac2b2a2"
+      },
+      "encoder_model.onnx": {
+        "size": 141463091,
+        "sha256": "f8e01244ad371cb9405baa37f4c126e40c6b601637dcdddb8058d639ea638d21",
+        "blob_id": "4023149b600616592d75c7bde4ed4e01df5a288d"
+      },
+      "tokenizer.json": {
+        "size": 2422234,
+        "blob_id": "41a5ffa2657f77be129f7d2f791e45aab6c145ae"
+      }
+    },
+    "exported_at": "2026-02-28T16:00:59+00:00"
+  },
+  "gpt2": {
+    "repo_id": "inference4j/gpt2",
+    "source": {
+      "type": "hf",
+      "repo": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 665,
+        "blob_id": "10c66461e4c109db5a2196bff4bb59be30396ed8"
+      },
+      "generation_config.json": {
+        "size": 124,
+        "blob_id": "3dc481ecc3b2c47a06ab4e20dba9d7f4b447bdf3"
+      },
+      "merges.txt": {
+        "size": 456318,
+        "blob_id": "226b0752cac7789c48f0cb3ec53eda48b7be36cc"
+      },
+      "model.safetensors": {
+        "size": 548105171,
+        "sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+        "blob_id": "44b36d6e32d13c8fb28b0feab0ac8bfefa7efeda"
+      },
+      "pytorch_model.bin": {
+        "size": 548118077,
+        "sha256": "7c5d3f4b8b76583b422fcb9189ad6c89d5d97a094541ce8932dce3ecabde1421",
+        "blob_id": "11f855591b3269c74652daee461f96fc238875ed"
+      },
+      "tokenizer.json": {
+        "size": 1355256,
+        "blob_id": "4b988bccc9dc5adacd403c00b4704976196548f8"
+      },
+      "tokenizer_config.json": {
+        "size": 26,
+        "blob_id": "be4d21d94f3b4687e5a54d84bf6ab46ed0f8defd"
+      },
+      "vocab.json": {
+        "size": 1042301,
+        "blob_id": "1f1d9aaca301414e7f6c9396df506798ff4eb9a6"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1232,
+        "blob_id": "8593cea7a0047484e524d410f1c9ef193b9f0e2a"
+      },
+      "config.json": {
+        "size": 874,
+        "blob_id": "6ec560d99834a214cc11581fec4d809e0f04e8f3"
+      },
+      "merges.txt": {
+        "size": 456318,
+        "blob_id": "226b0752cac7789c48f0cb3ec53eda48b7be36cc"
+      },
+      "model.onnx": {
+        "size": 652560776,
+        "sha256": "c65b96cc34a79614f0f4798cda459ef98a9180c159a66671a53879a0c6fac200",
+        "blob_id": "03170c3e4d3ae459c88475af6f8aa6f75c5b6e63"
+      },
+      "vocab.json": {
+        "size": 798156,
+        "blob_id": "84ef7fb594b5c0979e48bdeddb60a0adef33df0b"
+      }
+    },
+    "exported_at": "2026-02-20T23:24:11+00:00"
+  },
+  "gte-base": {
+    "repo_id": "inference4j/gte-base",
+    "source": {
+      "type": "hf",
+      "repo": "Xenova/gte-base",
+      "revision": "ffdeea73386c8c0f73931ebed6878aa715eca7d3"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "onnx/model.onnx": {
+        "size": 435811539,
+        "sha256": "5a2a2a94a85a7e4645bfe7bf7635b010ba1a3e46752780f4d4172af062a260e1",
+        "blob_id": "ff9d3bd4926e2eaf35bc1a4eaec19e95ac223138"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "published": {
+      "model.onnx": {
+        "size": 435811539,
+        "sha256": "5a2a2a94a85a7e4645bfe7bf7635b010ba1a3e46752780f4d4172af062a260e1",
+        "blob_id": "ff9d3bd4926e2eaf35bc1a4eaec19e95ac223138"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "exported_at": null
+  },
+  "ms-marco-MiniLM-L-6-v2": {
+    "repo_id": "inference4j/ms-marco-MiniLM-L-6-v2",
+    "source": {
+      "type": "hf",
+      "repo": "Xenova/ms-marco-MiniLM-L-6-v2",
+      "revision": "a09144355adeed5f58c8ed011d209bf8ee5a1fec"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "onnx/model.onnx": {
+        "size": 90992115,
+        "sha256": "c623d0bcb99f4622beb413eaef00cfbe5db20df9f1dd982da4b4f26022881870",
+        "blob_id": "b409c3bebe4ec688cc5d2647b8e346928c38afbe"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "published": {
+      "model.onnx": {
+        "size": 90992115,
+        "sha256": "c623d0bcb99f4622beb413eaef00cfbe5db20df9f1dd982da4b4f26022881870",
+        "blob_id": "b409c3bebe4ec688cc5d2647b8e346928c38afbe"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "exported_at": null
+  },
+  "opus-mt-en-de": {
+    "repo_id": "inference4j/opus-mt-en-de",
+    "source": {
+      "type": "hf",
+      "repo": "Helsinki-NLP/opus-mt-en-de",
+      "revision": "6183067f769a302e3861815543b9f312c71b0ca4"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 1335,
+        "blob_id": "0a49d3f4024d5ea51560d51f29d75722d794fb16"
+      },
+      "generation_config.json": {
+        "size": 293,
+        "blob_id": "3d05a5bad924f2121cf5a006b36dfda02970289b"
+      },
+      "pytorch_model.bin": {
+        "size": 297928209,
+        "sha256": "da068344b1b0c20e6d4a8f77f48e06646b90d679029006b18579e68977206bdd",
+        "blob_id": "a30060b112529b126b8781ec8277c5c1dee064a2"
+      },
+      "source.spm": {
+        "size": 768489,
+        "blob_id": "e73d58f99c702eb1746e3dc55bc76255d7aa4a94"
+      },
+      "target.spm": {
+        "size": 796845,
+        "blob_id": "9dd0d88081be8d75fbc029762329cc11bfad07b9"
+      },
+      "tokenizer_config.json": {
+        "size": 42,
+        "blob_id": "c1fe32f77a961c887ae8266fbd92f4f583fe309a"
+      },
+      "vocab.json": {
+        "size": 1273232,
+        "blob_id": "0da41bcf74fa9a6af4855c7350e27819796d9ca9"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1427,
+        "blob_id": "c596a55b999c8041b8765f818329179acc5e92db"
+      },
+      "config.json": {
+        "size": 1333,
+        "blob_id": "1edb5a6bdd3ed5b4b68bd27e3cf33f14a773b09a"
+      },
+      "decoder_model.onnx": {
+        "size": 221369969,
+        "sha256": "97d9f8cc79f1ae2c55ff1dab9d046681ee36ccb6b801598af15579f502f41d69",
+        "blob_id": "3f6da6758ec40f9b2dc21b688e5c44276521928d"
+      },
+      "decoder_with_past_model.onnx": {
+        "size": 208740361,
+        "sha256": "8d171fa6f150ebe5982187becca8259c615b341ff21e305977775091cb62ef6c",
+        "blob_id": "08715ba7cd66b0d985cb7098f87c56531a0b6c79"
+      },
+      "encoder_model.onnx": {
+        "size": 195770998,
+        "sha256": "9fbe1f86bbc70d148ab2dbead42db38e06fa3670dbe875b283d373d98a775abd",
+        "blob_id": "e38a294df8304c9eba010c65bf55ab08caf70ee4"
+      },
+      "target_tokenizer.json": {
+        "size": 2477540,
+        "blob_id": "03df66c1c2f339ea6a652807f71a962f75bc7bf6"
+      },
+      "tokenizer.json": {
+        "size": 2547183,
+        "blob_id": "7ffcacf06caa31789422b6d7d60c6e4430a3c920"
+      }
+    },
+    "exported_at": "2026-03-01T03:34:06+00:00"
+  },
+  "opus-mt-en-es": {
+    "repo_id": "inference4j/opus-mt-en-es",
+    "source": {
+      "type": "hf",
+      "repo": "Helsinki-NLP/opus-mt-en-es",
+      "revision": "5bc4493d463cf000c1f0b50f8d56886a392ed4ab"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 1473,
+        "blob_id": "c40dc3af1603bdbca3388970914022f4abb81f7f"
+      },
+      "generation_config.json": {
+        "size": 293,
+        "blob_id": "f07859fcab98712b231d115475990a962eebc851"
+      },
+      "pytorch_model.bin": {
+        "size": 312087523,
+        "sha256": "befce0f620e8e63f83bbb7f0818eb51d541cba28057a7cc14b00466d85c4994c",
+        "blob_id": "743cd75486a76eae532e12d4ddec5ee71e881ba4"
+      },
+      "source.spm": {
+        "size": 801636,
+        "blob_id": "6dc92ba66940f622779f82c376066c2c46bbad12"
+      },
+      "target.spm": {
+        "size": 825924,
+        "blob_id": "2dfb31564bc31c8fbc65c8bfa8cc201fbbf45e44"
+      },
+      "tokenizer_config.json": {
+        "size": 44,
+        "blob_id": "159d739c93118ec73b1a90a6045b636928fcce95"
+      },
+      "vocab.json": {
+        "size": 1590040,
+        "blob_id": "d2c5a0f1ab2bb3a752894b854150c358f8c682f9"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1430,
+        "blob_id": "dfce1631cf4fb9915606afd6662251c8515cc0bf"
+      },
+      "config.json": {
+        "size": 1390,
+        "blob_id": "33af49b09038a81aeb2758de9a38a452ab2ee34c"
+      },
+      "decoder_model.onnx": {
+        "size": 235528769,
+        "sha256": "1bbe7fe2c88ad5b91d16370b472b2f565c52a19c2e50c395f34c1382ed878210",
+        "blob_id": "192e75074e531257e54fa51a9ae48434c2ba8093"
+      },
+      "decoder_with_past_model.onnx": {
+        "size": 222899161,
+        "sha256": "00c741f94363c63a3519dd466f199357ccf3b5186acaf76f0726535b5e4e5059",
+        "blob_id": "dce2d6a38facb021bb165e91d473953d9bb87305"
+      },
+      "encoder_model.onnx": {
+        "size": 209902198,
+        "sha256": "b911cad773c54b238cbc9b919102bf9a8ca017b93507a58a61f740dd3fa2e9ee",
+        "blob_id": "9ac44f1d3c5e0efbee67e525fe3c96fb8be4a193"
+      },
+      "target_tokenizer.json": {
+        "size": 2569569,
+        "blob_id": "08710c46968e6d5ebf1277e89fd8011860daa117"
+      },
+      "tokenizer.json": {
+        "size": 3563343,
+        "blob_id": "fa7fd479f0f515dfc11980240949f05858901a18"
+      }
+    },
+    "exported_at": "2026-03-01T03:55:51+00:00"
+  },
+  "opus-mt-en-fr": {
+    "repo_id": "inference4j/opus-mt-en-fr",
+    "source": {
+      "type": "hf",
+      "repo": "Helsinki-NLP/opus-mt-en-fr",
+      "revision": "dd7f6540a7a48a7f4db59e5c0b9c42c8eea67f18"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 1416,
+        "blob_id": "1ca77a4a9305ea071d96dd12dbe7c69c3a224f8e"
+      },
+      "generation_config.json": {
+        "size": 293,
+        "blob_id": "a76623f9e228ce241586c6dc0ede54b9674940a6"
+      },
+      "pytorch_model.bin": {
+        "size": 300827685,
+        "sha256": "cc1de10b49342ad2f33e06bc4474ddd6eaca278474903c4a8636ce15680d64de",
+        "blob_id": "396bf4eb15e01fa5193edcf1e0af5eed70032954"
+      },
+      "source.spm": {
+        "size": 778395,
+        "blob_id": "5b989d2ad3cc6596bef819b2ad755f3e06377476"
+      },
+      "target.spm": {
+        "size": 802397,
+        "blob_id": "e95b99a0e1a115d0f27eb051c7afc5a2859f1630"
+      },
+      "tokenizer_config.json": {
+        "size": 42,
+        "blob_id": "599f1c74f7e68d1351c801ef3557a03fd846d171"
+      },
+      "vocab.json": {
+        "size": 1339166,
+        "blob_id": "f12d2f5f9cddfc4b05dee175269d98cab8274c12"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1427,
+        "blob_id": "15e65922117d9fb67739bc0edaa12d496d4f6995"
+      },
+      "config.json": {
+        "size": 1333,
+        "blob_id": "ab830fb43fc3629aa2854f50e16ae6415f42b442"
+      },
+      "decoder_model.onnx": {
+        "size": 224269445,
+        "sha256": "28665ff7893a8053fca2cf9b6bb646ce57bbded8ef63022974dcec9ea7aed51d",
+        "blob_id": "22ded99e7a59d2734cb4706efa720559e99931a2"
+      },
+      "decoder_with_past_model.onnx": {
+        "size": 211639837,
+        "sha256": "fb1abc5d44cfe661559533092a2c1d374e69a771cba7bf5c24ab8b520447e54b",
+        "blob_id": "610abbd43657a8414ee059516d5346df2994f061"
+      },
+      "encoder_model.onnx": {
+        "size": 198664822,
+        "sha256": "247e6e03b46b72f7975e4dd7ed3b7574fb0fa8b570fab0b7ca0c5cdf7faf9f83",
+        "blob_id": "bdff52cf2e3a8b759f65e9f0ffb1c8e98feaac34"
+      },
+      "target_tokenizer.json": {
+        "size": 2631017,
+        "blob_id": "3a5429a2df132f029da534a02637d40d4223fd36"
+      },
+      "tokenizer.json": {
+        "size": 2557139,
+        "blob_id": "50eecccc6b53203756959f3096dfed955637a77c"
+      }
+    },
+    "exported_at": "2026-03-01T03:33:56+00:00"
+  },
+  "phi-3-mini": {
+    "repo_id": "inference4j/phi-3-mini-4k-instruct",
+    "source": {
+      "type": "hf",
+      "repo": "microsoft/Phi-3-mini-4k-instruct-onnx",
+      "revision": "5f5f794c1c23c9d5ee142af85df02a6cc52d6945"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/added_tokens.json": {
+        "size": 306,
+        "blob_id": "178968dec606c790aa335e9142f6afec37288470"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/config.json": {
+        "size": 919,
+        "blob_id": "01de35834a12bca5fc9150cc2a8351135f442757"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/genai_config.json": {
+        "size": 1576,
+        "blob_id": "5e5a61eea6e20bda5b011053a889535029e4b9c1"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/phi3-mini-4k-instruct-cpu-int4-rtn-block-32-acc-level-4.onnx": {
+        "size": 231335,
+        "sha256": "385cd1b908a0d2f8634e86d30236f6dbb7ae660eb3943fd1ef5bdc3847326480",
+        "blob_id": "fe9a04ca7101641d71f0853e288b863155bfe69b"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/phi3-mini-4k-instruct-cpu-int4-rtn-block-32-acc-level-4.onnx.data": {
+        "size": 2722861056,
+        "sha256": "5db30ce699aee1123cf9045742488db5928006fa618a42cb3c0840322a85ad0f",
+        "blob_id": "dde7967fa407b6c0978d4cbfadc4739ee9e91fe0"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/special_tokens_map.json": {
+        "size": 599,
+        "blob_id": "c6a944b4d49ce5d79030250ed6bdcbb1a65dfda1"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/tokenizer.json": {
+        "size": 1937869,
+        "blob_id": "88ec145f4e7684c009bc6d55df24bb82c7d3c379"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/tokenizer.model": {
+        "size": 499723,
+        "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347",
+        "blob_id": "6c00c742ce03c627d6cd5b795984876fa49fa899"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/tokenizer_config.json": {
+        "size": 3441,
+        "blob_id": "67aa82cddb4d66391ddf31ff99f059239bd2d1e7"
+      }
+    },
+    "published": {
+      "added_tokens.json": {
+        "size": 306,
+        "blob_id": "178968dec606c790aa335e9142f6afec37288470"
+      },
+      "config.json": {
+        "size": 919,
+        "blob_id": "01de35834a12bca5fc9150cc2a8351135f442757"
+      },
+      "genai_config.json": {
+        "size": 1576,
+        "blob_id": "5e5a61eea6e20bda5b011053a889535029e4b9c1"
+      },
+      "phi3-mini-4k-instruct-cpu-int4-rtn-block-32-acc-level-4.onnx": {
+        "size": 231335,
+        "sha256": "385cd1b908a0d2f8634e86d30236f6dbb7ae660eb3943fd1ef5bdc3847326480",
+        "blob_id": "fe9a04ca7101641d71f0853e288b863155bfe69b"
+      },
+      "phi3-mini-4k-instruct-cpu-int4-rtn-block-32-acc-level-4.onnx.data": {
+        "size": 2722861056,
+        "sha256": "5db30ce699aee1123cf9045742488db5928006fa618a42cb3c0840322a85ad0f",
+        "blob_id": "dde7967fa407b6c0978d4cbfadc4739ee9e91fe0"
+      },
+      "special_tokens_map.json": {
+        "size": 599,
+        "blob_id": "c6a944b4d49ce5d79030250ed6bdcbb1a65dfda1"
+      },
+      "tokenizer.json": {
+        "size": 1937869,
+        "blob_id": "88ec145f4e7684c009bc6d55df24bb82c7d3c379"
+      },
+      "tokenizer.model": {
+        "size": 499723,
+        "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347",
+        "blob_id": "6c00c742ce03c627d6cd5b795984876fa49fa899"
+      },
+      "tokenizer_config.json": {
+        "size": 3441,
+        "blob_id": "67aa82cddb4d66391ddf31ff99f059239bd2d1e7"
+      }
+    },
+    "exported_at": null
+  },
+  "phi-3.5-vision": {
+    "repo_id": "inference4j/phi-3.5-vision-instruct",
+    "source": {
+      "type": "hf",
+      "repo": "microsoft/Phi-3.5-vision-instruct-onnx",
+      "revision": "672d73375fa86f3d7787e40ac593e33a4f04a055"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/genai_config.json": {
+        "size": 2121,
+        "blob_id": "8f783a58f933ea0a05cc535a6f7a17fe6ae0468c"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/phi-3.5-v-instruct-embedding.onnx": {
+        "size": 6091,
+        "sha256": "83bb330b0a319812eccdf6b6bc5ce17eb6a120bcf76120f6af27c19c3d396ea1",
+        "blob_id": "4556644fc9afea3256486d316d9988a75f65fff3"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/phi-3.5-v-instruct-embedding.onnx.data": {
+        "size": 394002432,
+        "sha256": "2dcbf0fcb14433ac8fa82b35c39675c01fb552512b4c0e5d54e8f247046ef393",
+        "blob_id": "5bdac45c5d7a9b3490b8a43199ec27c5e1d804dd"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/phi-3.5-v-instruct-text.onnx": {
+        "size": 52123846,
+        "sha256": "f7580bd589693e87e3825ffe8eda3f5fda4158d2d82d27803c263aa0e7454a81",
+        "blob_id": "e2a3e06032aef4c61e9ffa19f3b247b705276dd9"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/phi-3.5-v-instruct-text.onnx.data": {
+        "size": 2327285760,
+        "sha256": "214fd2e8a09b8c7b141f9095171aed6f994768a36803b7eeb9ea3be16da99dd6",
+        "blob_id": "217ac5da8b61366e17e4dbcc857278c630b65765"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/phi-3.5-v-instruct-vision.onnx": {
+        "size": 414021,
+        "sha256": "e06ccb2d2c35c2565f0abe507241f33cae9d7f63a1d79f6170b317d12f35c3bf",
+        "blob_id": "c99571d92215db5ec49972e730aba7973e3d9c14"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/phi-3.5-v-instruct-vision.onnx.data": {
+        "size": 444916232,
+        "sha256": "45af0e626ba0eff702d9c1873c84f9e60f1f17bb2036bf1abc045968b5e645df",
+        "blob_id": "c6952175084705b2fefbfff2cd3b0bd3a3132215"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/processor_config.json": {
+        "size": 752,
+        "blob_id": "22adf04d88dffee8859f29585b214bfd624adbd5"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/special_tokens_map.json": {
+        "size": 670,
+        "blob_id": "0616f20a3af0830d0991f72c15c4f5e6d5dc02fa"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/tokenizer.json": {
+        "size": 1851388,
+        "blob_id": "7f2088c90541c5e7f05cd50c2abfedacbb647684"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/tokenizer_config.json": {
+        "size": 9547,
+        "blob_id": "bda28a1560ec16f8126889550ea297b02e240da8"
+      }
+    },
+    "published": {
+      "genai_config.json": {
+        "size": 2121,
+        "blob_id": "8f783a58f933ea0a05cc535a6f7a17fe6ae0468c"
+      },
+      "phi-3.5-v-instruct-embedding.onnx": {
+        "size": 6091,
+        "sha256": "83bb330b0a319812eccdf6b6bc5ce17eb6a120bcf76120f6af27c19c3d396ea1",
+        "blob_id": "4556644fc9afea3256486d316d9988a75f65fff3"
+      },
+      "phi-3.5-v-instruct-embedding.onnx.data": {
+        "size": 394002432,
+        "sha256": "2dcbf0fcb14433ac8fa82b35c39675c01fb552512b4c0e5d54e8f247046ef393",
+        "blob_id": "5bdac45c5d7a9b3490b8a43199ec27c5e1d804dd"
+      },
+      "phi-3.5-v-instruct-text.onnx": {
+        "size": 52123846,
+        "sha256": "f7580bd589693e87e3825ffe8eda3f5fda4158d2d82d27803c263aa0e7454a81",
+        "blob_id": "e2a3e06032aef4c61e9ffa19f3b247b705276dd9"
+      },
+      "phi-3.5-v-instruct-text.onnx.data": {
+        "size": 2327285760,
+        "sha256": "214fd2e8a09b8c7b141f9095171aed6f994768a36803b7eeb9ea3be16da99dd6",
+        "blob_id": "217ac5da8b61366e17e4dbcc857278c630b65765"
+      },
+      "phi-3.5-v-instruct-vision.onnx": {
+        "size": 414021,
+        "sha256": "e06ccb2d2c35c2565f0abe507241f33cae9d7f63a1d79f6170b317d12f35c3bf",
+        "blob_id": "c99571d92215db5ec49972e730aba7973e3d9c14"
+      },
+      "phi-3.5-v-instruct-vision.onnx.data": {
+        "size": 444916232,
+        "sha256": "45af0e626ba0eff702d9c1873c84f9e60f1f17bb2036bf1abc045968b5e645df",
+        "blob_id": "c6952175084705b2fefbfff2cd3b0bd3a3132215"
+      },
+      "processor_config.json": {
+        "size": 752,
+        "blob_id": "22adf04d88dffee8859f29585b214bfd624adbd5"
+      },
+      "special_tokens_map.json": {
+        "size": 670,
+        "blob_id": "0616f20a3af0830d0991f72c15c4f5e6d5dc02fa"
+      },
+      "tokenizer.json": {
+        "size": 1851388,
+        "blob_id": "7f2088c90541c5e7f05cd50c2abfedacbb647684"
+      },
+      "tokenizer_config.json": {
+        "size": 9547,
+        "blob_id": "bda28a1560ec16f8126889550ea297b02e240da8"
+      }
+    },
+    "exported_at": null
+  },
+  "qwen2.5-1.5b-instruct": {
+    "repo_id": "inference4j/qwen2.5-1.5b-instruct",
+    "source": {
+      "type": "hf",
+      "repo": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 660,
+        "blob_id": "f81ead14ab072d65a07817f83a3ee0e5a1890d10"
+      },
+      "generation_config.json": {
+        "size": 242,
+        "blob_id": "dfc11073787daf1b0f9c0f1499487ab5f4c93738"
+      },
+      "merges.txt": {
+        "size": 1671839,
+        "blob_id": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0"
+      },
+      "model.safetensors": {
+        "size": 3087467144,
+        "sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+        "blob_id": "9127f71e7314df0064f469223749e5f237e06463"
+      },
+      "tokenizer.json": {
+        "size": 7031645,
+        "blob_id": "443909a61d429dff23010e5bddd28ff530edda00"
+      },
+      "tokenizer_config.json": {
+        "size": 7305,
+        "blob_id": "07bfe0640cb5a0037f9322287fbfc682806cf672"
+      },
+      "vocab.json": {
+        "size": 2776833,
+        "blob_id": "4783fe10ac3adce15ac8f358ef5462739852c569"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1490,
+        "blob_id": "94f3873ce3064397fdde0d0b634ab0eb1e0d5429"
+      },
+      "chat_template.jinja": {
+        "size": 2507,
+        "blob_id": "bdf7919a96cfe43d50914a007b9c0877bd0ec27e"
+      },
+      "config.json": {
+        "size": 1315,
+        "blob_id": "dfe17c99f39404bef2dd77ed9fc31700ffcffd87"
+      },
+      "merges.txt": {
+        "size": 1671853,
+        "blob_id": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+      },
+      "model.onnx": {
+        "size": 1321454,
+        "sha256": "82009048f56842577afe107a840d0c2d7368897efa6afcc24bb220b72f9e0a91",
+        "blob_id": "a20eb1780fb2515e42d4d4ae3d7ba7988f0d7016"
+      },
+      "model.onnx_data": {
+        "size": 3686296832,
+        "sha256": "510f8a35b81c4671fb07ffdf5018424dfd3d692de960eb59ddc1cebdfb50af26",
+        "blob_id": "6036570f537103bbb784ae5cbfaa236f7a0e9df2"
+      },
+      "special_tokens_map.json": {
+        "size": 613,
+        "blob_id": "ac23c0aaa2434523c494330aeb79c58395378103"
+      },
+      "tokenizer_config.json": {
+        "size": 4686,
+        "blob_id": "eaed590d62aaf0ba31e284b66ddcb18222f066c2"
+      },
+      "vocab.json": {
+        "size": 2776833,
+        "blob_id": "4783fe10ac3adce15ac8f358ef5462739852c569"
+      }
+    },
+    "exported_at": "2026-02-21T23:12:06+00:00"
+  },
+  "resnet50-v1-7": {
+    "repo_id": "inference4j/resnet50-v1-7",
+    "source": {
+      "type": "hf",
+      "repo": "onnxmodelzoo/resnet50-v1-7",
+      "revision": "83711f096876673100e9c18343bf99b97afaf832"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "resnet50-v1-7.onnx": {
+        "size": 102583340,
+        "sha256": "af16a04a6ec48ac494065d4439fe9dea590d337b9ca6dc328160ccf04a217b9c",
+        "blob_id": "02d9136d8481da74c444bbbbb1ef378676b67fdb"
+      }
+    },
+    "published": {
+      "model.onnx": {
+        "size": 102583340,
+        "sha256": "af16a04a6ec48ac494065d4439fe9dea590d337b9ca6dc328160ccf04a217b9c",
+        "blob_id": "02d9136d8481da74c444bbbbb1ef378676b67fdb"
+      }
+    },
+    "exported_at": null
+  },
+  "silero-vad": {
+    "repo_id": "inference4j/silero-vad",
+    "source": {
+      "type": "url",
+      "repo": "https://github.com/snakers4/silero-vad/raw/master/src/silero_vad/data/silero_vad.onnx",
+      "revision": "bfdc0193023f121ea5b3cc7b176dbed570a68a59"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "src/silero_vad/data/silero_vad.onnx": {
+        "size": 2327524,
+        "sha256": "1a153a22f4509e292a94e67d6f9b85e8deb25b4988682b7e174c65279d8788e3"
+      }
+    },
+    "published": {},
+    "exported_at": null
+  },
+  "smollm2-1.7b-instruct": {
+    "repo_id": "inference4j/smollm2-1.7b-instruct",
+    "source": {
+      "type": "hf",
+      "repo": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "revision": "31b70e2e869a7173562077fd711b654946d38674"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 908,
+        "blob_id": "207e75b189e8d8b72a8966dddcce5502f653e5ba"
+      },
+      "generation_config.json": {
+        "size": 132,
+        "blob_id": "da6c4d71a43aa7e6f785bdbb28ea5025438a73fa"
+      },
+      "merges.txt": {
+        "size": 466391,
+        "blob_id": "69503b13f727ba3812b6803e97442a6de05ef5eb"
+      },
+      "model.safetensors": {
+        "size": 3422777952,
+        "sha256": "f55217be716b6a997b97b9d8d7eb6fad02e00858f5010ec24f64603c3a98a0e8",
+        "blob_id": "f96523abc9c9bcd1ee9375f137dddd420372c258"
+      },
+      "special_tokens_map.json": {
+        "size": 655,
+        "blob_id": "44719d2e365acac0637fd25a3acf46494ca45940"
+      },
+      "tokenizer.json": {
+        "size": 2104556,
+        "blob_id": "f922b1797f0c88e71addc8393787831f2477a4bd"
+      },
+      "tokenizer_config.json": {
+        "size": 3764,
+        "blob_id": "8c7b22013909450429303ed10be4398bd63f5457"
+      },
+      "vocab.json": {
+        "size": 800662,
+        "blob_id": "0ad5ecc2035b7031b88afb544ee95e2d49baa484"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1530,
+        "blob_id": "1f187762c66e565434d99f8c8c75dfda9cae3387"
+      },
+      "chat_template.jinja": {
+        "size": 368,
+        "blob_id": "a3c992f0116e505e0d725b13be4b282a1eda3c56"
+      },
+      "config.json": {
+        "size": 919,
+        "blob_id": "5e8571638d63537460048049d8c8cc67a6a0d232"
+      },
+      "merges.txt": {
+        "size": 466391,
+        "blob_id": "69503b13f727ba3812b6803e97442a6de05ef5eb"
+      },
+      "model.onnx": {
+        "size": 724007,
+        "sha256": "253307b85cd91472ce47be52311526463d6dc9cf630c02b39457a5cf35f2e3d0",
+        "blob_id": "d75b049ec5b25111dc0fd8baf7d3945c1bed9b3e"
+      },
+      "model.onnx_data": {
+        "size": 3825406080,
+        "sha256": "c1d5f650541568cdc871af4f39b0d5861212ecd97f970cbb5b5b5fc5a117c19c",
+        "blob_id": "1ba38a8d3f41f22e3ff22115b3fef645992880e1"
+      },
+      "special_tokens_map.json": {
+        "size": 655,
+        "blob_id": "44719d2e365acac0637fd25a3acf46494ca45940"
+      },
+      "tokenizer_config.json": {
+        "size": 3398,
+        "blob_id": "2d6e55aa24d5f9d2fc9b18338d43da94b61f87a7"
+      },
+      "vocab.json": {
+        "size": 800662,
+        "blob_id": "0ad5ecc2035b7031b88afb544ee95e2d49baa484"
+      }
+    },
+    "exported_at": "2026-02-21T23:51:28+00:00"
+  },
+  "smollm2-360m-instruct": {
+    "repo_id": "inference4j/smollm2-360m-instruct",
+    "source": {
+      "type": "hf",
+      "repo": "HuggingFaceTB/SmolLM2-360M-Instruct",
+      "revision": "a10cc1512eabd3dde888204e902eca88bddb4951"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 846,
+        "blob_id": "4f2ae86545bb5c1d4fcc55644deef86be50a7dee"
+      },
+      "generation_config.json": {
+        "size": 132,
+        "blob_id": "da6c4d71a43aa7e6f785bdbb28ea5025438a73fa"
+      },
+      "merges.txt": {
+        "size": 466391,
+        "blob_id": "69503b13f727ba3812b6803e97442a6de05ef5eb"
+      },
+      "model.safetensors": {
+        "size": 723674912,
+        "sha256": "e6bffe7435d7ddc10fd3b9a9efd429dafbacb1cb17015fb5562664e7532bf86e",
+        "blob_id": "5e3cd2324bc51fbe72a42fc00f3ccd8da230cc04"
+      },
+      "special_tokens_map.json": {
+        "size": 655,
+        "blob_id": "44719d2e365acac0637fd25a3acf46494ca45940"
+      },
+      "tokenizer.json": {
+        "size": 2104556,
+        "blob_id": "f922b1797f0c88e71addc8393787831f2477a4bd"
+      },
+      "tokenizer_config.json": {
+        "size": 3764,
+        "blob_id": "8c7b22013909450429303ed10be4398bd63f5457"
+      },
+      "vocab.json": {
+        "size": 800662,
+        "blob_id": "0ad5ecc2035b7031b88afb544ee95e2d49baa484"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1478,
+        "blob_id": "9387c0cc48bf28905abef8b42a5046d1e838a3df"
+      },
+      "chat_template.jinja": {
+        "size": 368,
+        "blob_id": "a3c992f0116e505e0d725b13be4b282a1eda3c56"
+      },
+      "config.json": {
+        "size": 857,
+        "blob_id": "b79c62c90858e624621aa8d888401b6d4dc43980"
+      },
+      "merges.txt": {
+        "size": 466391,
+        "blob_id": "69503b13f727ba3812b6803e97442a6de05ef5eb"
+      },
+      "model.onnx": {
+        "size": 1637335453,
+        "sha256": "806c2f2c9e756905ab3c410948a214e51b89bb49271d99afe38025bc3d873bd6",
+        "blob_id": "9da7e297a8ae7c5256bab390dfe3d2175824c27e"
+      },
+      "special_tokens_map.json": {
+        "size": 655,
+        "blob_id": "44719d2e365acac0637fd25a3acf46494ca45940"
+      },
+      "tokenizer_config.json": {
+        "size": 3398,
+        "blob_id": "2d6e55aa24d5f9d2fc9b18338d43da94b61f87a7"
+      },
+      "vocab.json": {
+        "size": 800662,
+        "blob_id": "0ad5ecc2035b7031b88afb544ee95e2d49baa484"
+      }
+    },
+    "exported_at": "2026-02-21T21:47:35+00:00"
+  },
+  "t5-small-awesome-text-to-sql": {
+    "repo_id": "inference4j/t5-small-awesome-text-to-sql",
+    "source": {
+      "type": "hf",
+      "repo": "cssupport/t5-small-awesome-text-to-sql",
+      "revision": "2f1fd097c4afc2093292d04af747677406f02f68"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 2371,
+        "blob_id": "23c3bd852764ac41cb34edc7457cece9a9f71b54"
+      },
+      "pytorch_model.bin": {
+        "size": 242086395,
+        "sha256": "a4fb9738839a480975febbc9faf5a41561957237fd159c7e72eb7cd3c4452b58",
+        "blob_id": "30514b13b6990e1bdaadec94c25301bdec47802a"
+      },
+      "special_tokens_map.json": {
+        "size": 2201,
+        "blob_id": "2c19eb6e3b583f52d34b903b5978d3d30b6b7682"
+      },
+      "spiece.model": {
+        "size": 791656,
+        "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+        "blob_id": "317a5ccbde45300f5d1d970d4d449af2108b147e"
+      },
+      "tokenizer_config.json": {
+        "size": 2414,
+        "blob_id": "6dd8fe604fec74daebc66bca47fc42099a370408"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 2254,
+        "blob_id": "d5b8171fc992aa77db288a2ea98ec6ad3a798394"
+      },
+      "config.json": {
+        "size": 1465,
+        "blob_id": "3769905fdc513f0290da11c8b2d6cb2db43e9716"
+      },
+      "decoder_model.onnx": {
+        "size": 166692968,
+        "sha256": "79a38072406eb81c8050be2041ff8e1d3bfd72550037f40d1c22d5dd1fc81a5e",
+        "blob_id": "aed97d7abf7fff97297ffe352a3b27425e9df88c"
+      },
+      "decoder_with_past_model.onnx": {
+        "size": 154092552,
+        "sha256": "e71ee8dcfc67497fbb46ea66aa64db3d69096d5332a0c6aa865af28e9defa768",
+        "blob_id": "4e0bf756f8c4e8cee006bb18c2b214537daa8758"
+      },
+      "encoder_model.onnx": {
+        "size": 141410256,
+        "sha256": "32ba0df3043bf5c95f63cf8af0d058f0c488173c95e48fca197e77baaa6b15fd",
+        "blob_id": "8c8a1affbdbfea3054e13e1f24bcc11d326d456d"
+      },
+      "tokenizer.json": {
+        "size": 2424235,
+        "blob_id": "21ed409afa3df5a822caa0fd5da30d13941f90b5"
+      }
+    },
+    "exported_at": "2026-02-28T23:46:20+00:00"
+  },
+  "tinyllama-1.1b-chat": {
+    "repo_id": "inference4j/tinyllama-1.1b-chat",
+    "source": {
+      "type": "hf",
+      "repo": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "revision": "fe8a4ea1ffedaf415f4da2f062534de366a451e6"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 608,
+        "blob_id": "4ea05f1bc289d48ba9b92eea2f58ad8acd3dce5d"
+      },
+      "generation_config.json": {
+        "size": 124,
+        "blob_id": "768e95e5b4dada726d7631277a4a87ecbb236f70"
+      },
+      "model.safetensors": {
+        "size": 2200119864,
+        "sha256": "6e6001da2106d4757498752a021df6c2bdc332c650aae4bae6b0c004dcf14933",
+        "blob_id": "2590fdb91785d0aba3e45388b12cf95f5f29a219"
+      },
+      "special_tokens_map.json": {
+        "size": 551,
+        "blob_id": "492d4b2966a1763442d426d880dbc29f94906e4c"
+      },
+      "tokenizer.json": {
+        "size": 1842767,
+        "blob_id": "a6e931b92caff4c79c5c56282f1e89569a0ae558"
+      },
+      "tokenizer.model": {
+        "size": 499723,
+        "sha256": "9e556afd44213b6bd1be2b850ebbbd98f5481437a8021afaf58ee7fb1818d347",
+        "blob_id": "6c00c742ce03c627d6cd5b795984876fa49fa899"
+      },
+      "tokenizer_config.json": {
+        "size": 1289,
+        "blob_id": "fa96b85858f4053b0142a18e2b09dbe94e3fae46"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1542,
+        "blob_id": "34782f5fd2ac6440e3c450c01182d50ea0361d00"
+      },
+      "chat_template.jinja": {
+        "size": 410,
+        "blob_id": "7955c6e9cfa88f2c3f475c9f990644a198e5d762"
+      },
+      "config.json": {
+        "size": 668,
+        "blob_id": "4703ad244d435ce8447ae83d66432d7b35f274f5"
+      },
+      "model.onnx": {
+        "size": 1020702,
+        "sha256": "2e8dac82a189136dea2617977b2c36550cb4343cd1ca06446cb197edaa4834fe",
+        "blob_id": "91aec65f3b69fcd48c71d657ca68344bb6bd6984"
+      },
+      "model.onnx_data": {
+        "size": 2384646272,
+        "sha256": "8fcfc455fa3634ca9da8a11140466226ffd526b5dcba4d8800725c7f51773f00",
+        "blob_id": "678f08743562e7b8fdfa83070f93b38206ea48ea"
+      },
+      "tokenizer.json": {
+        "size": 3619016,
+        "blob_id": "6b684f885f88f239c3ce65d728241672132152b6"
+      }
+    },
+    "exported_at": "2026-02-24T15:26:19+00:00"
+  },
+  "wav2vec2-base-960h": {
+    "repo_id": "inference4j/wav2vec2-base-960h",
+    "source": {
+      "type": "hf",
+      "repo": "Xenova/wav2vec2-base-960h",
+      "revision": "a19f851b3d42865797e410752b4c570c871e4825"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "onnx/model.onnx": {
+        "size": 377887594,
+        "sha256": "e46614273f03ff4b87923a965e417fa72004825522cb007c9c25633b8475490d",
+        "blob_id": "4c8ac1767085c5cc06efbf9574f8d7b03326e8f7"
+      },
+      "vocab.json": {
+        "size": 358,
+        "blob_id": "7efc55a6619a53189e1ca2b5bdcca400a2d4f3e6"
+      }
+    },
+    "published": {
+      "model.onnx": {
+        "size": 377887594,
+        "sha256": "e46614273f03ff4b87923a965e417fa72004825522cb007c9c25633b8475490d",
+        "blob_id": "4c8ac1767085c5cc06efbf9574f8d7b03326e8f7"
+      },
+      "vocab.json": {
+        "size": 358,
+        "blob_id": "7efc55a6619a53189e1ca2b5bdcca400a2d4f3e6"
+      }
+    },
+    "exported_at": null
+  },
+  "yolo26n": {
+    "repo_id": "inference4j/yolo26n",
+    "source": {
+      "type": "hf",
+      "repo": "onnx-community/yolo26n-ONNX",
+      "revision": "a8dc7e14743e1cea8ccd493bd99b4c2827de1acf"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "onnx/model.onnx": {
+        "size": 9890454,
+        "sha256": "cda08d9440217e243e075ee839f40383c59b3f973e493f9f6c7452922a69436e",
+        "blob_id": "7e4caa89d7ca4fb258e770724e1a4bc905794f27"
+      }
+    },
+    "published": {
+      "model.onnx": {
+        "size": 9890454,
+        "sha256": "cda08d9440217e243e075ee839f40383c59b3f973e493f9f6c7452922a69436e",
+        "blob_id": "7e4caa89d7ca4fb258e770724e1a4bc905794f27"
+      }
+    },
+    "exported_at": null
+  },
+  "yolov8n": {
+    "repo_id": "inference4j/yolov8n",
+    "source": {
+      "type": "hf",
+      "repo": "Kalray/yolov8",
+      "revision": "9e0af089be9c2f172e4fd9b724805f8b6514854e"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "yolov8n.onnx": {
+        "size": 12834838,
+        "sha256": "65158dad735be799c2466fa15e260c09558080bd530b42a8d0c3d1b419afd8b5",
+        "blob_id": "cf96178a1a6c5fa4fa26ceb7e294961214b529be"
+      }
+    },
+    "published": {
+      "model.onnx": {
+        "size": 12834838,
+        "sha256": "65158dad735be799c2466fa15e260c09558080bd530b42a8d0c3d1b419afd8b5",
+        "blob_id": "cf96178a1a6c5fa4fa26ceb7e294961214b529be"
+      }
+    },
+    "exported_at": null
+  }
+}

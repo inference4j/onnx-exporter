@@ -22,6 +22,7 @@ class Gpt2(ExportedModel):
         print("  Exporting GPT-2 to ONNX with KV cache...")
         main_export(
             model_name_or_path=model_id,
+            revision=self.revision,
             output=staging_dir,
             task="text-generation-with-past",
             no_post_process=False,

@@ -146,6 +146,11 @@ class CraftMlt25k(ExportedModel):
     name = "craft-mlt-25k"
     repo_id = "inference4j/craft-mlt-25k"
     source_repo = "clovaai/CRAFT"
+    # Weights come from a Google Drive link with no version metadata, so the sha256 of
+    # the .pth is the only identity it has. Not a HuggingFace repo — don't probe one.
+    source_type = "gdrive"
+    weights_url = WEIGHTS_URL
+    weights_cache = WEIGHTS_CACHE
 
     def stage(self, staging_dir: Path) -> None:
         import gdown
