@@ -20,6 +20,7 @@ class CoeditLarge(ExportedModel):
         print("  Exporting CoEdIT Large to ONNX (encoder-decoder with KV cache)...")
         main_export(
             model_name_or_path=model_id,
+            revision=self.revision,
             output=staging_dir,
             task="text2text-generation-with-past",
             no_post_process=False,

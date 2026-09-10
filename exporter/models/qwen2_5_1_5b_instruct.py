@@ -22,6 +22,7 @@ class Qwen2_5_1_5B_Instruct(ExportedModel):
         print("  Exporting Qwen2.5-1.5B-Instruct to ONNX (FP16) with KV cache...")
         main_export(
             model_name_or_path=model_id,
+            revision=self.revision,
             output=staging_dir,
             task="text-generation-with-past",
             no_post_process=False,

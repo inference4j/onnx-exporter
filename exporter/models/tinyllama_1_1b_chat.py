@@ -22,6 +22,7 @@ class TinyLlama_1_1B_Chat(ExportedModel):
         print("  Exporting TinyLlama-1.1B-Chat to ONNX (FP16) with KV cache...")
         main_export(
             model_name_or_path=model_id,
+            revision=self.revision,
             output=staging_dir,
             task="text-generation-with-past",
             no_post_process=False,

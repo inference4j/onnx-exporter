@@ -15,6 +15,9 @@ class WhisperSmall(ExportedModel):
     name = "whisper-small"
     repo_id = "inference4j/whisper-small-genai"
     source_repo = "openai/whisper-small"
+    # onnxruntime's whisper converter is a CLI that takes a bare model id with no
+    # revision flag, so this export always tracks upstream HEAD.
+    supports_pinning = False
 
     def stage(self, staging_dir: Path) -> None:
         """Export Whisper Small to genai-compatible ONNX format.
