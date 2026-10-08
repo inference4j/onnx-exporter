@@ -1599,6 +1599,56 @@
     },
     "exported_at": null
   },
+  "punctuation-fullstop-truecase-english": {
+    "repo_id": "inference4j/punctuation-fullstop-truecase-english",
+    "source": {
+      "type": "hf",
+      "repo": "1-800-BAD-CODE/punctuation_fullstop_truecase_english",
+      "revision": "b26fd1c40e88678859048898218ea4edcc24c84a"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "config.yaml": {
+        "size": 302,
+        "blob_id": "152bcfd87c1e2be77d4d4b836efc987e2d6794dc"
+      },
+      "punct_cap_seg_en.onnx": {
+        "size": 209532928,
+        "sha256": "dd922d459da618cd324280889740608b76fb3e9e61d3f402291be1251f91421b",
+        "blob_id": "2ec5543e8895a49b0af4a646b4ce748d56dd3744"
+      },
+      "spe_32k_lc_en.model": {
+        "size": 587902,
+        "sha256": "9e86d0263de80b3b68327a21f5350c8cdf846e4c4400253c9baf05e3d44871c3",
+        "blob_id": "cd0017eba743c20fd61e27dc53fb75d991ffb31e"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 4364,
+        "blob_id": "5fcaf75ba985976afc3e9a307054d11825d2a68a"
+      },
+      "config.yaml": {
+        "size": 302,
+        "blob_id": "152bcfd87c1e2be77d4d4b836efc987e2d6794dc"
+      },
+      "model.onnx": {
+        "size": 209532928,
+        "sha256": "dd922d459da618cd324280889740608b76fb3e9e61d3f402291be1251f91421b",
+        "blob_id": "2ec5543e8895a49b0af4a646b4ce748d56dd3744"
+      },
+      "spe_32k_lc_en.model": {
+        "size": 587902,
+        "sha256": "9e86d0263de80b3b68327a21f5350c8cdf846e4c4400253c9baf05e3d44871c3",
+        "blob_id": "cd0017eba743c20fd61e27dc53fb75d991ffb31e"
+      },
+      "tokenizer.json": {
+        "size": 2115592,
+        "blob_id": "0d600ad261ddfae39109d0b035c2fae1075656bd"
+      }
+    },
+    "exported_at": "2026-10-08T23:00:29+00:00"
+  },
   "qwen2.5-1.5b-instruct": {
     "repo_id": "inference4j/qwen2.5-1.5b-instruct",
     "source": {

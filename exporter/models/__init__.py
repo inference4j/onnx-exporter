@@ -41,3 +41,4 @@ from exporter.models import bge_base_en_v1_5  # noqa: F401
 from exporter.models import gte_base_en_v1_5  # noqa: F401
 from exporter.models import depth_anything_v2_small  # noqa: F401
 from exporter.models import depth_anything_v2_base  # noqa: F401
+from exporter.models import punctuation_fullstop_truecase_english  # noqa: F401
