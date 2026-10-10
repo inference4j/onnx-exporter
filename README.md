@@ -59,8 +59,7 @@ To move to new upstream weights:
 python -m exporter run gpt2 --update      # export from upstream HEAD, re-pin the lock
 ```
 
-Models with no lock entry track upstream HEAD, as before. `whisper-small` cannot pin
-(its converter takes a bare model id) and always builds from HEAD.
+Models with no lock entry track upstream HEAD, as before.
 
 ## Successor detection
 

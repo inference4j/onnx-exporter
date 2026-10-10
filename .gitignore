@@ -1,4 +1,5 @@
 .venv/
+.venv-genai-builder/
 output/
 .env
 .idea/
