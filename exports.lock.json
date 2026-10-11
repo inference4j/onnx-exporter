@@ -1599,6 +1599,120 @@
     },
     "exported_at": null
   },
+  "phi-4-mini-instruct": {
+    "repo_id": "inference4j/phi-4-mini-instruct",
+    "source": {
+      "type": "hf",
+      "repo": "microsoft/Phi-4-mini-instruct-onnx",
+      "revision": "fc04c8f93df696602fd9f300a30d1bf2e3081347"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/added_tokens.json": {
+        "size": 249,
+        "sha256": "d4f2aceb0f20b71dd1f4bcc7e052e4412946bf281840b8f83d39f259571af486",
+        "blob_id": "843e0a4585a43694b20b8dfa6dd25e1d05b6e630"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/config.json": {
+        "size": 2504,
+        "sha256": "ac65d86061d3d0d704ee2511fd0eb8713ef19eb6eedba17c3080a4165d5b933b",
+        "blob_id": "4b5170a8d1caea7ddd168260af12cf10b7b17748"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/genai_config.json": {
+        "size": 1520,
+        "sha256": "0fcfa1e663f2bc867f8dc62fae65dd0924f0a4d68b43d1234df742dd19171470",
+        "blob_id": "c70ada24eb2096decf770a693cca76077016df90"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/merges.txt": {
+        "size": 2418348,
+        "blob_id": "dcecc4524288b351bbd0da8028e74e9b5bcdb9b5"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/model.onnx": {
+        "size": 52118230,
+        "sha256": "701aa5d185b6a782bc27104a990dd5b634fa507840b7c42f7ee6f1fb812d0b83",
+        "blob_id": "ebfe7adf13bad9186af276b7b9fa7a52e63d9858"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/model.onnx.data": {
+        "size": 4856573952,
+        "sha256": "cb0267fa60befa1a4ade8c98b6d32a3d67f51abbd307c7f793f132e8d9092131",
+        "blob_id": "350d0be416c0838aee7fe4ef7af924edc6d81b4b"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/special_tokens_map.json": {
+        "size": 587,
+        "sha256": "aff38493227d813e29fcf8406e8e90062f1f031aa47d589325e9c31d89ac7cc3",
+        "blob_id": "a42ea2253a77e158c7a3006594161e62d2817316"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/tokenizer.json": {
+        "size": 15524095,
+        "sha256": "382cc235b56c725945e149cc25f191da667c836655efd0857b004320e90e91ea",
+        "blob_id": "3a12dacd8e86802d0229d810d3cc69ab548adf0a"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/tokenizer_config.json": {
+        "size": 2960,
+        "sha256": "c565326a315fbe62cda093a59d298828c8f3f823122661325f41f3ba577a7dec",
+        "blob_id": "4224246d776a70f3f318f203c30f2fef25c1e386"
+      },
+      "cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4/vocab.json": {
+        "size": 3910310,
+        "sha256": "6cb65a857824fa6615bb1782d95d882617a8bbce1da0317118586b36f39e98bd",
+        "blob_id": "2460dac4ea448ad39eb37f8837a15b32dff009de"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1492,
+        "blob_id": "da12e246f868c77aaa9ccbd68d43ad9ad90f01c8"
+      },
+      "added_tokens.json": {
+        "size": 249,
+        "blob_id": "af52cde61cc39aca58f7b7f04116b317116e75dd"
+      },
+      "chat_template.jinja": {
+        "size": 423,
+        "blob_id": "a9c00dd9bbd97e117371168e9d62af65b9f0e725"
+      },
+      "config.json": {
+        "size": 2504,
+        "blob_id": "679e70defca5b399ae9e8ad53ff1176c9d7c6f93"
+      },
+      "genai_config.json": {
+        "size": 1520,
+        "blob_id": "4fa2db307b52e050f28af564cb553db59f5bb749"
+      },
+      "merges.txt": {
+        "size": 2418348,
+        "blob_id": "dcecc4524288b351bbd0da8028e74e9b5bcdb9b5"
+      },
+      "model.onnx": {
+        "size": 52118230,
+        "sha256": "701aa5d185b6a782bc27104a990dd5b634fa507840b7c42f7ee6f1fb812d0b83",
+        "blob_id": "ebfe7adf13bad9186af276b7b9fa7a52e63d9858"
+      },
+      "model.onnx.data": {
+        "size": 4856573952,
+        "sha256": "cb0267fa60befa1a4ade8c98b6d32a3d67f51abbd307c7f793f132e8d9092131",
+        "blob_id": "350d0be416c0838aee7fe4ef7af924edc6d81b4b"
+      },
+      "special_tokens_map.json": {
+        "size": 587,
+        "blob_id": "156262f7d61a27706bdcad9d117c579e88e2fa27"
+      },
+      "tokenizer.json": {
+        "size": 15524095,
+        "sha256": "382cc235b56c725945e149cc25f191da667c836655efd0857b004320e90e91ea",
+        "blob_id": "3a12dacd8e86802d0229d810d3cc69ab548adf0a"
+      },
+      "tokenizer_config.json": {
+        "size": 2960,
+        "blob_id": "1820e4871935457bf81619270e99f5e138ec4209"
+      },
+      "vocab.json": {
+        "size": 3910310,
+        "blob_id": "ea953a43348cdb3776cb7fd9ea02e3784febde34"
+      }
+    },
+    "exported_at": "2026-10-11T23:14:04+00:00"
+  },
   "punctuation-fullstop-truecase-english": {
     "repo_id": "inference4j/punctuation-fullstop-truecase-english",
     "source": {
@@ -1729,6 +1843,81 @@
       }
     },
     "exported_at": "2026-02-21T23:12:06+00:00"
+  },
+  "qwen3-0.6b": {
+    "repo_id": "inference4j/qwen3-0.6b",
+    "source": {
+      "type": "hf",
+      "repo": "Qwen/Qwen3-0.6B",
+      "revision": "c1899de289a04d12100db370d81485cdf75e47ca"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 726,
+        "blob_id": "f5c3703b78ae2a478ae15b247e9f855e0ce2107b"
+      },
+      "generation_config.json": {
+        "size": 239,
+        "blob_id": "20a8a9156fc8c3f25295ca067f61fdf120d517c5"
+      },
+      "merges.txt": {
+        "size": 1671853,
+        "blob_id": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+      },
+      "model.safetensors": {
+        "size": 1503300328,
+        "sha256": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+        "blob_id": "a0458bbfda764d86cf930900d5f0f933933da9a3"
+      },
+      "tokenizer.json": {
+        "size": 11422654,
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "blob_id": "cd71f61a15a522601badb3dc960d800d9cb3766c"
+      },
+      "tokenizer_config.json": {
+        "size": 9732,
+        "blob_id": "417d038a63fa3de29cfde265caedae14d1a58d92"
+      },
+      "vocab.json": {
+        "size": 2776833,
+        "blob_id": "4783fe10ac3adce15ac8f358ef5462739852c569"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1105,
+        "blob_id": "9a20018688e4f6212e73db9c3f99a673513e3e20"
+      },
+      "chat_template.jinja": {
+        "size": 4168,
+        "blob_id": "01be9b307daa2d425f7c168c9fb145a286e0afb4"
+      },
+      "genai_config.json": {
+        "size": 1648,
+        "blob_id": "7f91f8e7ee1bf09b2ab52eb2c69d7eb5b05d8634"
+      },
+      "model.onnx": {
+        "size": 300036,
+        "sha256": "6eecf81d7e222c9cc7e3d30810da03a1b54d15d132c9020d765acffc7e3cf7dd",
+        "blob_id": "f1c1508c7bc244a7eb857990e30973902d153c60"
+      },
+      "model.onnx.data": {
+        "size": 393740288,
+        "sha256": "eff419e6e53a1b67e137bbd3d8a248885dd27095f1a0ea349a42bc2bd72cf71a",
+        "blob_id": "bcca7637fcdf0102ad2d60ecf8cbc847045b11c7"
+      },
+      "tokenizer.json": {
+        "size": 11422650,
+        "sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+        "blob_id": "c7afbed2efcdf019f88ab0572ec29d3bf595dfe2"
+      },
+      "tokenizer_config.json": {
+        "size": 692,
+        "blob_id": "16d98f822eb93dc8544730cec0b54804b8ce796e"
+      }
+    },
+    "exported_at": "2026-10-11T23:18:18+00:00"
   },
   "resnet50-v1-7": {
     "repo_id": "inference4j/resnet50-v1-7",
