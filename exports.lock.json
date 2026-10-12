@@ -2125,6 +2125,90 @@
     },
     "exported_at": "2026-02-21T21:47:35+00:00"
   },
+  "smollm3-3b": {
+    "repo_id": "inference4j/smollm3-3b",
+    "source": {
+      "type": "hf",
+      "repo": "HuggingFaceTB/SmolLM3-3B",
+      "revision": "a07cc9a04f16550a088caea529712d1d335b0ac1"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "chat_template.jinja": {
+        "size": 5598,
+        "blob_id": "e01e3a1bca00ae47bca8326b38cc397729f87481"
+      },
+      "config.json": {
+        "size": 1915,
+        "blob_id": "89ad848b8bbebe0ae085847b7b2e010a4aa1b408"
+      },
+      "generation_config.json": {
+        "size": 182,
+        "blob_id": "5339609fb994a8644fe865353cf0f1d3ee0130c8"
+      },
+      "model-00001-of-00002.safetensors": {
+        "size": 4966315264,
+        "sha256": "e5eed4113a925264c33e3cdf76cd9f547c06a207ef2270914a7274a2bf685ffd",
+        "blob_id": "1fff5585fcd2594e1596f19167487bbd00f37d80"
+      },
+      "model-00002-of-00002.safetensors": {
+        "size": 1183919744,
+        "sha256": "6c3ad90646457295723e4da5ee8afac47006e20407b122df5174693dd8d68a43",
+        "blob_id": "2483faf15a6b96e39b645c93bf28a14c76b08bd5"
+      },
+      "model.safetensors.index.json": {
+        "size": 26899,
+        "blob_id": "ee6c028c012814d385be51c1d537c345c9fa9457"
+      },
+      "special_tokens_map.json": {
+        "size": 289,
+        "blob_id": "190d5624dbbc1ad56f2f34c9d58e03fef7e5328b"
+      },
+      "tokenizer.json": {
+        "size": 17208819,
+        "sha256": "7b6a500b662a34eb3f0374db856ba4ad7de4c81040571d78dc0d357238930005",
+        "blob_id": "074fa66556b01370362a2c8ff15d40db65186806"
+      },
+      "tokenizer_config.json": {
+        "size": 50387,
+        "blob_id": "61910c2db5cbdc9e6a6f37e14aaf00584cc6ad47"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1146,
+        "blob_id": "ab3cf6498ae901e940111a9de42d362993f015c4"
+      },
+      "chat_template.jinja": {
+        "size": 5598,
+        "blob_id": "e01e3a1bca00ae47bca8326b38cc397729f87481"
+      },
+      "genai_config.json": {
+        "size": 1606,
+        "blob_id": "35ab77f0e014ef4d018b27cb7fe9d81363b65d44"
+      },
+      "model.onnx": {
+        "size": 271043,
+        "sha256": "7e045f9a553015e3dba9d65596a3eb047b3be9f84d67eec652278620c06f1c3b",
+        "blob_id": "48b06b52fea41050181d65ecb3d07213fd38ffd2"
+      },
+      "model.onnx.data": {
+        "size": 1956052992,
+        "sha256": "4f7d12fc3549c64c33a73f130fa39609adea09803d50f4baac16993c865b5d31",
+        "blob_id": "c6a5a0b98295fef50c152fe943605f7c4b099a23"
+      },
+      "tokenizer.json": {
+        "size": 17208819,
+        "sha256": "7b6a500b662a34eb3f0374db856ba4ad7de4c81040571d78dc0d357238930005",
+        "blob_id": "074fa66556b01370362a2c8ff15d40db65186806"
+      },
+      "tokenizer_config.json": {
+        "size": 354,
+        "blob_id": "664bd2658ba38746eb49d416a7f991ec6918da9e"
+      }
+    },
+    "exported_at": "2026-10-12T00:39:02+00:00"
+  },
   "t5-small-awesome-text-to-sql": {
     "repo_id": "inference4j/t5-small-awesome-text-to-sql",
     "source": {

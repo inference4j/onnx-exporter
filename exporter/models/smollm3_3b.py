@@ -9,6 +9,31 @@ from exporter.genai_builder import TEXT_GENAI_SOURCE_PATTERNS, ensure_chat_templ
 from exporter.registry import register
 
 
+def _patch_smollm_builder(python_path: Path) -> None:
+    """Patch smollm.py in onnxruntime_genai to cleanly handle layers without RoPE."""
+    builder_dir = python_path.parent.parent / "lib"
+    for smollm_file in builder_dir.glob("**/onnxruntime_genai/models/builders/smollm.py"):
+        text = smollm_file.read_text(encoding="utf-8")
+        if 'original_rope = self.attention_attrs["rope"]' in text:
+            continue
+        old_block = '        # Enable/disable RoPE for the current layer.\n        self.attention_attrs["use_rope_in_attn"] = bool(self.no_rope_layers[layer_id])'
+        new_block = '''        # Enable/disable RoPE for the current layer.
+        use_rope = bool(self.no_rope_layers[layer_id])
+        self.attention_attrs["rope"] = use_rope
+        self.attention_attrs["use_rope_in_attn"] = use_rope'''
+
+        old_start = '        original_use_rope = self.attention_attrs["use_rope_in_attn"]'
+        new_start = '        original_rope = self.attention_attrs["rope"]\n        original_use_rope = self.attention_attrs["use_rope_in_attn"]'
+
+        old_restore = '        self.attention_attrs["use_rope_in_attn"] = original_use_rope'
+        new_restore = '        self.attention_attrs["rope"] = original_rope\n        self.attention_attrs["use_rope_in_attn"] = original_use_rope'
+
+        if old_block in text:
+            text = text.replace(old_start, new_start).replace(old_block, new_block).replace(old_restore, new_restore)
+            smollm_file.write_text(text, encoding="utf-8")
+            print(f"  Applied SmolLM3 RoPE bugfix to {smollm_file.name}")
+
+
 class SmolLM3_3B(ExportedModel):
     """SmolLM3-3B exported to onnxruntime-genai format (INT4, CPU) using genai's model builder."""
 
@@ -29,8 +54,11 @@ class SmolLM3_3B(ExportedModel):
             local_dir=source_dir,
         )
 
+        builder_py = get_builder_python()
+        _patch_smollm_builder(builder_py)
+
         cmd = [
-            str(get_builder_python()), "-m", "onnxruntime_genai.models.builder",
+            str(builder_py), "-m", "onnxruntime_genai.models.builder",
             "-i", str(source_dir),
             "-o", str(output_dir),
             "-p", "int4",
