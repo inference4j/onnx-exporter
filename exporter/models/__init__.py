@@ -45,3 +45,4 @@ from exporter.models import punctuation_fullstop_truecase_english  # noqa: F401
 from exporter.models import phi_4_mini  # noqa: F401
 from exporter.models import smollm3_3b  # noqa: F401
 from exporter.models import qwen3_0_6b  # noqa: F401
+from exporter.models import moonshine  # noqa: F401

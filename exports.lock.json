@@ -1139,6 +1139,270 @@
     },
     "exported_at": null
   },
+  "moonshine-streaming-medium-en": {
+    "repo_id": "inference4j/moonshine-streaming-medium-en",
+    "source": {
+      "type": "hf",
+      "repo": "moonshine-ai/moonshine-voice-assets",
+      "revision": "0bf2f2e5aff22e6fbba4300b00a4e00bbc4f8aae"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "model/medium-streaming-en/quantized_26_08_21/adapter.ort": {
+        "size": 3651296,
+        "sha256": "3f2a287def57cc094367a0eec3c4f5fc36a32ec420e86764b696920991b20281",
+        "blob_id": "da7724814c12b096ef4dc9cfaba3cdd5fab5be96"
+      },
+      "model/medium-streaming-en/quantized_26_08_21/cross_kv.ort": {
+        "size": 11643776,
+        "sha256": "642f6e21cd305be79342207c6f9e6b681d469d55bc48c72b27b84846fb71fd1e",
+        "blob_id": "4be9463f9aa23769ac90882e6e55d32eab0a0990"
+      },
+      "model/medium-streaming-en/quantized_26_08_21/decoder_kv.ort": {
+        "size": 146972408,
+        "sha256": "193bb366492b74fc4ad338c6778e8d8eb916aaa11b5aa264f9057f4db7759486",
+        "blob_id": "19a085fb7bc80b6d9858b08322ca77e095fe2112"
+      },
+      "model/medium-streaming-en/quantized_26_08_21/encoder.ort": {
+        "size": 94705376,
+        "sha256": "12915e76ebac7dd287c5ea63965d06103a53ba1ce242a4a34f318f3958c60c37",
+        "blob_id": "7bc0fef41b45d46b6c9d7cd2dbd1eba88cbf1eca"
+      },
+      "model/medium-streaming-en/quantized_26_08_21/frontend.model.ort": {
+        "size": 28720,
+        "blob_id": "e8fdaceff0c9f6bb54d9407d92b5afa25a959505"
+      },
+      "model/medium-streaming-en/quantized_26_08_21/frontend.weights.ort": {
+        "size": 11889560,
+        "sha256": "5ac941f490cbe035b335b99a414cc393d62d4c6f9f2423495b286870d271d709",
+        "blob_id": "8b3461a44183c8c1b895019a2f04c3d62fad8f62"
+      },
+      "model/medium-streaming-en/quantized_26_08_21/streaming_config.json": {
+        "size": 513,
+        "blob_id": "238511fe7d6a47bf8d3cc3dd9b9dae6544c76a71"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1696,
+        "blob_id": "9f4e71d594a3e6c0be843fc89b269e96f47e6de9"
+      },
+      "adapter.ort": {
+        "size": 3651296,
+        "sha256": "3f2a287def57cc094367a0eec3c4f5fc36a32ec420e86764b696920991b20281",
+        "blob_id": "da7724814c12b096ef4dc9cfaba3cdd5fab5be96"
+      },
+      "cross_kv.ort": {
+        "size": 11643776,
+        "sha256": "642f6e21cd305be79342207c6f9e6b681d469d55bc48c72b27b84846fb71fd1e",
+        "blob_id": "4be9463f9aa23769ac90882e6e55d32eab0a0990"
+      },
+      "decoder_kv.ort": {
+        "size": 146972408,
+        "sha256": "193bb366492b74fc4ad338c6778e8d8eb916aaa11b5aa264f9057f4db7759486",
+        "blob_id": "19a085fb7bc80b6d9858b08322ca77e095fe2112"
+      },
+      "encoder.ort": {
+        "size": 94705376,
+        "sha256": "12915e76ebac7dd287c5ea63965d06103a53ba1ce242a4a34f318f3958c60c37",
+        "blob_id": "7bc0fef41b45d46b6c9d7cd2dbd1eba88cbf1eca"
+      },
+      "frontend.model.ort": {
+        "size": 28720,
+        "blob_id": "e8fdaceff0c9f6bb54d9407d92b5afa25a959505"
+      },
+      "frontend.weights.ort": {
+        "size": 11889560,
+        "sha256": "5ac941f490cbe035b335b99a414cc393d62d4c6f9f2423495b286870d271d709",
+        "blob_id": "8b3461a44183c8c1b895019a2f04c3d62fad8f62"
+      },
+      "streaming_config.json": {
+        "size": 513,
+        "blob_id": "238511fe7d6a47bf8d3cc3dd9b9dae6544c76a71"
+      },
+      "tokenizer.json": {
+        "size": 1676069,
+        "blob_id": "95d18d455dcc0c3049f0f631ea5cfa2bed862222"
+      }
+    },
+    "exported_at": "2026-10-13T03:05:08+00:00"
+  },
+  "moonshine-streaming-small-en": {
+    "repo_id": "inference4j/moonshine-streaming-small-en",
+    "source": {
+      "type": "hf",
+      "repo": "moonshine-ai/moonshine-voice-assets",
+      "revision": "0bf2f2e5aff22e6fbba4300b00a4e00bbc4f8aae"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "model/small-streaming-en/quantized_26_08_21/adapter.ort": {
+        "size": 2870368,
+        "sha256": "c665f742364febad597cc9ac1e0b341ffbee0e24a1466e2f3bde95e6e4771762",
+        "blob_id": "26ba9d18a226de9a21f7c7604cc48338eace2aa1"
+      },
+      "model/small-streaming-en/quantized_26_08_21/cross_kv.ort": {
+        "size": 5356536,
+        "sha256": "e2d3417144e9514055ebfefe8dcc4c0a55a55adcb8530435844c75c53e352bf6",
+        "blob_id": "66c22be60b65f3bd626c15c73c1b51b65140cd8a"
+      },
+      "model/small-streaming-en/quantized_26_08_21/decoder_kv.ort": {
+        "size": 81878600,
+        "sha256": "1a05465b1dd955858dfcbee039c0020fb5dd982b0f5094c34e61735d518d771b",
+        "blob_id": "7f4fa84bc16c76c009dff0325f671715d73852da"
+      },
+      "model/small-streaming-en/quantized_26_08_21/encoder.ort": {
+        "size": 44148576,
+        "sha256": "2d4d973e91e8aca08c51e7e7efa28a46ab265b63d809d5294d18b86bcd85b993",
+        "blob_id": "54a406dafdda3ac8c1338ae024598c7eb0094669"
+      },
+      "model/small-streaming-en/quantized_26_08_21/frontend.model.ort": {
+        "size": 26944,
+        "blob_id": "bdb6d49a35aedd788f73ce5414320efcc3331145"
+      },
+      "model/small-streaming-en/quantized_26_08_21/frontend.weights.ort": {
+        "size": 7769464,
+        "sha256": "7ef97521bd4bad3928f5bb6808586f4fcc6e92bd5990394112eed7d4052ec338",
+        "blob_id": "b81153f44a1221410cc22472a5911794aa61c5af"
+      },
+      "model/small-streaming-en/quantized_26_08_21/streaming_config.json": {
+        "size": 512,
+        "blob_id": "0c39f5f897398d0132a0fd710c3d4ce12c8ce86b"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1692,
+        "blob_id": "a03e65ccf04a014156a3baf643434f13a52a5727"
+      },
+      "adapter.ort": {
+        "size": 2870368,
+        "sha256": "c665f742364febad597cc9ac1e0b341ffbee0e24a1466e2f3bde95e6e4771762",
+        "blob_id": "26ba9d18a226de9a21f7c7604cc48338eace2aa1"
+      },
+      "cross_kv.ort": {
+        "size": 5356536,
+        "sha256": "e2d3417144e9514055ebfefe8dcc4c0a55a55adcb8530435844c75c53e352bf6",
+        "blob_id": "66c22be60b65f3bd626c15c73c1b51b65140cd8a"
+      },
+      "decoder_kv.ort": {
+        "size": 81878600,
+        "sha256": "1a05465b1dd955858dfcbee039c0020fb5dd982b0f5094c34e61735d518d771b",
+        "blob_id": "7f4fa84bc16c76c009dff0325f671715d73852da"
+      },
+      "encoder.ort": {
+        "size": 44148576,
+        "sha256": "2d4d973e91e8aca08c51e7e7efa28a46ab265b63d809d5294d18b86bcd85b993",
+        "blob_id": "54a406dafdda3ac8c1338ae024598c7eb0094669"
+      },
+      "frontend.model.ort": {
+        "size": 26944,
+        "blob_id": "bdb6d49a35aedd788f73ce5414320efcc3331145"
+      },
+      "frontend.weights.ort": {
+        "size": 7769464,
+        "sha256": "7ef97521bd4bad3928f5bb6808586f4fcc6e92bd5990394112eed7d4052ec338",
+        "blob_id": "b81153f44a1221410cc22472a5911794aa61c5af"
+      },
+      "streaming_config.json": {
+        "size": 512,
+        "blob_id": "0c39f5f897398d0132a0fd710c3d4ce12c8ce86b"
+      },
+      "tokenizer.json": {
+        "size": 1676069,
+        "blob_id": "95d18d455dcc0c3049f0f631ea5cfa2bed862222"
+      }
+    },
+    "exported_at": "2026-10-13T03:05:05+00:00"
+  },
+  "moonshine-streaming-tiny-en": {
+    "repo_id": "inference4j/moonshine-streaming-tiny-en",
+    "source": {
+      "type": "hf",
+      "repo": "moonshine-ai/moonshine-voice-assets",
+      "revision": "0bf2f2e5aff22e6fbba4300b00a4e00bbc4f8aae"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "model/tiny-streaming-en/quantized_26_08_21/adapter.ort": {
+        "size": 1319664,
+        "sha256": "22ecc949e146c49667fda28d102d4e30749a107dc88a396292aa8f277ef1347c",
+        "blob_id": "f894e931ac772491893e8de27a55b36da4593274"
+      },
+      "model/tiny-streaming-en/quantized_26_08_21/cross_kv.ort": {
+        "size": 1287544,
+        "sha256": "143a36667b8d05fd9d04e8c337b7ee121f37ef299aea6b3d82bdb3d3401950b4",
+        "blob_id": "c5e5ddb96a4e8e35902aa2a1d128b414716b377c"
+      },
+      "model/tiny-streaming-en/quantized_26_08_21/decoder_kv.ort": {
+        "size": 32583720,
+        "sha256": "8852553f312adb6c9aa4d17418015049b30f412209ee569d336548c0044627de",
+        "blob_id": "8929baad65a05d2573daa79d256d907360100f63"
+      },
+      "model/tiny-streaming-en/quantized_26_08_21/encoder.ort": {
+        "size": 7675440,
+        "sha256": "a8414e1a5dedf9f2093d7680601dd8a9b0433e7020260eafe0e370ead91134ca",
+        "blob_id": "6b77eb08f9961339c34b90af5868c801f08de733"
+      },
+      "model/tiny-streaming-en/quantized_26_08_21/frontend.model.ort": {
+        "size": 23344,
+        "blob_id": "a0c8a92f15aef8685aa9fedfd328687dbdb52eec"
+      },
+      "model/tiny-streaming-en/quantized_26_08_21/frontend.weights.ort": {
+        "size": 2093464,
+        "sha256": "217da24ac6f522ebf02da8ef288e77d1ac68d50d4a6821433182e4fbf4204bbd",
+        "blob_id": "2c6084f477c41618d0107d8f3524ef9399658a2f"
+      },
+      "model/tiny-streaming-en/quantized_26_08_21/streaming_config.json": {
+        "size": 509,
+        "blob_id": "e7ea41bd07a0615d544d17e13dc44717749a8398"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1688,
+        "blob_id": "302bfbf296a35b4444807dc5bde3c8f9ad48e763"
+      },
+      "adapter.ort": {
+        "size": 1319664,
+        "sha256": "22ecc949e146c49667fda28d102d4e30749a107dc88a396292aa8f277ef1347c",
+        "blob_id": "f894e931ac772491893e8de27a55b36da4593274"
+      },
+      "cross_kv.ort": {
+        "size": 1287544,
+        "sha256": "143a36667b8d05fd9d04e8c337b7ee121f37ef299aea6b3d82bdb3d3401950b4",
+        "blob_id": "c5e5ddb96a4e8e35902aa2a1d128b414716b377c"
+      },
+      "decoder_kv.ort": {
+        "size": 32583720,
+        "sha256": "8852553f312adb6c9aa4d17418015049b30f412209ee569d336548c0044627de",
+        "blob_id": "8929baad65a05d2573daa79d256d907360100f63"
+      },
+      "encoder.ort": {
+        "size": 7675440,
+        "sha256": "a8414e1a5dedf9f2093d7680601dd8a9b0433e7020260eafe0e370ead91134ca",
+        "blob_id": "6b77eb08f9961339c34b90af5868c801f08de733"
+      },
+      "frontend.model.ort": {
+        "size": 23344,
+        "blob_id": "a0c8a92f15aef8685aa9fedfd328687dbdb52eec"
+      },
+      "frontend.weights.ort": {
+        "size": 2093464,
+        "sha256": "217da24ac6f522ebf02da8ef288e77d1ac68d50d4a6821433182e4fbf4204bbd",
+        "blob_id": "2c6084f477c41618d0107d8f3524ef9399658a2f"
+      },
+      "streaming_config.json": {
+        "size": 509,
+        "blob_id": "e7ea41bd07a0615d544d17e13dc44717749a8398"
+      },
+      "tokenizer.json": {
+        "size": 1676069,
+        "blob_id": "95d18d455dcc0c3049f0f631ea5cfa2bed862222"
+      }
+    },
+    "exported_at": "2026-10-13T03:05:02+00:00"
+  },
   "ms-marco-MiniLM-L-6-v2": {
     "repo_id": "inference4j/ms-marco-MiniLM-L-6-v2",
     "source": {
