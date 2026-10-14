@@ -545,6 +545,66 @@
     "published": {},
     "exported_at": null
   },
+  "deberta-v3-base-prompt-injection-v2": {
+    "repo_id": "inference4j/deberta-v3-base-prompt-injection-v2",
+    "source": {
+      "type": "hf",
+      "repo": "protectai/deberta-v3-base-prompt-injection-v2",
+      "revision": "90c9989b1a342275dd0d1a95aad283c04e075671"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "onnx/config.json": {
+        "size": 1014,
+        "blob_id": "3366690a064655366dd7dd57f9b3cf1e8ba8e78f"
+      },
+      "onnx/model.onnx": {
+        "size": 738563188,
+        "sha256": "f0ea7f239f765aedbde7c9e163a7cb38a79c5b8853d3f76db5152172047b228c",
+        "blob_id": "2d9532d6b214243ff14dfc0e2664e0d2667d75b5"
+      },
+      "onnx/special_tokens_map.json": {
+        "size": 970,
+        "blob_id": "83fb22de184abab1b193b1f6001e3015e865e50b"
+      },
+      "onnx/tokenizer.json": {
+        "size": 8648886,
+        "blob_id": "00c50710453478105265c838bfb3bad69b410891"
+      },
+      "onnx/tokenizer_config.json": {
+        "size": 1392,
+        "blob_id": "7a76cf2e0d2a72e3baf09096c657dc5d977b04ec"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1467,
+        "blob_id": "7f77fa774d718677c1d49d85f723d77745d3e4d9"
+      },
+      "config.json": {
+        "size": 1014,
+        "blob_id": "3366690a064655366dd7dd57f9b3cf1e8ba8e78f"
+      },
+      "model.onnx": {
+        "size": 738563188,
+        "sha256": "f0ea7f239f765aedbde7c9e163a7cb38a79c5b8853d3f76db5152172047b228c",
+        "blob_id": "2d9532d6b214243ff14dfc0e2664e0d2667d75b5"
+      },
+      "special_tokens_map.json": {
+        "size": 970,
+        "blob_id": "83fb22de184abab1b193b1f6001e3015e865e50b"
+      },
+      "tokenizer.json": {
+        "size": 8648886,
+        "blob_id": "00c50710453478105265c838bfb3bad69b410891"
+      },
+      "tokenizer_config.json": {
+        "size": 1392,
+        "blob_id": "7a76cf2e0d2a72e3baf09096c657dc5d977b04ec"
+      }
+    },
+    "exported_at": "2026-10-14T14:40:15+00:00"
+  },
   "deepseek-r1-distill-qwen-1.5b": {
     "repo_id": "inference4j/deepseek-r1-distill-qwen-1.5b",
     "source": {

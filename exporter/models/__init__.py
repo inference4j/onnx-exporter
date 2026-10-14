@@ -46,3 +46,4 @@ from exporter.models import phi_4_mini  # noqa: F401
 from exporter.models import smollm3_3b  # noqa: F401
 from exporter.models import qwen3_0_6b  # noqa: F401
 from exporter.models import moonshine  # noqa: F401
+from exporter.models import deberta_v3_base_prompt_injection_v2  # noqa: F401
