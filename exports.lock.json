@@ -605,6 +605,126 @@
     },
     "exported_at": "2026-10-14T14:40:15+00:00"
   },
+  "deberta-v3-base-zeroshot-v2.0-c": {
+    "repo_id": "inference4j/deberta-v3-base-zeroshot-v2.0-c",
+    "source": {
+      "type": "hf",
+      "repo": "MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c",
+      "revision": "bddf8c5411c34ac3565e16e04384fd68b2618dda"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 1016,
+        "blob_id": "f197b762013995bddcb8dd6f758f60b716bc0dfe"
+      },
+      "model.safetensors": {
+        "size": 368871908,
+        "sha256": "605e40d2020f4c66666db3e98a4bc277b6214565eac95f35c1a5027a93ee0ef0",
+        "blob_id": "9586629329eaccd3e96b534343b799c41b14d3dc"
+      },
+      "special_tokens_map.json": {
+        "size": 286,
+        "blob_id": "2c9cb07c8fdeeb5ac3ceafb170592e990b204dcd"
+      },
+      "tokenizer.json": {
+        "size": 8656646,
+        "blob_id": "f9bbf3fa0b51e2c1d9c2bf284e3de29c542720c7"
+      },
+      "tokenizer_config.json": {
+        "size": 1256,
+        "blob_id": "8b07a55c4aa6b2fd8020f9665cc2daa260d60814"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 3287,
+        "blob_id": "fec4d3c9dcad0a2992432f70a05bf922a20e8cef"
+      },
+      "config.json": {
+        "size": 980,
+        "blob_id": "2c472d52c6e0a0652753b52dbfb13c8554143d54"
+      },
+      "model.onnx": {
+        "size": 738604996,
+        "sha256": "848be2e6041a0779d0bfe084ae347e87fe55d410de4cbdaa0d07bea8cdcb45b2",
+        "blob_id": "a9c1e0537a0bcd393f03580ad7cad9999c44c89f"
+      },
+      "special_tokens_map.json": {
+        "size": 970,
+        "blob_id": "83fb22de184abab1b193b1f6001e3015e865e50b"
+      },
+      "tokenizer.json": {
+        "size": 8648864,
+        "blob_id": "91cf6343ed019104bdb2f55473543ee1ce7e79ed"
+      },
+      "tokenizer_config.json": {
+        "size": 1286,
+        "blob_id": "186293510d53a0ebf42778b96e5d230ef95ba59d"
+      }
+    },
+    "exported_at": "2026-10-17T18:23:04+00:00"
+  },
+  "deberta-v3-large-zeroshot-v2.0-c": {
+    "repo_id": "inference4j/deberta-v3-large-zeroshot-v2.0-c",
+    "source": {
+      "type": "hf",
+      "repo": "MoritzLaurer/deberta-v3-large-zeroshot-v2.0-c",
+      "revision": "b2730f16019076bb0009481121efbe4705e0e378"
+    },
+    "provenance": "inferred",
+    "tracked": {
+      "config.json": {
+        "size": 1036,
+        "blob_id": "6c11f4ee15fe1070f8d3240e958dea859f1a9173"
+      },
+      "model.safetensors": {
+        "size": 870176356,
+        "sha256": "688fdc38a29c0e301fa4d67805a45db82d84b8663349aa8d20d67de39aebd02d",
+        "blob_id": "68be246cbad3843d878814af101751303c4b63c0"
+      },
+      "special_tokens_map.json": {
+        "size": 286,
+        "blob_id": "2c9cb07c8fdeeb5ac3ceafb170592e990b204dcd"
+      },
+      "tokenizer.json": {
+        "size": 8656646,
+        "blob_id": "f9bbf3fa0b51e2c1d9c2bf284e3de29c542720c7"
+      },
+      "tokenizer_config.json": {
+        "size": 1256,
+        "blob_id": "8b07a55c4aa6b2fd8020f9665cc2daa260d60814"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 3294,
+        "blob_id": "f438696129fc3649c79e4e81f6ae38e27822b3ac"
+      },
+      "config.json": {
+        "size": 982,
+        "blob_id": "073c00fe8d033ee9a8214e6bf76280d6decf72d1"
+      },
+      "model.onnx": {
+        "size": 1742076356,
+        "sha256": "f2353a0d5e005d64fabc0ce90bef1cec3d9cad5cdd8aa7afef67aa071bcf64c4",
+        "blob_id": "78e3f7c36f844d1903522e3e746391fb00ccbe57"
+      },
+      "special_tokens_map.json": {
+        "size": 970,
+        "blob_id": "83fb22de184abab1b193b1f6001e3015e865e50b"
+      },
+      "tokenizer.json": {
+        "size": 8648864,
+        "blob_id": "91cf6343ed019104bdb2f55473543ee1ce7e79ed"
+      },
+      "tokenizer_config.json": {
+        "size": 1286,
+        "blob_id": "186293510d53a0ebf42778b96e5d230ef95ba59d"
+      }
+    },
+    "exported_at": "2026-10-17T18:23:40+00:00"
+  },
   "deepseek-r1-distill-qwen-1.5b": {
     "repo_id": "inference4j/deepseek-r1-distill-qwen-1.5b",
     "source": {
