@@ -111,3 +111,34 @@ class TestTrackedFiles:
         model = registry.get("opus-mt-en-fr")
         tracked = model.tracked_files(["source.spm", "target.spm", "config.json", "README.md"])
         assert "source.spm" in tracked and "target.spm" in tracked
+
+
+class TestDebertaV3ZeroShotModels:
+    def test_variants_are_registered_at_the_requested_revisions(self):
+        from exporter import registry
+        import exporter.models  # noqa: F401
+
+        expected = {
+            "deberta-v3-base-zeroshot-v2.0-c":
+                "bddf8c5411c34ac3565e16e04384fd68b2618dda",
+            "deberta-v3-large-zeroshot-v2.0-c":
+                "b2730f16019076bb0009481121efbe4705e0e378",
+        }
+        for name, revision in expected.items():
+            model = registry.get(name)
+            assert model is not None
+            assert model.repo_id == f"inference4j/{name}"
+            assert model.revision == revision
+
+    def test_cards_document_the_published_contract_and_license(self):
+        from exporter import registry
+        import exporter.models  # noqa: F401
+
+        for name in ("deberta-v3-base-zeroshot-v2.0-c",
+                     "deberta-v3-large-zeroshot-v2.0-c"):
+            card = registry.get(name).render_card()
+            assert "pipeline_tag: zero-shot-classification" in card
+            assert "0: `entailment`, 1: `not_entailment`" in card
+            assert "`input_ids`, `attention_mask`" in card
+            assert "commercially friendly data" in card
+            assert "Permission is hereby granted" in card
