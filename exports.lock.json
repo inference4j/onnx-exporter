@@ -2037,6 +2037,150 @@
     },
     "exported_at": "2026-10-11T23:14:04+00:00"
   },
+  "pp-ocrv6-small-det": {
+    "repo_id": "inference4j/pp-ocrv6-small-det",
+    "source": {
+      "type": "hf",
+      "repo": "PaddlePaddle/PP-OCRv6_small_det_onnx",
+      "revision": "28fe5895c24fd108c19eb3e8479f4ab385fbfc62"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "inference.onnx": {
+        "size": 9880512,
+        "sha256": "d73e0058b7a8086bbd57f3d10b8bcd4ff95363f67e06e2762b5e814fe9c9410e",
+        "blob_id": "d5d3f5b992066b64c7f6bed8ab402860f4325aaa"
+      },
+      "inference.yml": {
+        "size": 885,
+        "blob_id": "9ce7e05c2621f968d47d4011c04c30cbd91be173"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1337,
+        "blob_id": "1c1f9ab9947b605ef1dbb594b521136d7fe00814"
+      },
+      "inference.yml": {
+        "size": 885,
+        "blob_id": "9ce7e05c2621f968d47d4011c04c30cbd91be173"
+      },
+      "model.onnx": {
+        "size": 9880512,
+        "sha256": "d73e0058b7a8086bbd57f3d10b8bcd4ff95363f67e06e2762b5e814fe9c9410e",
+        "blob_id": "d5d3f5b992066b64c7f6bed8ab402860f4325aaa"
+      }
+    },
+    "exported_at": "2026-10-15T21:15:00+00:00"
+  },
+  "pp-ocrv6-small-rec": {
+    "repo_id": "inference4j/pp-ocrv6-small-rec",
+    "source": {
+      "type": "hf",
+      "repo": "PaddlePaddle/PP-OCRv6_small_rec_onnx",
+      "revision": "b8f84f0b80c529de40b4fbb3544b84fa7233a513"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "inference.onnx": {
+        "size": 21159378,
+        "sha256": "5435fd747c9e0efe15a96d0b378d5bd157e9492ed8fd80edf08f30d02fa24634",
+        "blob_id": "666cee731b98bee55376f02690226d60db9a8187"
+      },
+      "inference.yml": {
+        "size": 150579,
+        "blob_id": "f1887595d177511e6af56fabd0baa25756d33bd8"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1503,
+        "blob_id": "6a97db3d7614d0117a4f698330c303e864a0ad0e"
+      },
+      "inference.yml": {
+        "size": 150579,
+        "blob_id": "f1887595d177511e6af56fabd0baa25756d33bd8"
+      },
+      "model.onnx": {
+        "size": 21159378,
+        "sha256": "5435fd747c9e0efe15a96d0b378d5bd157e9492ed8fd80edf08f30d02fa24634",
+        "blob_id": "666cee731b98bee55376f02690226d60db9a8187"
+      }
+    },
+    "exported_at": "2026-10-15T21:15:04+00:00"
+  },
+  "pp-ocrv6-tiny-det": {
+    "repo_id": "inference4j/pp-ocrv6-tiny-det",
+    "source": {
+      "type": "hf",
+      "repo": "PaddlePaddle/PP-OCRv6_tiny_det_onnx",
+      "revision": "2ba1506c0380b8f0b03dd142459aac66d4421f6c"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "inference.onnx": {
+        "size": 1780590,
+        "sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+        "blob_id": "cd551d0ec8f49b28ac306ae7bab6328c66bd156f"
+      },
+      "inference.yml": {
+        "size": 883,
+        "blob_id": "28dccd0baa8a939287aaa410cbacdbc94b2e0925"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1366,
+        "blob_id": "ac1a4069ad45c62e565d3bcdd10ec185906fdfdb"
+      },
+      "inference.yml": {
+        "size": 883,
+        "blob_id": "28dccd0baa8a939287aaa410cbacdbc94b2e0925"
+      },
+      "model.onnx": {
+        "size": 1780590,
+        "sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+        "blob_id": "cd551d0ec8f49b28ac306ae7bab6328c66bd156f"
+      }
+    },
+    "exported_at": "2026-10-15T21:15:06+00:00"
+  },
+  "pp-ocrv6-tiny-rec": {
+    "repo_id": "inference4j/pp-ocrv6-tiny-rec",
+    "source": {
+      "type": "hf",
+      "repo": "PaddlePaddle/PP-OCRv6_tiny_rec_onnx",
+      "revision": "2612ab37152ae0a677521bae4e1e3d4fb4cf7c30"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "inference.onnx": {
+        "size": 4462639,
+        "sha256": "9ef676d6ed3c88256a2d92c640c44f25b0c40947e111b14b8be8f594091563e6",
+        "blob_id": "f5c5ab038605f94421055d829639d37fbfd14cdf"
+      },
+      "inference.yml": {
+        "size": 55571,
+        "blob_id": "85905320b166ff9fd95efbb69d1b0107f8ea3150"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1516,
+        "blob_id": "be537e167e9cb9817fe986bae0b54fec584d14c8"
+      },
+      "inference.yml": {
+        "size": 55571,
+        "blob_id": "85905320b166ff9fd95efbb69d1b0107f8ea3150"
+      },
+      "model.onnx": {
+        "size": 4462639,
+        "sha256": "9ef676d6ed3c88256a2d92c640c44f25b0c40947e111b14b8be8f594091563e6",
+        "blob_id": "f5c5ab038605f94421055d829639d37fbfd14cdf"
+      }
+    },
+    "exported_at": "2026-10-15T21:15:10+00:00"
+  },
   "punctuation-fullstop-truecase-english": {
     "repo_id": "inference4j/punctuation-fullstop-truecase-english",
     "source": {

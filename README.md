@@ -56,6 +56,10 @@ Export and mirror ONNX models for the [inference4j](https://github.com/inference
 | `moonshine-streaming-small-en` | [moonshine-ai/moonshine-voice-assets](https://huggingface.co/moonshine-ai/moonshine-voice-assets) | [inference4j/moonshine-streaming-small-en](https://huggingface.co/inference4j/moonshine-streaming-small-en) |
 | `moonshine-streaming-medium-en` | [moonshine-ai/moonshine-voice-assets](https://huggingface.co/moonshine-ai/moonshine-voice-assets) | [inference4j/moonshine-streaming-medium-en](https://huggingface.co/inference4j/moonshine-streaming-medium-en) |
 | `deberta-v3-base-prompt-injection-v2` | [protectai/deberta-v3-base-prompt-injection-v2](https://huggingface.co/protectai/deberta-v3-base-prompt-injection-v2) | [inference4j/deberta-v3-base-prompt-injection-v2](https://huggingface.co/inference4j/deberta-v3-base-prompt-injection-v2) |
+| `pp-ocrv6-small-det` | [PaddlePaddle/PP-OCRv6_small_det_onnx](https://huggingface.co/PaddlePaddle/PP-OCRv6_small_det_onnx) | [inference4j/pp-ocrv6-small-det](https://huggingface.co/inference4j/pp-ocrv6-small-det) |
+| `pp-ocrv6-small-rec` | [PaddlePaddle/PP-OCRv6_small_rec_onnx](https://huggingface.co/PaddlePaddle/PP-OCRv6_small_rec_onnx) | [inference4j/pp-ocrv6-small-rec](https://huggingface.co/inference4j/pp-ocrv6-small-rec) |
+| `pp-ocrv6-tiny-det` | [PaddlePaddle/PP-OCRv6_tiny_det_onnx](https://huggingface.co/PaddlePaddle/PP-OCRv6_tiny_det_onnx) | [inference4j/pp-ocrv6-tiny-det](https://huggingface.co/inference4j/pp-ocrv6-tiny-det) |
+| `pp-ocrv6-tiny-rec` | [PaddlePaddle/PP-OCRv6_tiny_rec_onnx](https://huggingface.co/PaddlePaddle/PP-OCRv6_tiny_rec_onnx) | [inference4j/pp-ocrv6-tiny-rec](https://huggingface.co/inference4j/pp-ocrv6-tiny-rec) |
 
 ## Setup
 
