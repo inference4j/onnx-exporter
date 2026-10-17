@@ -48,3 +48,4 @@ from exporter.models import qwen3_0_6b  # noqa: F401
 from exporter.models import moonshine  # noqa: F401
 from exporter.models import deberta_v3_base_prompt_injection_v2  # noqa: F401
 from exporter.models import pp_ocrv6  # noqa: F401
+from exporter.models import deberta_v3_zeroshot  # noqa: F401
