@@ -62,6 +62,8 @@ Export and mirror ONNX models for the [inference4j](https://github.com/inference
 | `pp-ocrv6-tiny-rec` | [PaddlePaddle/PP-OCRv6_tiny_rec_onnx](https://huggingface.co/PaddlePaddle/PP-OCRv6_tiny_rec_onnx) | [inference4j/pp-ocrv6-tiny-rec](https://huggingface.co/inference4j/pp-ocrv6-tiny-rec) |
 | `deberta-v3-base-zeroshot-v2.0-c` | [MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c](https://huggingface.co/MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c) | [inference4j/deberta-v3-base-zeroshot-v2.0-c](https://huggingface.co/inference4j/deberta-v3-base-zeroshot-v2.0-c) |
 | `deberta-v3-large-zeroshot-v2.0-c` | [MoritzLaurer/deberta-v3-large-zeroshot-v2.0-c](https://huggingface.co/MoritzLaurer/deberta-v3-large-zeroshot-v2.0-c) | [inference4j/deberta-v3-large-zeroshot-v2.0-c](https://huggingface.co/inference4j/deberta-v3-large-zeroshot-v2.0-c) |
+| `gliner-small-v2.1` | [onnx-community/gliner_small-v2.1](https://huggingface.co/onnx-community/gliner_small-v2.1) | [inference4j/gliner-small-v2.1](https://huggingface.co/inference4j/gliner-small-v2.1) |
+| `gliner-pii-base-v1.0` | [knowledgator/gliner-pii-base-v1.0](https://huggingface.co/knowledgator/gliner-pii-base-v1.0) | [inference4j/gliner-pii-base-v1.0](https://huggingface.co/inference4j/gliner-pii-base-v1.0) |
 
 ## Setup
 
