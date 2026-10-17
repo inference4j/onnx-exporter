@@ -1,0 +1,1397 @@
+{
+  "model": "gliner-small-v2.1",
+  "gliner_package_version": "0.2.29",
+  "onnx_revision": "8142fb00740ccea973e64b1272949ff48653df5e",
+  "pytorch_source": "urchade/gliner_small-v2.1",
+  "pytorch_revision": "4e091416cf7c3481db542c2a3d26156916f3a47f",
+  "onnx_contract": {
+    "inputs": [
+      {
+        "name": "input_ids",
+        "dtype": "tensor(int64)",
+        "shape": [
+          "batch_size",
+          "sequence_length"
+        ]
+      },
+      {
+        "name": "attention_mask",
+        "dtype": "tensor(int64)",
+        "shape": [
+          "batch_size",
+          "sequence_length"
+        ]
+      },
+      {
+        "name": "words_mask",
+        "dtype": "tensor(int64)",
+        "shape": [
+          "batch_size",
+          "sequence_length"
+        ]
+      },
+      {
+        "name": "text_lengths",
+        "dtype": "tensor(int64)",
+        "shape": [
+          "batch_size",
+          "value"
+        ]
+      },
+      {
+        "name": "span_idx",
+        "dtype": "tensor(int64)",
+        "shape": [
+          "batch_size",
+          "num_spans",
+          "idx"
+        ]
+      },
+      {
+        "name": "span_mask",
+        "dtype": "tensor(bool)",
+        "shape": [
+          "batch_size",
+          "num_spans"
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "logits",
+        "dtype": "tensor(float)",
+        "shape": [
+          "batch_size",
+          "sequence_length",
+          "num_spans",
+          "num_classes"
+        ]
+      },
+      {
+        "name": "prompts_embedding",
+        "dtype": "tensor(float)",
+        "shape": [
+          "Addprompts_embedding_dim_0",
+          "Addprompts_embedding_dim_1",
+          512
+        ]
+      },
+      {
+        "name": "2973",
+        "dtype": "tensor(int64)",
+        "shape": [
+          "Cast2973_dim_0",
+          "Cast2973_dim_1"
+        ]
+      },
+      {
+        "name": "onnx::Shape_3287",
+        "dtype": "tensor(float)",
+        "shape": [
+          "Gatheronnx::Shape_3287_dim_0",
+          "Gatheronnx::Shape_3287_dim_1",
+          512
+        ]
+      },
+      {
+        "name": "onnx::Cast_3115",
+        "dtype": "tensor(bool)",
+        "shape": [
+          "Lessonnx::Cast_3115_dim_0",
+          "Gatheronnx::Shape_3287_dim_1"
+        ]
+      }
+    ]
+  },
+  "worked_example": {
+    "text": "Alice Johnson paid invoice INV-2024-0042 to Acme Corp on 3 March.",
+    "labels_in_prompt_order": [
+      "person",
+      "organization",
+      "invoice id",
+      "date"
+    ],
+    "words": [
+      {
+        "index": 0,
+        "text": "Alice",
+        "char_start": 0,
+        "char_end_exclusive": 5
+      },
+      {
+        "index": 1,
+        "text": "Johnson",
+        "char_start": 6,
+        "char_end_exclusive": 13
+      },
+      {
+        "index": 2,
+        "text": "paid",
+        "char_start": 14,
+        "char_end_exclusive": 18
+      },
+      {
+        "index": 3,
+        "text": "invoice",
+        "char_start": 19,
+        "char_end_exclusive": 26
+      },
+      {
+        "index": 4,
+        "text": "INV-2024-0042",
+        "char_start": 27,
+        "char_end_exclusive": 40
+      },
+      {
+        "index": 5,
+        "text": "to",
+        "char_start": 41,
+        "char_end_exclusive": 43
+      },
+      {
+        "index": 6,
+        "text": "Acme",
+        "char_start": 44,
+        "char_end_exclusive": 48
+      },
+      {
+        "index": 7,
+        "text": "Corp",
+        "char_start": 49,
+        "char_end_exclusive": 53
+      },
+      {
+        "index": 8,
+        "text": "on",
+        "char_start": 54,
+        "char_end_exclusive": 56
+      },
+      {
+        "index": 9,
+        "text": "3",
+        "char_start": 57,
+        "char_end_exclusive": 58
+      },
+      {
+        "index": 10,
+        "text": "March",
+        "char_start": 59,
+        "char_end_exclusive": 64
+      },
+      {
+        "index": 11,
+        "text": ".",
+        "char_start": 64,
+        "char_end_exclusive": 65
+      }
+    ],
+    "inputs": {
+      "input_ids": {
+        "dtype": "int64",
+        "shape": [
+          1,
+          30
+        ],
+        "values": [
+          [
+            1,
+            128002,
+            604,
+            128002,
+            1416,
+            128002,
+            10462,
+            9764,
+            128002,
+            1043,
+            128003,
+            8085,
+            3161,
+            1487,
+            10462,
+            273,
+            30277,
+            271,
+            73742,
+            271,
+            962,
+            5304,
+            264,
+            63290,
+            6071,
+            277,
+            404,
+            1014,
+            323,
+            2
+          ]
+        ]
+      },
+      "attention_mask": {
+        "dtype": "int64",
+        "shape": [
+          1,
+          30
+        ],
+        "values": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "words_mask": {
+        "dtype": "int64",
+        "shape": [
+          1,
+          30
+        ],
+        "values": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            0
+          ]
+        ]
+      },
+      "text_lengths": {
+        "dtype": "int64",
+        "shape": [
+          1,
+          1
+        ],
+        "values": [
+          [
+            12
+          ]
+        ]
+      },
+      "span_idx": {
+        "dtype": "int64",
+        "shape": [
+          1,
+          144,
+          2
+        ],
+        "values": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              8
+            ],
+            [
+              0,
+              9
+            ],
+            [
+              0,
+              10
+            ],
+            [
+              0,
+              11
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              1,
+              9
+            ],
+            [
+              1,
+              10
+            ],
+            [
+              1,
+              11
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              2,
+              9
+            ],
+            [
+              2,
+              10
+            ],
+            [
+              2,
+              11
+            ],
+            [
+              2,
+              12
+            ],
+            [
+              2,
+              13
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              8
+            ],
+            [
+              3,
+              9
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              3,
+              11
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              3,
+              13
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              4,
+              11
+            ],
+            [
+              4,
+              12
+            ],
+            [
+              4,
+              13
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              4,
+              15
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              5,
+              11
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              5,
+              13
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              5,
+              15
+            ],
+            [
+              5,
+              16
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              6,
+              13
+            ],
+            [
+              6,
+              14
+            ],
+            [
+              6,
+              15
+            ],
+            [
+              6,
+              16
+            ],
+            [
+              6,
+              17
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              7,
+              12
+            ],
+            [
+              7,
+              13
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              7,
+              15
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              7,
+              17
+            ],
+            [
+              7,
+              18
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              8,
+              14
+            ],
+            [
+              8,
+              15
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              8,
+              17
+            ],
+            [
+              8,
+              18
+            ],
+            [
+              8,
+              19
+            ],
+            [
+              9,
+              9
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              9,
+              12
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              9,
+              15
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              9,
+              17
+            ],
+            [
+              9,
+              18
+            ],
+            [
+              9,
+              19
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              10,
+              10
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              10,
+              13
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              10,
+              16
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              10,
+              18
+            ],
+            [
+              10,
+              19
+            ],
+            [
+              10,
+              20
+            ],
+            [
+              10,
+              21
+            ],
+            [
+              11,
+              11
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              11,
+              13
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              11,
+              16
+            ],
+            [
+              11,
+              17
+            ],
+            [
+              11,
+              18
+            ],
+            [
+              11,
+              19
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              11,
+              21
+            ],
+            [
+              11,
+              22
+            ]
+          ]
+        ]
+      },
+      "span_mask": {
+        "dtype": "bool",
+        "shape": [
+          1,
+          144
+        ],
+        "values": [
+          [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        ]
+      }
+    },
+    "raw_logits_shape": [
+      1,
+      12,
+      12,
+      4
+    ],
+    "raw_logits_range": [
+      -48.30364227294922,
+      4.0940141677856445
+    ],
+    "top_valid_spans": [
+      {
+        "batch": 0,
+        "word_start": 0,
+        "width_index": 1,
+        "word_count": 2,
+        "label_index": 0,
+        "label": "person",
+        "logit": 4.0940141677856445,
+        "score": 0.98360122901533
+      },
+      {
+        "batch": 0,
+        "word_start": 6,
+        "width_index": 1,
+        "word_count": 2,
+        "label_index": 1,
+        "label": "organization",
+        "logit": 3.346050977706909,
+        "score": 0.965975281746699
+      },
+      {
+        "batch": 0,
+        "word_start": 9,
+        "width_index": 1,
+        "word_count": 2,
+        "label_index": 3,
+        "label": "date",
+        "logit": 2.6265652179718018,
+        "score": 0.932551826056641
+      },
+      {
+        "batch": 0,
+        "word_start": 4,
+        "width_index": 0,
+        "word_count": 1,
+        "label_index": 2,
+        "label": "invoice id",
+        "logit": 1.8874926567077637,
+        "score": 0.8684693804637801
+      },
+      {
+        "batch": 0,
+        "word_start": 10,
+        "width_index": 0,
+        "word_count": 1,
+        "label_index": 3,
+        "label": "date",
+        "logit": -2.671457052230835,
+        "score": 0.06467876768429212
+      },
+      {
+        "batch": 0,
+        "word_start": 8,
+        "width_index": 2,
+        "word_count": 3,
+        "label_index": 3,
+        "label": "date",
+        "logit": -3.924072265625,
+        "score": 0.019377551482048453
+      },
+      {
+        "batch": 0,
+        "word_start": 1,
+        "width_index": 0,
+        "word_count": 1,
+        "label_index": 0,
+        "label": "person",
+        "logit": -4.049066543579102,
+        "score": 0.017139751218406028
+      },
+      {
+        "batch": 0,
+        "word_start": 0,
+        "width_index": 0,
+        "word_count": 1,
+        "label_index": 0,
+        "label": "person",
+        "logit": -4.094892501831055,
+        "score": 0.016384609603277492
+      }
+    ]
+  },
+  "parity": [
+    {
+      "text_index": 0,
+      "word_count_before_truncation": 12,
+      "thresholds": [
+        {
+          "threshold": 0.5,
+          "logits_shape": [
+            1,
+            12,
+            12,
+            4
+          ],
+          "max_abs_logit_diff": 2.86102294921875e-05,
+          "entity_identities_identical": true,
+          "max_entity_score_diff": 1.7881393432617188e-07,
+          "onnx_entities": [
+            {
+              "start": 0,
+              "end": 13,
+              "text": "Alice Johnson",
+              "label": "person",
+              "score": 0.9836012721061707
+            },
+            {
+              "start": 27,
+              "end": 40,
+              "text": "INV-2024-0042",
+              "label": "invoice id",
+              "score": 0.8684693574905396
+            },
+            {
+              "start": 44,
+              "end": 53,
+              "text": "Acme Corp",
+              "label": "organization",
+              "score": 0.9659753441810608
+            },
+            {
+              "start": 57,
+              "end": 64,
+              "text": "3 March",
+              "label": "date",
+              "score": 0.9325518608093262
+            }
+          ],
+          "pytorch_entities": [
+            {
+              "start": 0,
+              "end": 13,
+              "text": "Alice Johnson",
+              "label": "person",
+              "score": 0.9836011528968811
+            },
+            {
+              "start": 27,
+              "end": 40,
+              "text": "INV-2024-0042",
+              "label": "invoice id",
+              "score": 0.8684693574905396
+            },
+            {
+              "start": 44,
+              "end": 53,
+              "text": "Acme Corp",
+              "label": "organization",
+              "score": 0.9659754633903503
+            },
+            {
+              "start": 57,
+              "end": 64,
+              "text": "3 March",
+              "label": "date",
+              "score": 0.9325516819953918
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text_index": 1,
+      "word_count_before_truncation": 13,
+      "thresholds": [
+        {
+          "threshold": 0.5,
+          "logits_shape": [
+            1,
+            13,
+            12,
+            4
+          ],
+          "max_abs_logit_diff": 3.62396240234375e-05,
+          "entity_identities_identical": true,
+          "max_entity_score_diff": 2.384185791015625e-07,
+          "onnx_entities": [
+            {
+              "start": 0,
+              "end": 11,
+              "text": "Maria Gomez",
+              "label": "person",
+              "score": 0.9824696779251099
+            },
+            {
+              "start": 15,
+              "end": 33,
+              "text": "Globex Corporation",
+              "label": "organization",
+              "score": 0.9696313738822937
+            },
+            {
+              "start": 51,
+              "end": 57,
+              "text": "Q4-778",
+              "label": "invoice id",
+              "score": 0.7795266509056091
+            },
+            {
+              "start": 61,
+              "end": 73,
+              "text": "14 July 2025",
+              "label": "date",
+              "score": 0.9563659429550171
+            }
+          ],
+          "pytorch_entities": [
+            {
+              "start": 0,
+              "end": 11,
+              "text": "Maria Gomez",
+              "label": "person",
+              "score": 0.9824696779251099
+            },
+            {
+              "start": 15,
+              "end": 33,
+              "text": "Globex Corporation",
+              "label": "organization",
+              "score": 0.9696316123008728
+            },
+            {
+              "start": 51,
+              "end": 57,
+              "text": "Q4-778",
+              "label": "invoice id",
+              "score": 0.7795265316963196
+            },
+            {
+              "start": 61,
+              "end": 73,
+              "text": "14 July 2025",
+              "label": "date",
+              "score": 0.9563658237457275
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text_index": 2,
+      "word_count_before_truncation": 397,
+      "thresholds": [
+        {
+          "threshold": 0.5,
+          "logits_shape": [
+            1,
+            384,
+            12,
+            4
+          ],
+          "max_abs_logit_diff": 5.53131103515625e-05,
+          "entity_identities_identical": true,
+          "max_entity_score_diff": 3.159046173095703e-06,
+          "onnx_entities": [
+            {
+              "start": 0,
+              "end": 13,
+              "text": "Alice Johnson",
+              "label": "person",
+              "score": 0.9357282519340515
+            },
+            {
+              "start": 21,
+              "end": 30,
+              "text": "Acme Corp",
+              "label": "organization",
+              "score": 0.6082232594490051
+            },
+            {
+              "start": 34,
+              "end": 41,
+              "text": "3 March",
+              "label": "date",
+              "score": 0.8253718018531799
+            },
+            {
+              "start": 55,
+              "end": 68,
+              "text": "INV-2024-0042",
+              "label": "invoice id",
+              "score": 0.5713126063346863
+            }
+          ],
+          "pytorch_entities": [
+            {
+              "start": 0,
+              "end": 13,
+              "text": "Alice Johnson",
+              "label": "person",
+              "score": 0.935728132724762
+            },
+            {
+              "start": 21,
+              "end": 30,
+              "text": "Acme Corp",
+              "label": "organization",
+              "score": 0.608220100402832
+            },
+            {
+              "start": 34,
+              "end": 41,
+              "text": "3 March",
+              "label": "date",
+              "score": 0.8253706693649292
+            },
+            {
+              "start": 55,
+              "end": 68,
+              "text": "INV-2024-0042",
+              "label": "invoice id",
+              "score": 0.571312427520752
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

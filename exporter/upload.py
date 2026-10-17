@@ -38,7 +38,10 @@ def _resolve_revision(model: BaseModel, update: bool, api: HfApi) -> str | None:
         entry = lock.get(model.name)
         if entry and entry.source.revision:
             return entry.source.revision
-        return None
+        # New model definitions may carry the issue-approved revision before their
+        # first successful upload creates a lock entry. Preserve that pin instead of
+        # silently resolving the source repo's moving default branch.
+        return model.revision
 
     try:
         return api.model_info(model.source_repo).sha
