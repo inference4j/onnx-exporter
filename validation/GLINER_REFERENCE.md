@@ -2,7 +2,10 @@
 
 These recordings use `gliner==0.2.29` and the pinned model revisions declared in
 `exporter/models/gliner.py`. The complete worked-example tensors and per-text entity
-outputs are generated as JSON by `validation/gliner_validate.py`:
+outputs are checked in as
+[`gliner-small-v2.1.json`](reference/gliner-small-v2.1.json) and
+[`gliner-pii-base-v1.0.json`](reference/gliner-pii-base-v1.0.json). Regenerate them with
+`validation/gliner_validate.py`:
 
 ```bash
 python validation/gliner_validate.py gliner-small-v2.1 \
@@ -95,7 +98,7 @@ Words and offsets are:
 | 11 | . | 64 | 65 |
 
 The exact six input tensors—including all 144 `span_idx` pairs and all 144
-`span_mask` values—are emitted under `worked_example.inputs` by the validator.
+`span_mask` values—are recorded under `worked_example.inputs` in both JSON files.
 
 Top valid spans:
 
