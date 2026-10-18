@@ -820,6 +820,94 @@
     },
     "exported_at": null
   },
+  "dfine-nano-coco": {
+    "repo_id": "inference4j/dfine-nano-coco",
+    "source": {
+      "type": "hf",
+      "repo": "onnx-community/dfine-nano-coco-ONNX",
+      "revision": "89df95b0e8575ff9879f13351bafe69bbe8e6823"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "config.json": {
+        "size": 6570,
+        "blob_id": "8e167f59bafa7e8495a7142b7ef13600926e893f"
+      },
+      "onnx/model.onnx": {
+        "size": 15434994,
+        "sha256": "f7febe9695cd6f71120abbeb0642d3d6b6c6bcc36f0ba1d79b66d302b5860814",
+        "blob_id": "920ee43cfc8b5000c995b59630f5a00a1e7abe25"
+      },
+      "preprocessor_config.json": {
+        "size": 444,
+        "blob_id": "fcdff16b42e5ebc51d28f59184490c6eff91a88b"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 2464,
+        "blob_id": "8d2d1e14c7ad4aa2edf2f115d401126ab4bfe9a2"
+      },
+      "config.json": {
+        "size": 6570,
+        "blob_id": "8e167f59bafa7e8495a7142b7ef13600926e893f"
+      },
+      "model.onnx": {
+        "size": 15436953,
+        "sha256": "84bd30f89084b5ce444e69ccbeede64d956377c4708e4d812b554fbc0d4a5d73",
+        "blob_id": "18abe1507b76d0426eca62cba5fce6f446b4dd55"
+      },
+      "preprocessor_config.json": {
+        "size": 444,
+        "blob_id": "fcdff16b42e5ebc51d28f59184490c6eff91a88b"
+      }
+    },
+    "exported_at": "2026-10-17T18:00:00+00:00"
+  },
+  "dfine-small-coco": {
+    "repo_id": "inference4j/dfine-small-coco",
+    "source": {
+      "type": "hf",
+      "repo": "onnx-community/dfine_s_coco-ONNX",
+      "revision": "a3cf03147a9b86c78475139115c8ac142577352d"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "config.json": {
+        "size": 6656,
+        "blob_id": "22fcb7d42e2f76cc3001d5a8704e3bc2674e204b"
+      },
+      "onnx/model.onnx": {
+        "size": 41535197,
+        "sha256": "cd8a49a945feda6d28c6304ae8ae85c2759ba1d78a5a83a22c5ce8db82ef7238",
+        "blob_id": "c9bccf039170fd4e77da589ca59ec41f0b0d2114"
+      },
+      "preprocessor_config.json": {
+        "size": 444,
+        "blob_id": "fcdff16b42e5ebc51d28f59184490c6eff91a88b"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 2288,
+        "blob_id": "0c45686d22d93ead7056331ac836f4a5ca1eb5c8"
+      },
+      "config.json": {
+        "size": 6656,
+        "blob_id": "22fcb7d42e2f76cc3001d5a8704e3bc2674e204b"
+      },
+      "model.onnx": {
+        "size": 41535197,
+        "sha256": "cd8a49a945feda6d28c6304ae8ae85c2759ba1d78a5a83a22c5ce8db82ef7238",
+        "blob_id": "c9bccf039170fd4e77da589ca59ec41f0b0d2114"
+      },
+      "preprocessor_config.json": {
+        "size": 444,
+        "blob_id": "fcdff16b42e5ebc51d28f59184490c6eff91a88b"
+      }
+    },
+    "exported_at": "2026-10-17T16:09:05+00:00"
+  },
   "distilbart-cnn-12-6": {
     "repo_id": "inference4j/distilbart-cnn-12-6",
     "source": {
@@ -2530,6 +2618,50 @@
       }
     },
     "exported_at": null
+  },
+  "rtdetr-v2-r18vd": {
+    "repo_id": "inference4j/rtdetr-v2-r18vd",
+    "source": {
+      "type": "hf",
+      "repo": "onnx-community/rtdetr_v2_r18vd-ONNX",
+      "revision": "936f90b6a476c6da4dfe053fc521af55285976ba"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "config.json": {
+        "size": 5731,
+        "blob_id": "83184c801c04be51c51e12d906e650be47d085b4"
+      },
+      "onnx/model.onnx": {
+        "size": 81057510,
+        "sha256": "583a236ac21c95a7fd94f284fc21485e42355bfef82c27011ba78fbc09ee87e2",
+        "blob_id": "7dc6666aa426d35110055e6fed82f2556a1c6f46"
+      },
+      "preprocessor_config.json": {
+        "size": 444,
+        "blob_id": "fcdff16b42e5ebc51d28f59184490c6eff91a88b"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 2273,
+        "blob_id": "22971e1310ebb1d87e0bf13bb4f46640f4b00885"
+      },
+      "config.json": {
+        "size": 5731,
+        "blob_id": "83184c801c04be51c51e12d906e650be47d085b4"
+      },
+      "model.onnx": {
+        "size": 81057510,
+        "sha256": "583a236ac21c95a7fd94f284fc21485e42355bfef82c27011ba78fbc09ee87e2",
+        "blob_id": "7dc6666aa426d35110055e6fed82f2556a1c6f46"
+      },
+      "preprocessor_config.json": {
+        "size": 444,
+        "blob_id": "fcdff16b42e5ebc51d28f59184490c6eff91a88b"
+      }
+    },
+    "exported_at": "2026-10-17T16:08:59+00:00"
   },
   "silero-vad": {
     "repo_id": "inference4j/silero-vad",
