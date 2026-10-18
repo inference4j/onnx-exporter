@@ -142,3 +142,62 @@ class TestDebertaV3ZeroShotModels:
             assert "`input_ids`, `attention_mask`" in card
             assert "commercially friendly data" in card
             assert "Permission is hereby granted" in card
+
+
+class TestGlinerModels:
+    def test_variants_are_registered_at_the_requested_revisions(self):
+        from exporter import registry
+        import exporter.models  # noqa: F401
+
+        expected = {
+            "gliner-small-v2.1": (
+                "onnx-community/gliner_small-v2.1",
+                "8142fb00740ccea973e64b1272949ff48653df5e",
+            ),
+            "gliner-pii-base-v1.0": (
+                "knowledgator/gliner-pii-base-v1.0",
+                "61726e0ad791dcab3e29339bbec3ad42ded65641",
+            ),
+        }
+        for name, (source_repo, revision) in expected.items():
+            model = registry.get(name)
+            assert model is not None
+            assert model.repo_id == f"inference4j/{name}"
+            assert model.source_repo == source_repo
+            assert model.revision == revision
+            assert [mapping.dst for mapping in model.files] == [
+                "model.onnx",
+                "gliner_config.json",
+                "tokenizer.json",
+                "tokenizer_config.json",
+                "special_tokens_map.json",
+                "added_tokens.json",
+            ]
+
+    def test_cards_document_contract_license_and_pii_warning(self):
+        from exporter import registry
+        import exporter.models  # noqa: F401
+
+        for name in ("gliner-small-v2.1", "gliner-pii-base-v1.0"):
+            card = registry.get(name).render_card()
+            assert "pipeline_tag: token-classification" in card
+            assert "  - gliner" in card
+            assert "  - zero-shot" in card
+            assert "Five int64 tensors plus boolean `span_mask`" in card
+            assert "Raw float32 `logits`" in card
+            assert "TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION" in card
+            assert "END OF TERMS AND CONDITIONS" in card
+
+        pii_card = registry.get("gliner-pii-base-v1.0").render_card()
+        assert "  - pii" in pii_card
+        assert "PII detection is probabilistic" in pii_card
+
+    def test_declared_revision_is_used_before_first_lock_entry(self, monkeypatch):
+        from exporter import registry, upload
+        import exporter.models  # noqa: F401
+
+        monkeypatch.setattr(upload.lock, "get", lambda _name: None)
+        model = registry.get("gliner-small-v2.1")
+        assert upload._resolve_revision(model, update=False, api=None) == (
+            "8142fb00740ccea973e64b1272949ff48653df5e"
+        )
