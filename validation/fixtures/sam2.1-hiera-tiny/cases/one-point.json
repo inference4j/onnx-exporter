@@ -1,0 +1,56 @@
+{
+  "name": "one-point",
+  "image": "images/non-square.png",
+  "mask": "masks/one-point.png",
+  "original_image_size": [
+    640,
+    480
+  ],
+  "prompt_original_coordinates": {
+    "points": [
+      [
+        250.0,
+        220.0
+      ]
+    ],
+    "labels": [
+      1
+    ],
+    "boxes": []
+  },
+  "onnx_prompt_shapes": {
+    "input_points": [
+      1,
+      1,
+      1,
+      2
+    ],
+    "input_labels": [
+      1,
+      1,
+      1
+    ],
+    "input_boxes": [
+      1,
+      0,
+      4
+    ]
+  },
+  "iou_scores": [
+    0.8981390595436096,
+    0.9539327621459961,
+    0.9543472528457642
+  ],
+  "selected_mask_index": 2,
+  "object_score_logits": [
+    24.129636764526367
+  ],
+  "parity": {
+    "contract_pytorch_iou_scores_max_abs_diff": 2.980232238769531e-07,
+    "contract_pytorch_mask_logits_max_abs_diff": 7.05718994140625e-05,
+    "contract_pytorch_object_score_max_abs_diff": 1.9073486328125e-06,
+    "contract_pytorch_binary_mask_iou": 1.0,
+    "canonical_processor_pytorch_iou_scores_max_abs_diff": 2.980232238769531e-07,
+    "canonical_processor_pytorch_binary_mask_iou": 1.0
+  }
+}
