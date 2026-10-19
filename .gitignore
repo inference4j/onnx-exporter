@@ -1,5 +1,6 @@
 .venv/
 .venv-genai-builder/
+.venv-hub-uploader/
 output/
 .env
 .idea/

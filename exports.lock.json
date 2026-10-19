@@ -1218,6 +1218,142 @@
     },
     "exported_at": "2026-02-28T16:00:59+00:00"
   },
+  "gliner-pii-base-v1.0": {
+    "repo_id": "inference4j/gliner-pii-base-v1.0",
+    "source": {
+      "type": "hf",
+      "repo": "knowledgator/gliner-pii-base-v1.0",
+      "revision": "61726e0ad791dcab3e29339bbec3ad42ded65641"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "added_tokens.json": {
+        "size": 65,
+        "blob_id": "7546b399c0c104e8eb33438f622def928f3707b5"
+      },
+      "gliner_config.json": {
+        "size": 3902,
+        "blob_id": "47ce168020b0e9d9cd4e060c4b9a245975f72558"
+      },
+      "onnx/model.onnx": {
+        "size": 664764803,
+        "sha256": "c6ccec44625d46bfe3191152e41d6564b69bc9d4313b7f3e419e8372679e9fed",
+        "blob_id": "00c93656d0389ae91e35beb3c6e9de84b80ed05a"
+      },
+      "special_tokens_map.json": {
+        "size": 970,
+        "blob_id": "83fb22de184abab1b193b1f6001e3015e865e50b"
+      },
+      "tokenizer.json": {
+        "size": 8649232,
+        "blob_id": "4811a898785c678e05053f8d709c8333f38f4ec8"
+      },
+      "tokenizer_config.json": {
+        "size": 1691,
+        "blob_id": "884832de0f31b98b02e6213332059b6cfd687ad7"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 12650,
+        "blob_id": "2eb9df2f8d4c17c5b383c89daf49e28069dc9d6d"
+      },
+      "added_tokens.json": {
+        "size": 65,
+        "blob_id": "7546b399c0c104e8eb33438f622def928f3707b5"
+      },
+      "gliner_config.json": {
+        "size": 3902,
+        "blob_id": "47ce168020b0e9d9cd4e060c4b9a245975f72558"
+      },
+      "model.onnx": {
+        "size": 664764803,
+        "sha256": "c6ccec44625d46bfe3191152e41d6564b69bc9d4313b7f3e419e8372679e9fed",
+        "blob_id": "00c93656d0389ae91e35beb3c6e9de84b80ed05a"
+      },
+      "special_tokens_map.json": {
+        "size": 970,
+        "blob_id": "83fb22de184abab1b193b1f6001e3015e865e50b"
+      },
+      "tokenizer.json": {
+        "size": 8649232,
+        "blob_id": "4811a898785c678e05053f8d709c8333f38f4ec8"
+      },
+      "tokenizer_config.json": {
+        "size": 1691,
+        "blob_id": "884832de0f31b98b02e6213332059b6cfd687ad7"
+      }
+    },
+    "exported_at": "2026-10-19T01:29:52+00:00"
+  },
+  "gliner-small-v2.1": {
+    "repo_id": "inference4j/gliner-small-v2.1",
+    "source": {
+      "type": "hf",
+      "repo": "onnx-community/gliner_small-v2.1",
+      "revision": "8142fb00740ccea973e64b1272949ff48653df5e"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "added_tokens.json": {
+        "size": 86,
+        "blob_id": "5c7599504ef0461de3e23af09cfaffc4ba589b27"
+      },
+      "gliner_config.json": {
+        "size": 731,
+        "blob_id": "3a04b9dab50de83ae69e767aa23d272e0a1de8dd"
+      },
+      "onnx/model.onnx": {
+        "size": 611293061,
+        "sha256": "874bc905cf3537a3bca91a55c3d99c78dbc571ebc2d8e209eb0aadd63e9d3948",
+        "blob_id": "e4f29ac1534adecdaf6543351454c64602fce1df"
+      },
+      "special_tokens_map.json": {
+        "size": 286,
+        "blob_id": "2c9cb07c8fdeeb5ac3ceafb170592e990b204dcd"
+      },
+      "tokenizer.json": {
+        "size": 8657198,
+        "blob_id": "b73fed61cb455681461d0044ce4ea8ac1c83a7ad"
+      },
+      "tokenizer_config.json": {
+        "size": 1806,
+        "blob_id": "504e1e8b30d1e5cf0472adcdd4c73448a1c12f8b"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 12756,
+        "blob_id": "fd5ad84ff0a7cead417024f176385c38a8f231dd"
+      },
+      "added_tokens.json": {
+        "size": 86,
+        "blob_id": "5c7599504ef0461de3e23af09cfaffc4ba589b27"
+      },
+      "gliner_config.json": {
+        "size": 731,
+        "blob_id": "3a04b9dab50de83ae69e767aa23d272e0a1de8dd"
+      },
+      "model.onnx": {
+        "size": 611293061,
+        "sha256": "874bc905cf3537a3bca91a55c3d99c78dbc571ebc2d8e209eb0aadd63e9d3948",
+        "blob_id": "e4f29ac1534adecdaf6543351454c64602fce1df"
+      },
+      "special_tokens_map.json": {
+        "size": 286,
+        "blob_id": "2c9cb07c8fdeeb5ac3ceafb170592e990b204dcd"
+      },
+      "tokenizer.json": {
+        "size": 8657198,
+        "blob_id": "b73fed61cb455681461d0044ce4ea8ac1c83a7ad"
+      },
+      "tokenizer_config.json": {
+        "size": 1806,
+        "blob_id": "504e1e8b30d1e5cf0472adcdd4c73448a1c12f8b"
+      }
+    },
+    "exported_at": "2026-10-19T00:48:11+00:00"
+  },
   "gpt2": {
     "repo_id": "inference4j/gpt2",
     "source": {

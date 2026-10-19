@@ -4,9 +4,11 @@ version = "0.1.0"
 description = "Export and mirror ONNX models for the inference4j HuggingFace organization"
 requires-python = ">=3.10"
 dependencies = [
-    "huggingface_hub>=0.20.0",
+    "huggingface_hub>=0.34,<1",
     "onnx>=1.14.0",
     "onnxruntime>=1.16.0",
+    "requests>=2.32.5,<3",
+    "chardet>=3.0.2,<6",
 ]
 
 [tool.setuptools.packages.find]
@@ -19,7 +21,7 @@ dev = [
 export = [
     "torch>=2.0.0",
     "torchvision>=0.15.0",
-    "transformers>=4.36.0",
+    "transformers>=4.36.0,<4.58",
     "optimum[onnxruntime]>=1.17.0",
     "gdown>=5.0.0",
     "numpy>=1.24.0",
