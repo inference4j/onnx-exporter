@@ -1,13 +1,89 @@
 """Staging and upload workflow."""
 
+import json
 import shutil
+import subprocess
+import sys
 import tempfile
+import time
 from pathlib import Path
+from typing import Callable, TypeVar
 
 from huggingface_hub import HfApi
+from requests.exceptions import ConnectionError as RequestsConnectionError
+from requests.exceptions import Timeout as RequestsTimeout
 
 from exporter import lock
 from exporter.base import BaseModel, MirroredModel
+
+
+_T = TypeVar("_T")
+_HUB_WRITE_ATTEMPTS = 3
+_COPY_HELPER_VENV = Path(__file__).resolve().parents[1] / ".venv-hub-uploader"
+_COPY_HELPER_REQUIREMENTS = ("huggingface_hub==1.33.0",)
+
+
+def _retry_hub_write(description: str, operation: Callable[[], _T]) -> _T:
+    """Retry transient HTTP failures without hiding non-network upload errors."""
+    for attempt in range(1, _HUB_WRITE_ATTEMPTS + 1):
+        try:
+            return operation()
+        except (RequestsConnectionError, RequestsTimeout) as exc:
+            if attempt == _HUB_WRITE_ATTEMPTS:
+                raise
+            delay = 2 ** (attempt - 1)
+            print(
+                f"  Warning: {description} failed ({type(exc).__name__}); "
+                f"retrying in {delay}s ({attempt}/{_HUB_WRITE_ATTEMPTS})"
+            )
+            time.sleep(delay)
+
+    raise AssertionError("unreachable")
+
+
+def _can_copy_server_side(model: BaseModel) -> bool:
+    """Whether publishing can copy every artifact directly from an HF source repo."""
+    return (
+        isinstance(model, MirroredModel)
+        and model.source_type == "hf"
+        and type(model).stage is MirroredModel.stage
+    )
+
+
+def _copy_helper_python() -> Path:
+    """Return an isolated Hub client new enough for cross-repository copies."""
+    python = _COPY_HELPER_VENV / "bin" / "python"
+    stamp = _COPY_HELPER_VENV / "requirements.txt"
+    wanted = "\n".join(_COPY_HELPER_REQUIREMENTS) + "\n"
+    if python.exists() and stamp.exists() and stamp.read_text() == wanted:
+        return python
+
+    print(f"  Creating Hub copy helper at {_COPY_HELPER_VENV} ...")
+    subprocess.run([sys.executable, "-m", "venv", "--clear", str(_COPY_HELPER_VENV)], check=True)
+    subprocess.run(
+        [str(python), "-m", "pip", "install", "-q", *_COPY_HELPER_REQUIREMENTS],
+        check=True,
+    )
+    stamp.write_text(wanted)
+    return python
+
+
+def _copy_mirror(model: MirroredModel, card_path: Path) -> None:
+    """Publish an unmodified HF mirror using an isolated, modern Hub client."""
+    revision = f"@{model.revision}" if model.revision else ""
+    print(f"  Copying files server-side from {model.source_repo}{revision} ...")
+    cmd = [
+        str(_copy_helper_python()),
+        str(Path(__file__).with_name("_hub_copy.py")),
+        "--source-repo", model.source_repo,
+        "--target-repo", model.repo_id,
+        "--files", json.dumps([[file.src, file.dst] for file in model.files]),
+        "--card", str(card_path),
+        "--message", f"Upload {model.name} ONNX model",
+    ]
+    if model.revision:
+        cmd.extend(["--source-revision", model.revision])
+    subprocess.run(cmd, check=True)
 
 
 def _resolve_revision(model: BaseModel, update: bool, api: HfApi) -> str | None:
@@ -125,8 +201,11 @@ def process(model: BaseModel, dry_run: bool = False, update: bool = False) -> No
     model.revision = _resolve_revision(model, update, api)
 
     staging_dir = Path(tempfile.mkdtemp(prefix=f"inference4j-{model.name}-"))
+    succeeded = False
     try:
-        model.stage(staging_dir)
+        server_side_copy = _can_copy_server_side(model) and not dry_run
+        if not server_side_copy:
+            model.stage(staging_dir)
 
         card_text = model.render_card()
         card_path = staging_dir / "README.md"
@@ -150,16 +229,25 @@ def process(model: BaseModel, dry_run: bool = False, update: bool = False) -> No
         print(f"  Creating repo {model.repo_id} ...")
         api.create_repo(model.repo_id, exist_ok=True)
 
-        print(f"  Uploading files ...")
-        api.upload_folder(
-            folder_path=str(staging_dir),
-            repo_id=model.repo_id,
-            commit_message=f"Upload {model.name} ONNX model",
-        )
+        if server_side_copy:
+            _copy_mirror(model, card_path)
+        else:
+            print(f"  Uploading files ...")
+            _retry_hub_write(
+                "upload",
+                lambda: api.upload_folder(
+                    folder_path=str(staging_dir),
+                    repo_id=model.repo_id,
+                    commit_message=f"Upload {model.name} ONNX model",
+                ),
+            )
         print(f"  Uploaded to https://huggingface.co/{model.repo_id}")
 
         _record(model, model.revision, api)
+        succeeded = True
     finally:
-        if not dry_run:
+        if not dry_run and succeeded:
             shutil.rmtree(staging_dir)
             print(f"  Cleaned up staging directory")
+        elif not dry_run:
+            print(f"  Upload failed; staging directory preserved at {staging_dir}")

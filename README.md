@@ -74,6 +74,11 @@ pip install -e .                # Core deps (mirrored models only)
 pip install -e ".[export]"      # + torch/transformers (for CLIP, CRAFT export)
 ```
 
+Publishing an unchanged Hugging Face mirror copies its files inside the Hub instead of
+downloading and re-uploading the model. On first use, the exporter creates the small
+`.venv-hub-uploader` helper environment required for that operation. Keeping it separate
+preserves compatibility with the Transformers 4.x ONNX export toolchain.
+
 ## Usage
 
 ```bash
@@ -87,7 +92,7 @@ python -m exporter card clip                      # Preview model card only
 
 ## Model types
 
-- **Mirrored** — downloads existing ONNX from upstream HuggingFace/URL, adds model card, re-uploads
+- **Mirrored** — copies unchanged Hugging Face artifacts server-side when possible; URL mirrors and models with custom staging still download and upload locally
 - **Exported** — custom PyTorch-to-ONNX conversion with model-specific code (CLIP, CRAFT)
 
 ## Drift detection
