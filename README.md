@@ -60,10 +60,14 @@ Export and mirror ONNX models for the [inference4j](https://github.com/inference
 | `pp-ocrv6-small-rec` | [PaddlePaddle/PP-OCRv6_small_rec_onnx](https://huggingface.co/PaddlePaddle/PP-OCRv6_small_rec_onnx) | [inference4j/pp-ocrv6-small-rec](https://huggingface.co/inference4j/pp-ocrv6-small-rec) |
 | `pp-ocrv6-tiny-det` | [PaddlePaddle/PP-OCRv6_tiny_det_onnx](https://huggingface.co/PaddlePaddle/PP-OCRv6_tiny_det_onnx) | [inference4j/pp-ocrv6-tiny-det](https://huggingface.co/inference4j/pp-ocrv6-tiny-det) |
 | `pp-ocrv6-tiny-rec` | [PaddlePaddle/PP-OCRv6_tiny_rec_onnx](https://huggingface.co/PaddlePaddle/PP-OCRv6_tiny_rec_onnx) | [inference4j/pp-ocrv6-tiny-rec](https://huggingface.co/inference4j/pp-ocrv6-tiny-rec) |
+| `rtdetr-v2-r18vd` | [onnx-community/rtdetr_v2_r18vd-ONNX](https://huggingface.co/onnx-community/rtdetr_v2_r18vd-ONNX) | [inference4j/rtdetr-v2-r18vd](https://huggingface.co/inference4j/rtdetr-v2-r18vd) |
+| `dfine-nano-coco` | [onnx-community/dfine-nano-coco-ONNX](https://huggingface.co/onnx-community/dfine-nano-coco-ONNX) | [inference4j/dfine-nano-coco](https://huggingface.co/inference4j/dfine-nano-coco) |
+| `dfine-small-coco` | [onnx-community/dfine_s_coco-ONNX](https://huggingface.co/onnx-community/dfine_s_coco-ONNX) | [inference4j/dfine-small-coco](https://huggingface.co/inference4j/dfine-small-coco) |
 | `deberta-v3-base-zeroshot-v2.0-c` | [MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c](https://huggingface.co/MoritzLaurer/deberta-v3-base-zeroshot-v2.0-c) | [inference4j/deberta-v3-base-zeroshot-v2.0-c](https://huggingface.co/inference4j/deberta-v3-base-zeroshot-v2.0-c) |
 | `deberta-v3-large-zeroshot-v2.0-c` | [MoritzLaurer/deberta-v3-large-zeroshot-v2.0-c](https://huggingface.co/MoritzLaurer/deberta-v3-large-zeroshot-v2.0-c) | [inference4j/deberta-v3-large-zeroshot-v2.0-c](https://huggingface.co/inference4j/deberta-v3-large-zeroshot-v2.0-c) |
 | `gliner-small-v2.1` | [onnx-community/gliner_small-v2.1](https://huggingface.co/onnx-community/gliner_small-v2.1) | [inference4j/gliner-small-v2.1](https://huggingface.co/inference4j/gliner-small-v2.1) |
 | `gliner-pii-base-v1.0` | [knowledgator/gliner-pii-base-v1.0](https://huggingface.co/knowledgator/gliner-pii-base-v1.0) | [inference4j/gliner-pii-base-v1.0](https://huggingface.co/inference4j/gliner-pii-base-v1.0) |
+
 
 ## Setup
 
