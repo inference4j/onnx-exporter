@@ -327,6 +327,18 @@ def cmd_card(args):
     print(model.render_card())
 
 
+def cmd_publish_card(args):
+    """Publish only the model card (and LICENSE) of models, leaving their files untouched."""
+    from exporter.upload import publish_card
+
+    for name in args.models:
+        model = registry.get(name)
+        if model is None:
+            print(f"Error: unknown model '{name}'")
+            sys.exit(1)
+        publish_card(model, dry_run=args.dry_run)
+
+
 def main():
     parser = argparse.ArgumentParser(
         prog="exporter",
@@ -391,6 +403,12 @@ def main():
     card_parser = subparsers.add_parser("card", help="Preview model card")
     card_parser.add_argument("model", help="Model name")
 
+    # publish-card
+    pub_parser = subparsers.add_parser(
+        "publish-card", help="Publish the model card and LICENSE only, without the model files")
+    pub_parser.add_argument("models", nargs="+", help="Model names")
+    pub_parser.add_argument("--dry-run", action="store_true", help="Show what would be committed")
+
     args = parser.parse_args()
 
     commands = {
@@ -401,6 +419,7 @@ def main():
         "contract": cmd_contract,
         "lock": cmd_lock,
         "card": cmd_card,
+        "publish-card": cmd_publish_card,
     }
     commands[args.command](args)
 

@@ -2,6 +2,7 @@ from pathlib import Path
 
 from exporter.base import FileMapping, MirroredModel, ModelCard
 from exporter.registry import register
+from exporter.models._detection import COCO, DFINE_CODE, UNCHANGED, java_usage, provenance
 
 _FILES = [
     FileMapping(src="onnx/model.onnx", dst="model.onnx"),
@@ -53,16 +54,11 @@ class DFineNanoCoco(MirroredModel):
         tags=["dfine", "object-detection", "coco", "computer-vision", "apache-2.0"],
         original_source_url="https://huggingface.co/ustc-community/dfine-nano-coco",
         original_author="USTC / onnx-community (D-FINE)",
-        java_usage="""\
-try (DFine model = DFine.fromPretrained("inference4j/dfine-nano-coco")) {
-    List<Detection> detections = model.detect(Path.of("street.jpg"));
-    detections.forEach(d -> System.out.printf("%s (%.0f%%) at [%.0f, %.0f, %.0f, %.0f]%n",
-        d.label(), d.confidence() * 100,
-        d.box().x1(), d.box().y1(), d.box().x2(), d.box().y2()));
-}""",
+        java_usage=java_usage("DetrDetector.dfineNano()"),
         model_details={
             "Architecture": "D-FINE Nano (transformer object detector)",
             "Task": "Object detection (COCO 80 classes)",
+            "COCO AP": "42.8 (val2017, as reported by the D-FINE authors)",
             "License note": "Apache-2.0 (permissive non-AGPL alternative to YOLOv8/YOLO26)",
             "Input": "`pixel_values`: `[1, 3, 640, 640]` — RGB, normalized 0-1 (bilinear resize, no letterbox, static shapes for CoreML)",
             "Output": "`logits`: `[1, 300, 80]` (raw logits, apply sigmoid) and `pred_boxes`: `[1, 300, 4]` (normalized [cx, cy, w, h])",
@@ -70,6 +66,13 @@ try (DFine model = DFine.fromPretrained("inference4j/dfine-nano-coco")) {
             "Hardware support": "Verified on CPU and Apple Silicon CoreML (NeuralNetwork & MLProgram formats).",
             "Original framework": "PyTorch (USTC D-FINE)",
         },
+        extra_sections=provenance(
+            code=DFINE_CODE,
+            weights="[ustc-community/dfine-nano-coco](https://huggingface.co/ustc-community/dfine-nano-coco), Apache-2.0",
+            onnx="[onnx-community/dfine-nano-coco-ONNX](https://huggingface.co/onnx-community/dfine-nano-coco-ONNX)",
+            training_data=COCO,
+            conversion="Graph simplified with `onnxsim` to a static `[1, 3, 640, 640]` input",
+        ),
         license_text=(
             "This model is licensed under the [Apache License 2.0]"
             "(https://www.apache.org/licenses/LICENSE-2.0). Original model by "
@@ -101,22 +104,24 @@ class DFineSmallCoco(MirroredModel):
         tags=["dfine", "object-detection", "coco", "computer-vision", "apache-2.0"],
         original_source_url="https://huggingface.co/ustc-community/dfine-small-coco",
         original_author="USTC / onnx-community (D-FINE)",
-        java_usage="""\
-try (DFine model = DFine.fromPretrained("inference4j/dfine-small-coco")) {
-    List<Detection> detections = model.detect(Path.of("street.jpg"));
-    detections.forEach(d -> System.out.printf("%s (%.0f%%) at [%.0f, %.0f, %.0f, %.0f]%n",
-        d.label(), d.confidence() * 100,
-        d.box().x1(), d.box().y1(), d.box().x2(), d.box().y2()));
-}""",
+        java_usage=java_usage("DetrDetector.dfineSmall()"),
         model_details={
             "Architecture": "D-FINE Small (transformer object detector)",
             "Task": "Object detection (COCO 80 classes)",
+            "COCO AP": "48.5 (val2017, as reported by the D-FINE authors)",
             "License note": "Apache-2.0 (permissive non-AGPL alternative to YOLOv8/YOLO26)",
             "Input": "`pixel_values`: `[batch, 3, 640, 640]` — RGB, normalized 0-1 (bilinear resize, no letterbox)",
             "Output": "`logits`: `[batch, 300, 80]` (raw logits, apply sigmoid) and `pred_boxes`: `[batch, 300, 4]` (normalized [cx, cy, w, h])",
             "Post-processing": "Convert [cx, cy, w, h] to [x1, y1, x2, y2] scaled to image dimensions; filter by score threshold (> 0.5). No NMS required.",
             "Original framework": "PyTorch (USTC D-FINE)",
         },
+        extra_sections=provenance(
+            code=DFINE_CODE,
+            weights="[ustc-community/dfine-small-coco](https://huggingface.co/ustc-community/dfine-small-coco), Apache-2.0",
+            onnx="[onnx-community/dfine_s_coco-ONNX](https://huggingface.co/onnx-community/dfine_s_coco-ONNX)",
+            training_data=COCO,
+            conversion=UNCHANGED,
+        ),
         license_text=(
             "This model is licensed under the [Apache License 2.0]"
             "(https://www.apache.org/licenses/LICENSE-2.0). Original model by "
@@ -148,13 +153,7 @@ class DFineMediumCoco(MirroredModel):
         tags=["dfine", "object-detection", "coco", "computer-vision", "apache-2.0"],
         original_source_url="https://huggingface.co/ustc-community/dfine-medium-coco",
         original_author="USTC / onnx-community (D-FINE)",
-        java_usage="""\
-try (ObjectDetector detector = DetrDetector.dfineMedium().build()) {
-    List<Detection> detections = detector.detect(Path.of("street.jpg"));
-    detections.forEach(d -> System.out.printf("%s (%.0f%%) at [%.0f, %.0f, %.0f, %.0f]%n",
-        d.label(), d.confidence() * 100,
-        d.box().x1(), d.box().y1(), d.box().x2(), d.box().y2()));
-}""",
+        java_usage=java_usage("DetrDetector.dfineMedium()"),
         model_details={
             "Architecture": "D-FINE Medium (transformer object detector)",
             "Task": "Object detection (COCO 80 classes)",
@@ -165,6 +164,13 @@ try (ObjectDetector detector = DetrDetector.dfineMedium().build()) {
             "Post-processing": "Convert [cx, cy, w, h] to [x1, y1, x2, y2] scaled to image dimensions; filter by score threshold (> 0.5). No NMS required.",
             "Original framework": "PyTorch (USTC D-FINE)",
         },
+        extra_sections=provenance(
+            code=DFINE_CODE,
+            weights="[ustc-community/dfine-medium-coco](https://huggingface.co/ustc-community/dfine-medium-coco), Apache-2.0",
+            onnx="[onnx-community/dfine_m_coco-ONNX](https://huggingface.co/onnx-community/dfine_m_coco-ONNX)",
+            training_data=COCO,
+            conversion=UNCHANGED,
+        ),
         license_text=(
             "This model is licensed under the [Apache License 2.0]"
             "(https://www.apache.org/licenses/LICENSE-2.0). Original model by "
@@ -196,13 +202,7 @@ class DFineLargeCoco(MirroredModel):
         tags=["dfine", "object-detection", "coco", "computer-vision", "apache-2.0"],
         original_source_url="https://huggingface.co/ustc-community/dfine-large-coco",
         original_author="USTC / onnx-community (D-FINE)",
-        java_usage="""\
-try (ObjectDetector detector = DetrDetector.dfineLarge().build()) {
-    List<Detection> detections = detector.detect(Path.of("street.jpg"));
-    detections.forEach(d -> System.out.printf("%s (%.0f%%) at [%.0f, %.0f, %.0f, %.0f]%n",
-        d.label(), d.confidence() * 100,
-        d.box().x1(), d.box().y1(), d.box().x2(), d.box().y2()));
-}""",
+        java_usage=java_usage("DetrDetector.dfineLarge()"),
         model_details={
             "Architecture": "D-FINE Large (transformer object detector)",
             "Task": "Object detection (COCO 80 classes)",
@@ -213,6 +213,13 @@ try (ObjectDetector detector = DetrDetector.dfineLarge().build()) {
             "Post-processing": "Convert [cx, cy, w, h] to [x1, y1, x2, y2] scaled to image dimensions; filter by score threshold (> 0.5). No NMS required.",
             "Original framework": "PyTorch (USTC D-FINE)",
         },
+        extra_sections=provenance(
+            code=DFINE_CODE,
+            weights="[ustc-community/dfine-large-coco](https://huggingface.co/ustc-community/dfine-large-coco), Apache-2.0",
+            onnx="[onnx-community/dfine_l_coco-ONNX](https://huggingface.co/onnx-community/dfine_l_coco-ONNX)",
+            training_data=COCO,
+            conversion=UNCHANGED,
+        ),
         license_text=(
             "This model is licensed under the [Apache License 2.0]"
             "(https://www.apache.org/licenses/LICENSE-2.0). Original model by "
