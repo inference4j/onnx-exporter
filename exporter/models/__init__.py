@@ -51,5 +51,6 @@ from exporter.models import pp_ocrv6  # noqa: F401
 from exporter.models import rtdetr_v2  # noqa: F401
 from exporter.models import dfine  # noqa: F401
 from exporter.models import yolox  # noqa: F401
+from exporter.models import picodet  # noqa: F401
 from exporter.models import deberta_v3_zeroshot  # noqa: F401
 from exporter.models import gliner  # noqa: F401

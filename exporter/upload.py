@@ -188,6 +188,17 @@ def _release_tag(url: str) -> str | None:
     return None
 
 
+def _content_length(url: str) -> int:
+    """Size of a URL artifact from a HEAD request, or 0 when the server does not say."""
+    import urllib.request
+
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=30) as resp:
+            return int(resp.headers.get("Content-Length") or 0)
+    except Exception:
+        return 0
+
+
 def _record_hash_pinned(model: BaseModel, api: HfApi) -> None:
     """Lock a URL mirror whose files carry their own sha256, such as GitHub release assets.
 
@@ -202,12 +213,13 @@ def _record_hash_pinned(model: BaseModel, api: HfApi) -> None:
         print(f"  Warning: could not record provenance ({type(exc).__name__})")
         return
 
+    unchanged = type(model).stage is MirroredModel.stage
     tracked = {}
     for f in model.files:
         ours = published.get(f.dst)
-        if ours is not None and ours.sha256 not in (None, f.sha256):
+        if unchanged and ours is not None and ours.sha256 not in (None, f.sha256):
             print(f"  Warning: published {f.dst} does not hash-match {f.src}")
-        tracked[f.src] = lock.FileHash(size=ours.size if ours else 0, sha256=f.sha256)
+        tracked[f.src] = lock.FileHash(size=_content_length(f.src), sha256=f.sha256)
 
     lock.put(model.name, lock.LockEntry(
         repo_id=model.repo_id,
