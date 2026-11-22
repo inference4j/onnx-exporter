@@ -60,6 +60,10 @@ class BaseModel(ABC):
     # LICENSE with the model. None publishes no LICENSE file.
     license_file: str | None = None
 
+    # Files an earlier export published that this one no longer produces. The upload deletes
+    # them from the repo (glob patterns, as huggingface_hub's delete_patterns).
+    obsolete_files: tuple[str, ...] = ()
+
     @abstractmethod
     def stage(self, staging_dir: Path) -> None:
         """Download/export model files into the staging directory."""

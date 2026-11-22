@@ -2,6 +2,7 @@ import shutil
 from pathlib import Path
 
 from exporter.base import ExportedModel
+from exporter.models._marian import build_marian_tokenizer
 from exporter.models.flan_t5_small import _validate_encoder_decoder
 from exporter.registry import register
 
@@ -10,6 +11,8 @@ class OpusMtEnDe(ExportedModel):
     name = "opus-mt-en-de"
     repo_id = "inference4j/opus-mt-en-de"
     source_repo = "Helsinki-NLP/opus-mt-en-de"
+    # An older export published the raw SentencePiece tokenizers; nothing reads them.
+    obsolete_files = ("target_tokenizer.json", "source_tokenizer.json")
 
     def stage(self, staging_dir: Path) -> None:
         from huggingface_hub import hf_hub_download
@@ -26,32 +29,19 @@ class OpusMtEnDe(ExportedModel):
             no_post_process=False,
         )
 
-        # Build tokenizer.json from vocab.json (model IDs) + source.spm (BPE merges).
-        # MarianMT merges source + target SPM vocabularies into a shared vocab.json
-        # with ~65K entries. The raw SentencePieceExtractor produces SPM-internal IDs
-        # (0-31999) which differ from the model's IDs, so we use vocab.json for the
-        # vocabulary mapping and only extract BPE merges from the SPM model.
+        # tokenizer.json: source.spm's Unigram segmentation with vocab.json's ids (the
+        # model's), as MarianTokenizer does. See build_marian_tokenizer.
         tok_dst = staging_dir / "tokenizer.json"
         if not tok_dst.exists():
-            import json
-            from transformers.convert_slow_tokenizer import SentencePieceExtractor
-            from tokenizers import Tokenizer
-            from tokenizers.models import BPE
-
             source_spm = staging_dir / "source.spm"
+            if not source_spm.exists():
+                source_spm = Path(hf_hub_download(repo_id=model_id, filename="source.spm", revision=self.revision))
             vocab_json = staging_dir / "vocab.json"
             if not vocab_json.exists():
-                vocab_json = Path(hf_hub_download(repo_id=model_id, filename="vocab.json"))
+                vocab_json = Path(hf_hub_download(repo_id=model_id, filename="vocab.json", revision=self.revision))
 
-            print("  Building tokenizer.json from vocab.json + source.spm merges...")
-            with open(vocab_json) as f:
-                model_vocab = json.load(f)
-
-            extractor = SentencePieceExtractor(str(source_spm))
-            _, merges = extractor.extract(None)
-
-            tokenizer = Tokenizer(BPE(model_vocab, merges, unk_token="<unk>"))
-            tokenizer.save(str(tok_dst))
+            print("  Building tokenizer.json from source.spm (segmentation) + vocab.json (ids)...")
+            build_marian_tokenizer(vocab_json, source_spm, tok_dst)
 
         # Clean up non-essential files
         for name in ("decoder_model_merged.onnx", "generation_config.json",
