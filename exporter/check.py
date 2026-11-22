@@ -270,6 +270,10 @@ def _check_url_hashes(model, entry: lock.LockEntry, source: str, deep: bool) -> 
         digest = _hash_url(url, limit=512 * 1024 * 1024)
         if digest is None:
             return Result(model.name, UNVERIFIABLE, source, f"cannot fetch {name}")
+        if expected.size and digest[1] != expected.size:
+            # A slow server can end the transfer early; a short read is not evidence of drift.
+            return Result(model.name, UNVERIFIABLE, source,
+                          f"{name}: fetched {digest[1]} of {expected.size} bytes")
         if digest[0] != expected.sha256:
             return Result(model.name, DRIFT, source, f"{name} bytes differ from the pinned hash",
                           changed=[url])
