@@ -2026,16 +2026,12 @@
         "sha256": "9fbe1f86bbc70d148ab2dbead42db38e06fa3670dbe875b283d373d98a775abd",
         "blob_id": "e38a294df8304c9eba010c65bf55ab08caf70ee4"
       },
-      "target_tokenizer.json": {
-        "size": 2477540,
-        "blob_id": "03df66c1c2f339ea6a652807f71a962f75bc7bf6"
-      },
       "tokenizer.json": {
-        "size": 2547183,
-        "blob_id": "7ffcacf06caa31789422b6d7d60c6e4430a3c920"
+        "size": 4097555,
+        "blob_id": "16cb5a466c974c7e459699c0f32e2eea447c8e0a"
       }
     },
-    "exported_at": "2026-03-01T03:34:06+00:00"
+    "exported_at": "2026-11-22T19:08:28+00:00"
   },
   "opus-mt-en-es": {
     "repo_id": "inference4j/opus-mt-en-es",
@@ -2100,16 +2096,12 @@
         "sha256": "b911cad773c54b238cbc9b919102bf9a8ca017b93507a58a61f740dd3fa2e9ee",
         "blob_id": "9ac44f1d3c5e0efbee67e525fe3c96fb8be4a193"
       },
-      "target_tokenizer.json": {
-        "size": 2569569,
-        "blob_id": "08710c46968e6d5ebf1277e89fd8011860daa117"
-      },
       "tokenizer.json": {
-        "size": 3563343,
-        "blob_id": "fa7fd479f0f515dfc11980240949f05858901a18"
+        "size": 4614808,
+        "blob_id": "3506e6b8f63e08f94dcc67be12687bf4dd2ece91"
       }
     },
-    "exported_at": "2026-03-01T03:55:51+00:00"
+    "exported_at": "2026-11-22T19:08:58+00:00"
   },
   "opus-mt-en-fr": {
     "repo_id": "inference4j/opus-mt-en-fr",
@@ -2174,16 +2166,12 @@
         "sha256": "247e6e03b46b72f7975e4dd7ed3b7574fb0fa8b570fab0b7ca0c5cdf7faf9f83",
         "blob_id": "bdff52cf2e3a8b759f65e9f0ffb1c8e98feaac34"
       },
-      "target_tokenizer.json": {
-        "size": 2631017,
-        "blob_id": "3a5429a2df132f029da534a02637d40d4223fd36"
-      },
       "tokenizer.json": {
-        "size": 2557139,
-        "blob_id": "50eecccc6b53203756959f3096dfed955637a77c"
+        "size": 4198700,
+        "blob_id": "513cad42567dd8aeadb53f85a27e2b640d6c99d6"
       }
     },
-    "exported_at": "2026-03-01T03:33:56+00:00"
+    "exported_at": "2026-11-22T19:08:40+00:00"
   },
   "phi-3-mini": {
     "repo_id": "inference4j/phi-3-mini-4k-instruct",
