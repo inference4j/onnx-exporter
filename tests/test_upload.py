@@ -44,6 +44,7 @@ class FakeApi:
 
     def upload_folder(self, **kwargs):
         self.upload_attempts += 1
+        self.upload_kwargs = kwargs
         if self.upload_error is not None:
             raise self.upload_error
 
@@ -124,6 +125,30 @@ def test_successful_generated_upload_cleans_staging(monkeypatch, tmp_path):
 
     assert api.upload_attempts == 1
     assert not staging.exists()
+
+
+def test_upload_deletes_obsolete_files_from_the_repo(monkeypatch, tmp_path):
+    api = FakeApi()
+    _fixed_staging(monkeypatch, tmp_path)
+    monkeypatch.setattr(upload, "HfApi", lambda: api)
+    monkeypatch.setattr(upload, "_record", lambda *args: None)
+    model = GeneratedModel()
+    model.obsolete_files = ("target_tokenizer.json",)
+
+    upload.process(model)
+
+    assert api.upload_kwargs["delete_patterns"] == ["target_tokenizer.json"]
+
+
+def test_upload_deletes_nothing_by_default(monkeypatch, tmp_path):
+    api = FakeApi()
+    _fixed_staging(monkeypatch, tmp_path)
+    monkeypatch.setattr(upload, "HfApi", lambda: api)
+    monkeypatch.setattr(upload, "_record", lambda *args: None)
+
+    upload.process(GeneratedModel())
+
+    assert api.upload_kwargs["delete_patterns"] is None
 
 
 def test_publish_card_commits_readme_and_license_only(monkeypatch, tmp_path):

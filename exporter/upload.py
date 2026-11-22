@@ -311,6 +311,7 @@ def process(model: BaseModel, dry_run: bool = False, update: bool = False) -> No
                     folder_path=str(staging_dir),
                     repo_id=model.repo_id,
                     commit_message=f"Upload {model.name} ONNX model",
+                    delete_patterns=list(model.obsolete_files) or None,
                 ),
             )
         print(f"  Uploaded to https://huggingface.co/{model.repo_id}")
