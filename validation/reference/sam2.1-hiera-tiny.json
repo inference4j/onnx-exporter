@@ -1,0 +1,461 @@
+{
+  "model": "sam2.1-hiera-tiny",
+  "onnx_source": "onnx-community/sam2.1-hiera-tiny-ONNX",
+  "onnx_revision": "814a066640debee5a91e70aa401fb8e17e030503",
+  "pytorch_source": "facebook/sam2.1-hiera-tiny",
+  "pytorch_revision": "de431c4043854a71d8101e17995dfe596bf101a5",
+  "contracts": {
+    "vision_encoder": {
+      "inputs": [
+        {
+          "name": "pixel_values",
+          "dtype": "tensor(float)",
+          "shape": [
+            "batch_size",
+            3,
+            1024,
+            1024
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image_embeddings.0",
+          "dtype": "tensor(float)",
+          "shape": [
+            "batch_size",
+            32,
+            256,
+            256
+          ]
+        },
+        {
+          "name": "image_embeddings.1",
+          "dtype": "tensor(float)",
+          "shape": [
+            "batch_size",
+            64,
+            128,
+            128
+          ]
+        },
+        {
+          "name": "image_embeddings.2",
+          "dtype": "tensor(float)",
+          "shape": [
+            "batch_size",
+            "Reshapeimage_embeddings.2_dim_1",
+            "Reshapeimage_embeddings.2_dim_2",
+            "Reshapeimage_embeddings.2_dim_3"
+          ]
+        }
+      ]
+    },
+    "prompt_encoder_mask_decoder": {
+      "inputs": [
+        {
+          "name": "input_points",
+          "dtype": "tensor(float)",
+          "shape": [
+            "batch_size",
+            1,
+            "num_points_per_image",
+            2
+          ]
+        },
+        {
+          "name": "input_labels",
+          "dtype": "tensor(int64)",
+          "shape": [
+            "batch_size",
+            1,
+            "num_points_per_image"
+          ]
+        },
+        {
+          "name": "input_boxes",
+          "dtype": "tensor(float)",
+          "shape": [
+            "batch_size",
+            "num_boxes_per_image",
+            4
+          ]
+        },
+        {
+          "name": "image_embeddings.0",
+          "dtype": "tensor(float)",
+          "shape": [
+            "batch_size",
+            32,
+            256,
+            256
+          ]
+        },
+        {
+          "name": "image_embeddings.1",
+          "dtype": "tensor(float)",
+          "shape": [
+            "batch_size",
+            64,
+            128,
+            128
+          ]
+        },
+        {
+          "name": "image_embeddings.2",
+          "dtype": "tensor(float)",
+          "shape": [
+            "batch_size",
+            256,
+            64,
+            64
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "iou_scores",
+          "dtype": "tensor(float)",
+          "shape": [
+            "batch_size",
+            "num_boxes_or_points",
+            3
+          ]
+        },
+        {
+          "name": "pred_masks",
+          "dtype": "tensor(float)",
+          "shape": [
+            "batch_size",
+            "num_boxes_or_points",
+            "num_masks",
+            "Slicepred_masks_dim_3",
+            "Slicepred_masks_dim_4"
+          ]
+        },
+        {
+          "name": "object_score_logits",
+          "dtype": "tensor(float)",
+          "shape": [
+            "batch_size",
+            "num_boxes_or_points",
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "prompt_behavior": {
+    "points_only_accepts_zero_boxes": true,
+    "box_only_accepts_zero_points": true,
+    "box_only_requires_padding_point": false,
+    "point_and_box_together": true,
+    "multiple_foreground_background_points": true,
+    "has_previous_mask_input": false,
+    "box_only_note": "The mandatory ONNX point inputs use zero-length axes. They match Sam2Model with explicit empty point tensors. Sam2Processor omits point arguments for box-only input; that changes raw scores slightly but not the selected post-processed binary mask."
+  },
+  "encoder_parity": [
+    {
+      "image": "images/non-square.png",
+      "original_size": [
+        640,
+        480
+      ],
+      "embedding_shapes": [
+        [
+          1,
+          32,
+          256,
+          256
+        ],
+        [
+          1,
+          64,
+          128,
+          128
+        ],
+        [
+          1,
+          256,
+          64,
+          64
+        ]
+      ],
+      "embedding_max_abs_diff": [
+        1.2693926692008972e-06,
+        7.584691047668457e-06,
+        8.881092071533203e-06
+      ]
+    },
+    {
+      "image": "images/square.png",
+      "original_size": [
+        512,
+        512
+      ],
+      "embedding_shapes": [
+        [
+          1,
+          32,
+          256,
+          256
+        ],
+        [
+          1,
+          64,
+          128,
+          128
+        ],
+        [
+          1,
+          256,
+          64,
+          64
+        ]
+      ],
+      "embedding_max_abs_diff": [
+        1.0095536708831787e-06,
+        7.048249244689941e-06,
+        1.5854835510253906e-05
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "name": "one-point",
+      "image": "images/non-square.png",
+      "mask": "masks/one-point.png",
+      "original_image_size": [
+        640,
+        480
+      ],
+      "prompt_original_coordinates": {
+        "points": [
+          [
+            250.0,
+            220.0
+          ]
+        ],
+        "labels": [
+          1
+        ],
+        "boxes": []
+      },
+      "onnx_prompt_shapes": {
+        "input_points": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "input_labels": [
+          1,
+          1,
+          1
+        ],
+        "input_boxes": [
+          1,
+          0,
+          4
+        ]
+      },
+      "iou_scores": [
+        0.8981390595436096,
+        0.9539327621459961,
+        0.9543472528457642
+      ],
+      "selected_mask_index": 2,
+      "object_score_logits": [
+        24.129636764526367
+      ],
+      "parity": {
+        "contract_pytorch_iou_scores_max_abs_diff": 2.980232238769531e-07,
+        "contract_pytorch_mask_logits_max_abs_diff": 7.05718994140625e-05,
+        "contract_pytorch_object_score_max_abs_diff": 1.9073486328125e-06,
+        "contract_pytorch_binary_mask_iou": 1.0,
+        "canonical_processor_pytorch_iou_scores_max_abs_diff": 2.980232238769531e-07,
+        "canonical_processor_pytorch_binary_mask_iou": 1.0
+      }
+    },
+    {
+      "name": "box-plus-point",
+      "image": "images/non-square.png",
+      "mask": "masks/box-plus-point.png",
+      "original_image_size": [
+        640,
+        480
+      ],
+      "prompt_original_coordinates": {
+        "points": [
+          [
+            250.0,
+            220.0
+          ]
+        ],
+        "labels": [
+          1
+        ],
+        "boxes": [
+          [
+            105.0,
+            65.0,
+            405.0,
+            375.0
+          ]
+        ]
+      },
+      "onnx_prompt_shapes": {
+        "input_points": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "input_labels": [
+          1,
+          1,
+          1
+        ],
+        "input_boxes": [
+          1,
+          1,
+          4
+        ]
+      },
+      "iou_scores": [
+        0.9833592772483826,
+        0.9520447850227356,
+        0.9859837889671326
+      ],
+      "selected_mask_index": 2,
+      "object_score_logits": [
+        23.45663070678711
+      ],
+      "parity": {
+        "contract_pytorch_iou_scores_max_abs_diff": 5.960464477539063e-08,
+        "contract_pytorch_mask_logits_max_abs_diff": 4.1961669921875e-05,
+        "contract_pytorch_object_score_max_abs_diff": 3.814697265625e-06,
+        "contract_pytorch_binary_mask_iou": 1.0,
+        "canonical_processor_pytorch_iou_scores_max_abs_diff": 9.250640869140625e-05,
+        "canonical_processor_pytorch_binary_mask_iou": 0.9997465078115619
+      }
+    },
+    {
+      "name": "two-points-fg-bg",
+      "image": "images/square.png",
+      "mask": "masks/two-points-fg-bg.png",
+      "original_image_size": [
+        512,
+        512
+      ],
+      "prompt_original_coordinates": {
+        "points": [
+          [
+            180.0,
+            260.0
+          ],
+          [
+            390.0,
+            120.0
+          ]
+        ],
+        "labels": [
+          1,
+          0
+        ],
+        "boxes": []
+      },
+      "onnx_prompt_shapes": {
+        "input_points": [
+          1,
+          1,
+          2,
+          2
+        ],
+        "input_labels": [
+          1,
+          1,
+          2
+        ],
+        "input_boxes": [
+          1,
+          0,
+          4
+        ]
+      },
+      "iou_scores": [
+        0.742595374584198,
+        0.9724228382110596,
+        0.9437704682350159
+      ],
+      "selected_mask_index": 1,
+      "object_score_logits": [
+        23.96347427368164
+      ],
+      "parity": {
+        "contract_pytorch_iou_scores_max_abs_diff": 1.0728836059570312e-06,
+        "contract_pytorch_mask_logits_max_abs_diff": 9.5367431640625e-05,
+        "contract_pytorch_object_score_max_abs_diff": 0.0,
+        "contract_pytorch_binary_mask_iou": 1.0,
+        "canonical_processor_pytorch_iou_scores_max_abs_diff": 1.0728836059570312e-06,
+        "canonical_processor_pytorch_binary_mask_iou": 1.0
+      }
+    },
+    {
+      "name": "one-box",
+      "image": "images/square.png",
+      "mask": "masks/one-box.png",
+      "original_image_size": [
+        512,
+        512
+      ],
+      "prompt_original_coordinates": {
+        "points": [],
+        "labels": [],
+        "boxes": [
+          [
+            70.0,
+            115.0,
+            295.0,
+            405.0
+          ]
+        ]
+      },
+      "onnx_prompt_shapes": {
+        "input_points": [
+          1,
+          1,
+          0,
+          2
+        ],
+        "input_labels": [
+          1,
+          1,
+          0
+        ],
+        "input_boxes": [
+          1,
+          1,
+          4
+        ]
+      },
+      "iou_scores": [
+        0.8867747783660889,
+        0.19010284543037415,
+        0.8146049976348877
+      ],
+      "selected_mask_index": 0,
+      "object_score_logits": [
+        19.59559440612793
+      ],
+      "parity": {
+        "contract_pytorch_iou_scores_max_abs_diff": 3.2782554626464844e-06,
+        "contract_pytorch_mask_logits_max_abs_diff": 5.14984130859375e-05,
+        "contract_pytorch_object_score_max_abs_diff": 1.71661376953125e-05,
+        "contract_pytorch_binary_mask_iou": 1.0,
+        "canonical_processor_pytorch_iou_scores_max_abs_diff": 0.0006542801856994629,
+        "canonical_processor_pytorch_binary_mask_iou": 1.0
+      }
+    }
+  ]
+}

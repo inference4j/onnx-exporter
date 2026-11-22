@@ -39,6 +39,7 @@ from exporter.models import distilbert_ner  # noqa: F401
 from exporter.models import bert_base_ner  # noqa: F401
 from exporter.models import bge_base_en_v1_5  # noqa: F401
 from exporter.models import gte_base_en_v1_5  # noqa: F401
+from exporter.models import nomic_embed_text_v1_5  # noqa: F401
 from exporter.models import depth_anything_v2_small  # noqa: F401
 from exporter.models import depth_anything_v2_base  # noqa: F401
 from exporter.models import punctuation_fullstop_truecase_english  # noqa: F401
@@ -54,3 +55,4 @@ from exporter.models import yolox  # noqa: F401
 from exporter.models import picodet  # noqa: F401
 from exporter.models import deberta_v3_zeroshot  # noqa: F401
 from exporter.models import gliner  # noqa: F401
+from exporter.models import sam2  # noqa: F401
