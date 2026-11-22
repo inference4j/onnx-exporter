@@ -32,3 +32,4 @@ ULTRALYTICS_CODE = "[ultralytics/ultralytics](https://github.com/ultralytics/ult
 COCO = "COCO 2017 (80 classes)"
 UNCHANGED = "None: files copied unchanged"
 YOLOX_CODE = "[Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), Apache-2.0"
+PADDLEDETECTION_CODE = "[PaddlePaddle/PaddleDetection](https://github.com/PaddlePaddle/PaddleDetection), Apache-2.0"

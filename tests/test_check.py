@@ -248,3 +248,26 @@ class TestHashPinnedUrls:
         _verify_sha256(artifact, hashlib.sha256(b"not the model").hexdigest())
         with pytest.raises(RuntimeError, match="does not match"):
             _verify_sha256(artifact, "0" * 64)
+
+
+class TestPicoDetModels:
+    def test_sizes_mirror_the_pinned_exports_without_post_processing(self):
+        from exporter import registry
+        import exporter.models  # noqa: F401
+
+        for size in ("s", "m"):
+            model = registry.get(f"picodet-{size}")
+            assert model.repo_id == f"inference4j/picodet-{size}"
+            [mapping] = model.files
+            assert mapping.src.endswith(f"/picodet_{size}_416_coco_lcnet.onnx")
+            assert len(mapping.sha256) == 64
+
+    def test_card_documents_the_decode(self):
+        from exporter import registry
+        import exporter.models  # noqa: F401
+
+        card = registry.get("picodet-m").render_card()
+        assert "`image`: `[1, 3, 416, 416]`" in card
+        assert "class-aware NMS, IoU 0.6" in card
+        assert "PicoDetDetector.m()" in card
+        assert "Weights removed from the graph inputs" in card
