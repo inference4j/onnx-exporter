@@ -176,6 +176,10 @@ Metadata could not settle the comparison. Two causes:
 - **An unversioned source.** `craft-mlt-25k` pulls from Google Drive, which exposes no
   revision at all — its sha256 *is* its version. `--deep` compares against the cached
   `.pth` when present.
+- **A GitHub release asset.** The `yolox-*` mirrors copy release assets, which have no
+  commit to pin. Each `FileMapping` declares the asset's `sha256`; staging refuses other
+  bytes, the first publish records the hash as `pinned-by-hash`, and `--deep` re-hashes
+  the asset URL against it.
 
 ---
 

@@ -31,3 +31,4 @@ RTDETR_CODE = "[lyuwenyu/RT-DETR](https://github.com/lyuwenyu/RT-DETR), Apache-2
 ULTRALYTICS_CODE = "[ultralytics/ultralytics](https://github.com/ultralytics/ultralytics), AGPL-3.0"
 COCO = "COCO 2017 (80 classes)"
 UNCHANGED = "None: files copied unchanged"
+YOLOX_CODE = "[Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), Apache-2.0"

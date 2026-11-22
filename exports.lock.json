@@ -3579,5 +3579,86 @@
       }
     },
     "exported_at": null
+  },
+  "yolox-nano": {
+    "repo_id": "inference4j/yolox-nano",
+    "source": {
+      "type": "url",
+      "repo": "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_nano.onnx",
+      "revision": "0.1.1rc0"
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {
+      "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_nano.onnx": {
+        "size": 3659407,
+        "sha256": "c789161ed43c8269fcd4e67c67eeeb4e80c622da2eb296a20bc6007bd18a0b7d"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 3180,
+        "blob_id": "7ecd9c14c09da143a3a64d800bddd07cc6ff078b"
+      },
+      "model.onnx": {
+        "size": 3659407,
+        "sha256": "c789161ed43c8269fcd4e67c67eeeb4e80c622da2eb296a20bc6007bd18a0b7d",
+        "blob_id": "75579ee566ff35121cf7f1de81ef18874bb0119e"
+      }
+    },
+    "exported_at": "2026-11-22T01:04:39+00:00"
+  },
+  "yolox-s": {
+    "repo_id": "inference4j/yolox-s",
+    "source": {
+      "type": "url",
+      "repo": "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_s.onnx",
+      "revision": "0.1.1rc0"
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {
+      "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_s.onnx": {
+        "size": 35858002,
+        "sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 3155,
+        "blob_id": "6f2df2d3b022298c873613ba6420fe72f2661520"
+      },
+      "model.onnx": {
+        "size": 35858002,
+        "sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+        "blob_id": "0a22cdd50d3c197d11509acea3ee192d18ea9ffe"
+      }
+    },
+    "exported_at": "2026-11-22T01:04:49+00:00"
+  },
+  "yolox-tiny": {
+    "repo_id": "inference4j/yolox-tiny",
+    "source": {
+      "type": "url",
+      "repo": "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_tiny.onnx",
+      "revision": "0.1.1rc0"
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {
+      "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_tiny.onnx": {
+        "size": 20219662,
+        "sha256": "427cc366d34e27ff7a03e2899b5e3671425c262ea2291f88bb942bc1cc70b0f7"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 3180,
+        "blob_id": "d74f683689494ece489fc302981fe449feaa8fd1"
+      },
+      "model.onnx": {
+        "size": 20219662,
+        "sha256": "427cc366d34e27ff7a03e2899b5e3671425c262ea2291f88bb942bc1cc70b0f7",
+        "blob_id": "0e3b88ab7a358ce8f7ccecb50413f8822569013c"
+      }
+    },
+    "exported_at": "2026-11-22T01:04:47+00:00"
   }
 }
