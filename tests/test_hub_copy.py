@@ -65,3 +65,28 @@ def test_retry_retries_transport_errors(monkeypatch):
 def test_retry_does_not_hide_non_network_errors():
     with pytest.raises(ValueError, match="invalid copy"):
         _hub_copy._retry(lambda: (_ for _ in ()).throw(ValueError("invalid copy")))
+
+
+def test_copy_mirror_adds_license_when_given(monkeypatch, tmp_path: Path):
+    api = FakeApi()
+    card = tmp_path / "README.md"
+    card.write_text("# model\n")
+    license = tmp_path / "LICENSE"
+    license.write_text("license\n")
+    monkeypatch.setattr(_hub_copy, "HfApi", lambda: api)
+    monkeypatch.setattr(_hub_copy, "CommitOperationCopy", FakeOperation)
+    monkeypatch.setattr(_hub_copy, "CommitOperationAdd", FakeOperation)
+
+    _hub_copy.copy_mirror(
+        source_repo="upstream/model",
+        source_revision=None,
+        target_repo="inference4j/model",
+        files=[["onnx/model.onnx", "model.onnx"]],
+        card=card,
+        message="Upload model",
+        license=license,
+    )
+
+    _, readme, license_op = api.commit["operations"]
+    assert license_op.path_in_repo == "LICENSE"
+    assert license_op.path_or_fileobj == license

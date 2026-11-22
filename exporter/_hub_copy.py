@@ -55,6 +55,7 @@ def copy_mirror(
     files: list[list[str]],
     card: Path,
     message: str,
+    license: Path | None = None,
 ) -> None:
     api = HfApi()
 
@@ -72,6 +73,10 @@ def copy_mirror(
         operations.append(
             CommitOperationAdd(path_in_repo="README.md", path_or_fileobj=card)
         )
+        if license is not None:
+            operations.append(
+                CommitOperationAdd(path_in_repo="LICENSE", path_or_fileobj=license)
+            )
         return api.create_commit(
             repo_id=target_repo,
             operations=operations,
@@ -89,6 +94,7 @@ def main() -> None:
     parser.add_argument("--files", required=True)
     parser.add_argument("--card", type=Path, required=True)
     parser.add_argument("--message", required=True)
+    parser.add_argument("--license", type=Path)
     args = parser.parse_args()
     copy_mirror(
         source_repo=args.source_repo,
@@ -97,6 +103,7 @@ def main() -> None:
         files=json.loads(args.files),
         card=args.card,
         message=args.message,
+        license=args.license,
     )
 
 

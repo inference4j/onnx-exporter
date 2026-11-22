@@ -51,6 +51,10 @@ class BaseModel(ABC):
     # detection, but its exports are not reproducible; upload.process() says so.
     supports_pinning: bool = True
 
+    # A license text in exporter/license_texts/ (for example "AGPL-3.0"), published as
+    # LICENSE with the model. None publishes no LICENSE file.
+    license_file: str | None = None
+
     @abstractmethod
     def stage(self, staging_dir: Path) -> None:
         """Download/export model files into the staging directory."""
@@ -68,6 +72,12 @@ class BaseModel(ABC):
         """Render the model card as markdown."""
         from exporter.card import render
         return render(self.card)
+
+    def license_path(self) -> Path | None:
+        """The license text published as LICENSE next to the model, or None."""
+        if self.license_file is None:
+            return None
+        return Path(__file__).with_name("license_texts") / f"{self.license_file}.txt"
 
 
 def _pin_url(url: str, revision: str | None) -> str:

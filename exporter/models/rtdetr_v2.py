@@ -1,13 +1,6 @@
 from exporter.base import FileMapping, MirroredModel, ModelCard
 from exporter.registry import register
-
-_JAVA_USAGE = """\
-try (RtDetr model = RtDetr.fromPretrained("inference4j/rtdetr-v2-r18vd")) {
-    List<Detection> detections = model.detect(Path.of("street.jpg"));
-    detections.forEach(d -> System.out.printf("%s (%.0f%%) at [%.0f, %.0f, %.0f, %.0f]%n",
-        d.label(), d.confidence() * 100,
-        d.box().x1(), d.box().y1(), d.box().x2(), d.box().y2()));
-}"""
+from exporter.models._detection import COCO, RTDETR_CODE, UNCHANGED, java_usage, provenance
 
 _LICENSE_TEXT = (
     "This model is licensed under the [Apache License 2.0]"
@@ -44,16 +37,24 @@ class RtDetrV2R18vd(MirroredModel):
         tags=["rtdetr", "rtdetr-v2", "object-detection", "coco", "computer-vision", "apache-2.0"],
         original_source_url="https://huggingface.co/PekingU/rtdetr_v2_r18vd",
         original_author="Peking University (RT-DETRv2)",
-        java_usage=_JAVA_USAGE,
+        java_usage=java_usage("DetrDetector.rtDetrV2()"),
         model_details={
             "Architecture": "RT-DETRv2 ResNet-18 vd (transformer object detector)",
             "Task": "Object detection (COCO 80 classes)",
+            "COCO AP": "48.1 (val2017, as reported by the RT-DETR authors)",
             "License note": "Apache-2.0 (permissive non-AGPL alternative to YOLOv8/YOLO26)",
             "Input": "`pixel_values`: `[batch, 3, 640, 640]` — RGB, normalized 0-1 (bilinear resize, no letterbox)",
             "Output": "`logits`: `[batch, 300, 80]` (raw logits, apply sigmoid) and `pred_boxes`: `[batch, 300, 4]` (normalized [cx, cy, w, h])",
             "Post-processing": "Convert [cx, cy, w, h] to [x1, y1, x2, y2] scaled to image dimensions; filter by score threshold (> 0.5). No NMS required.",
             "Original framework": "PyTorch (PekingU / Baidu RT-DETR)",
         },
+        extra_sections=provenance(
+            code=RTDETR_CODE,
+            weights="[PekingU/rtdetr_v2_r18vd](https://huggingface.co/PekingU/rtdetr_v2_r18vd), Apache-2.0",
+            onnx="[onnx-community/rtdetr_v2_r18vd-ONNX](https://huggingface.co/onnx-community/rtdetr_v2_r18vd-ONNX)",
+            training_data=COCO,
+            conversion=UNCHANGED,
+        ),
         license_text=_LICENSE_TEXT,
     )
 

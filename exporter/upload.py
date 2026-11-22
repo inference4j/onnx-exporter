@@ -9,7 +9,7 @@ import time
 from pathlib import Path
 from typing import Callable, TypeVar
 
-from huggingface_hub import HfApi
+from huggingface_hub import CommitOperationAdd, HfApi
 from requests.exceptions import ConnectionError as RequestsConnectionError
 from requests.exceptions import Timeout as RequestsTimeout
 
@@ -68,7 +68,17 @@ def _copy_helper_python() -> Path:
     return python
 
 
-def _copy_mirror(model: MirroredModel, card_path: Path) -> None:
+def _write_license(model: BaseModel, directory: Path) -> Path | None:
+    """Copy the model's license text into a directory as LICENSE, if it has one."""
+    source = model.license_path()
+    if source is None:
+        return None
+    target = directory / "LICENSE"
+    shutil.copyfile(source, target)
+    return target
+
+
+def _copy_mirror(model: MirroredModel, card_path: Path, license_path: Path | None = None) -> None:
     """Publish an unmodified HF mirror using an isolated, modern Hub client."""
     revision = f"@{model.revision}" if model.revision else ""
     print(f"  Copying files server-side from {model.source_repo}{revision} ...")
@@ -83,6 +93,8 @@ def _copy_mirror(model: MirroredModel, card_path: Path) -> None:
     ]
     if model.revision:
         cmd.extend(["--source-revision", model.revision])
+    if license_path is not None:
+        cmd.extend(["--license", str(license_path)])
     subprocess.run(cmd, check=True)
 
 
@@ -181,6 +193,7 @@ def stage_to(model: BaseModel, cache_dir: Path, update: bool = False) -> Path:
     print(f"  Staging into {target}")
     model.stage(target)
     (target / "README.md").write_text(model.render_card())
+    _write_license(model, target)
 
     print(f"\n  Staged {model.name} for local testing:")
     for f in sorted(target.iterdir()):
@@ -211,6 +224,7 @@ def process(model: BaseModel, dry_run: bool = False, update: bool = False) -> No
         card_path = staging_dir / "README.md"
         card_path.write_text(card_text)
         print(f"  Model card written to {card_path}")
+        license_path = _write_license(model, staging_dir)
 
         if dry_run:
             print(f"\n  [DRY RUN] Would upload to {model.repo_id}")
@@ -230,7 +244,7 @@ def process(model: BaseModel, dry_run: bool = False, update: bool = False) -> No
         api.create_repo(model.repo_id, exist_ok=True)
 
         if server_side_copy:
-            _copy_mirror(model, card_path)
+            _copy_mirror(model, card_path, license_path)
         else:
             print(f"  Uploading files ...")
             _retry_hub_write(
@@ -251,3 +265,47 @@ def process(model: BaseModel, dry_run: bool = False, update: bool = False) -> No
             print(f"  Cleaned up staging directory")
         elif not dry_run:
             print(f"  Upload failed; staging directory preserved at {staging_dir}")
+
+
+def publish_card(model: BaseModel, dry_run: bool = False) -> None:
+    """Publish only the model card, and the LICENSE file if the model has one.
+
+    The model files are left untouched. The lockfile's record of the published files is
+    refreshed afterwards, so `check` keeps comparing against what is live.
+    """
+    print(f"\nPublishing card: {model.name} -> {model.repo_id}")
+    api = HfApi()
+    with tempfile.TemporaryDirectory(prefix=f"inference4j-card-{model.name}-") as tmp:
+        directory = Path(tmp)
+        card_path = directory / "README.md"
+        card_path.write_text(model.render_card())
+        operations = [CommitOperationAdd(path_in_repo="README.md", path_or_fileobj=str(card_path))]
+        license_path = _write_license(model, directory)
+        if license_path is not None:
+            operations.append(CommitOperationAdd(path_in_repo="LICENSE", path_or_fileobj=str(license_path)))
+        if dry_run:
+            print(f"  [DRY RUN] Would commit {', '.join(op.path_in_repo for op in operations)}")
+            return
+        _retry_hub_write(
+            "card commit",
+            lambda: api.create_commit(
+                repo_id=model.repo_id,
+                operations=operations,
+                commit_message=f"Update {model.name} model card",
+            ),
+        )
+    print(f"  Updated https://huggingface.co/{model.repo_id}")
+    _refresh_published(model, api)
+
+
+def _refresh_published(model: BaseModel, api: HfApi) -> None:
+    """Re-record the published file hashes of a model already in the lockfile."""
+    from exporter.check import file_map
+
+    entry = lock.get(model.name)
+    if entry is None:
+        return
+    published = file_map(api.model_info(model.repo_id, files_metadata=True))
+    entry.published = {n: h for n, h in published.items() if not n.startswith(".")}
+    lock.put(model.name, entry)
+    print(f"  Lockfile: published files of {model.name} refreshed")
