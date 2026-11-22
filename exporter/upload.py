@@ -145,6 +145,9 @@ def _record(model: BaseModel, revision: str | None, api: HfApi) -> None:
     is_mirror = isinstance(model, MirroredModel)
 
     if model.source_type == "url":
+        if model.files and all(f.sha256 for f in model.files):
+            _record_hash_pinned(model, api)
+            return
         entry = lock.get(model.name)
         if entry and revision:
             entry.source.revision = revision
@@ -173,6 +176,49 @@ def _record(model: BaseModel, revision: str | None, api: HfApi) -> None:
         exported_at=lock.now(),
     ))
     print(f"  Locked to {model.source_repo}@{info.sha[:8]}")
+
+
+def _release_tag(url: str) -> str | None:
+    """The tag of a GitHub release asset URL (`.../releases/download/<tag>/<file>`)."""
+    parts = url.split("/")
+    if "releases" in parts:
+        i = parts.index("releases")
+        if parts[i + 1:i + 2] == ["download"] and len(parts) > i + 2:
+            return parts[i + 2]
+    return None
+
+
+def _record_hash_pinned(model: BaseModel, api: HfApi) -> None:
+    """Lock a URL mirror whose files carry their own sha256, such as GitHub release assets.
+
+    A release asset has no commit to pin, so the declared hash is the version: stage()
+    refuses other bytes, and `check --deep` re-hashes the URL against this entry.
+    """
+    from exporter.check import file_map
+
+    try:
+        published = file_map(api.model_info(model.repo_id, files_metadata=True))
+    except Exception as exc:
+        print(f"  Warning: could not record provenance ({type(exc).__name__})")
+        return
+
+    tracked = {}
+    for f in model.files:
+        ours = published.get(f.dst)
+        if ours is not None and ours.sha256 not in (None, f.sha256):
+            print(f"  Warning: published {f.dst} does not hash-match {f.src}")
+        tracked[f.src] = lock.FileHash(size=ours.size if ours else 0, sha256=f.sha256)
+
+    lock.put(model.name, lock.LockEntry(
+        repo_id=model.repo_id,
+        source=lock.Source(type="url", repo=model.source_repo,
+                           revision=_release_tag(model.files[0].src)),
+        provenance=lock.PINNED_BY_HASH,
+        tracked=tracked,
+        published={n: h for n, h in published.items() if not n.startswith(".")},
+        exported_at=lock.now(),
+    ))
+    print(f"  Locked {len(tracked)} file(s) by sha256")
 
 
 def stage_to(model: BaseModel, cache_dir: Path, update: bool = False) -> Path:

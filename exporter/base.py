@@ -12,9 +12,14 @@ from huggingface_hub import hf_hub_download
 
 @dataclass
 class FileMapping:
-    """Maps a source file to a destination filename."""
+    """Maps a source file to a destination filename.
+
+    `sha256` pins a URL source that has no commit to pin, such as a GitHub release asset:
+    staging fails if the downloaded bytes differ, and the hash is recorded in the lockfile.
+    """
     src: str
     dst: str
+    sha256: str | None = None
 
 
 @dataclass
@@ -98,6 +103,20 @@ def _pin_url(url: str, revision: str | None) -> str:
     return "/".join(parts)
 
 
+def _verify_sha256(path: Path, expected: str) -> None:
+    """Fail when a downloaded artifact is not the one the model definition pins."""
+    import hashlib
+
+    digest = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            digest.update(chunk)
+    if digest.hexdigest() != expected:
+        raise RuntimeError(
+            f"{path.name}: sha256 {digest.hexdigest()} does not match the pinned {expected}"
+        )
+
+
 class MirroredModel(BaseModel):
     """A model mirrored from an upstream source (HuggingFace repo or URL)."""
     source_repo: str
@@ -128,6 +147,8 @@ class MirroredModel(BaseModel):
                 url = _pin_url(f.src, self.revision)
                 print(f"  Downloading {url} ...")
                 urllib.request.urlretrieve(url, dst_path)
+                if f.sha256 is not None:
+                    _verify_sha256(dst_path, f.sha256)
                 size_mb = dst_path.stat().st_size / 1024 / 1024
                 print(f"    -> {dst_path} ({size_mb:.1f} MB)")
 
