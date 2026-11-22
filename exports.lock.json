@@ -2469,6 +2469,60 @@
     },
     "exported_at": "2026-10-11T23:14:04+00:00"
   },
+  "picodet-m": {
+    "repo_id": "inference4j/picodet-m",
+    "source": {
+      "type": "url",
+      "repo": "https://paddledet.bj.bcebos.com/deploy/third_engine/picodet_m_416_coco_lcnet.onnx",
+      "revision": null
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {
+      "https://paddledet.bj.bcebos.com/deploy/third_engine/picodet_m_416_coco_lcnet.onnx": {
+        "size": 13879463,
+        "sha256": "73175223e66d458a341be0443cb469d8ae1d83a86c1a0fe4d29b85e0770830d6"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 3878,
+        "blob_id": "9ccffda1c5410ce2293d963d28772de044da4d29"
+      },
+      "model.onnx": {
+        "size": 13872684,
+        "sha256": "b2a83430eec58390fddada816ea1a0d67ae9019bed0a399ff4c4528bb2fc5753",
+        "blob_id": "223c13be6288f7cc0f94cd5895d48ea772c9ac9b"
+      }
+    },
+    "exported_at": "2026-11-22T01:16:02+00:00"
+  },
+  "picodet-s": {
+    "repo_id": "inference4j/picodet-s",
+    "source": {
+      "type": "url",
+      "repo": "https://paddledet.bj.bcebos.com/deploy/third_engine/picodet_s_416_coco_lcnet.onnx",
+      "revision": null
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {
+      "https://paddledet.bj.bcebos.com/deploy/third_engine/picodet_s_416_coco_lcnet.onnx": {
+        "size": 4781221,
+        "sha256": "d080f8d9931bf9164934a7863e989605c7b3aa7751e35be406e20aa6b68256a7"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 3878,
+        "blob_id": "f1877f9611dabfea3b464ec7839ce34f2405933f"
+      },
+      "model.onnx": {
+        "size": 4775446,
+        "sha256": "c71d289dccb5dc6ba77420110c7fe3f6d575dd18f06005376015dfef443fb043",
+        "blob_id": "29933d2c9c4661675b080d0312c73b73a94e6c41"
+      }
+    },
+    "exported_at": "2026-11-22T01:15:49+00:00"
+  },
   "pp-ocrv6-small-det": {
     "repo_id": "inference4j/pp-ocrv6-small-det",
     "source": {
