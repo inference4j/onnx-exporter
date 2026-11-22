@@ -247,10 +247,37 @@ def _check_non_hf(model, entry: lock.LockEntry, source: str, deep: bool) -> Resu
                                   f"{path} bytes differ from the pinned hash", changed=[path])
         return Result(model.name, OK, source, f"pinned to {sha[:8]}")
 
+    if entry.source.type == "url" and entry.provenance == lock.PINNED_BY_HASH:
+        return _check_url_hashes(model, entry, source, deep)
+
     # Google Drive (craft): the artifact hash is the only version there is.
     if not deep:
         return Result(model.name, UNVERIFIABLE, source, "unversioned source — use --deep")
     return _check_by_download(model, entry, source)
+
+
+def _check_url_hashes(model, entry: lock.LockEntry, source: str, deep: bool) -> Result:
+    """URL artifacts pinned by sha256 (GitHub release assets), which have no commit to compare."""
+    mismatch = _check_published(model, entry, HfApi())
+    if mismatch:
+        return Result(model.name, PUBLISHED_MISMATCH, source, mismatch)
+    if not deep:
+        return Result(model.name, UNVERIFIABLE, source, "pinned by sha256 — use --deep")
+    from exporter.bootstrap import _hash_url
+
+    for url, expected in entry.tracked.items():
+        name = url.rsplit("/", 1)[-1]
+        digest = _hash_url(url, limit=512 * 1024 * 1024)
+        if digest is None:
+            return Result(model.name, UNVERIFIABLE, source, f"cannot fetch {name}")
+        if expected.size and digest[1] != expected.size:
+            # A slow server can end the transfer early; a short read is not evidence of drift.
+            return Result(model.name, UNVERIFIABLE, source,
+                          f"{name}: fetched {digest[1]} of {expected.size} bytes")
+        if digest[0] != expected.sha256:
+            return Result(model.name, DRIFT, source, f"{name} bytes differ from the pinned hash",
+                          changed=[url])
+    return Result(model.name, OK, source, f"{len(entry.tracked)} file(s) match their pinned sha256")
 
 
 def _check_by_download(model, entry: lock.LockEntry, source: str) -> Result:

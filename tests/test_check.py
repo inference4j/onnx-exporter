@@ -201,3 +201,73 @@ class TestGlinerModels:
         assert upload._resolve_revision(model, update=False, api=None) == (
             "8142fb00740ccea973e64b1272949ff48653df5e"
         )
+
+
+class TestYoloXModels:
+    def test_sizes_mirror_the_pinned_release_assets(self):
+        from exporter import registry
+        import exporter.models  # noqa: F401
+
+        for size in ("nano", "tiny", "s"):
+            model = registry.get(f"yolox-{size}")
+            assert model.repo_id == f"inference4j/yolox-{size}"
+            assert model.source_type == "url"
+            [mapping] = model.files
+            assert mapping.src.endswith(f"/releases/download/0.1.1rc0/yolox_{size}.onnx")
+            assert mapping.dst == "model.onnx"
+            assert len(mapping.sha256) == 64
+
+    def test_cards_document_the_decode_and_provenance(self):
+        from exporter import registry
+        import exporter.models  # noqa: F401
+
+        card = registry.get("yolox-s").render_card()
+        assert "`images`: `[1, 3, 640, 640]`" in card
+        assert "`output`: `[1, 8400, 85]`" in card
+        assert "pad right and bottom with 114" in card
+        assert "objectness × class score" in card
+        assert "YoloXDetector.s()" in card
+        assert "## Provenance" in card
+
+
+class TestHashPinnedUrls:
+    def test_release_tag_is_read_from_the_asset_url(self):
+        from exporter.upload import _release_tag
+
+        url = "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_s.onnx"
+        assert _release_tag(url) == "0.1.1rc0"
+        assert _release_tag("https://github.com/o/r/raw/main/m.onnx") is None
+
+    def test_staging_rejects_bytes_that_do_not_match_the_pin(self, tmp_path):
+        import hashlib
+
+        from exporter.base import _verify_sha256
+
+        artifact = tmp_path / "model.onnx"
+        artifact.write_bytes(b"not the model")
+        _verify_sha256(artifact, hashlib.sha256(b"not the model").hexdigest())
+        with pytest.raises(RuntimeError, match="does not match"):
+            _verify_sha256(artifact, "0" * 64)
+
+
+class TestPicoDetModels:
+    def test_sizes_mirror_the_pinned_exports_without_post_processing(self):
+        from exporter import registry
+        import exporter.models  # noqa: F401
+
+        for size in ("s", "m"):
+            model = registry.get(f"picodet-{size}")
+            assert model.repo_id == f"inference4j/picodet-{size}"
+            [mapping] = model.files
+            assert mapping.src.endswith(f"/picodet_{size}_416_coco_lcnet.onnx")
+            assert len(mapping.sha256) == 64
+
+    def test_card_documents_the_decode(self):
+        from exporter import registry
+        import exporter.models  # noqa: F401
+
+        card = registry.get("picodet-m").render_card()
+        assert "`image`: `[1, 3, 416, 416]`" in card
+        assert "class-aware NMS, IoU 0.6" in card
+        assert "PicoDetDetector.m()" in card
+        assert "Weights removed from the graph inputs" in card

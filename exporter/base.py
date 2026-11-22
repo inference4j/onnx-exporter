@@ -12,9 +12,14 @@ from huggingface_hub import hf_hub_download
 
 @dataclass
 class FileMapping:
-    """Maps a source file to a destination filename."""
+    """Maps a source file to a destination filename.
+
+    `sha256` pins a URL source that has no commit to pin, such as a GitHub release asset:
+    staging fails if the downloaded bytes differ, and the hash is recorded in the lockfile.
+    """
     src: str
     dst: str
+    sha256: str | None = None
 
 
 @dataclass
@@ -51,6 +56,10 @@ class BaseModel(ABC):
     # detection, but its exports are not reproducible; upload.process() says so.
     supports_pinning: bool = True
 
+    # A license text in exporter/license_texts/ (for example "AGPL-3.0"), published as
+    # LICENSE with the model. None publishes no LICENSE file.
+    license_file: str | None = None
+
     @abstractmethod
     def stage(self, staging_dir: Path) -> None:
         """Download/export model files into the staging directory."""
@@ -69,6 +78,12 @@ class BaseModel(ABC):
         from exporter.card import render
         return render(self.card)
 
+    def license_path(self) -> Path | None:
+        """The license text published as LICENSE next to the model, or None."""
+        if self.license_file is None:
+            return None
+        return Path(__file__).with_name("license_texts") / f"{self.license_file}.txt"
+
 
 def _pin_url(url: str, revision: str | None) -> str:
     """Swap a GitHub raw URL's branch for a pinned commit sha.
@@ -86,6 +101,20 @@ def _pin_url(url: str, revision: str | None) -> str:
         return url
     parts[raw + 1] = revision
     return "/".join(parts)
+
+
+def _verify_sha256(path: Path, expected: str) -> None:
+    """Fail when a downloaded artifact is not the one the model definition pins."""
+    import hashlib
+
+    digest = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            digest.update(chunk)
+    if digest.hexdigest() != expected:
+        raise RuntimeError(
+            f"{path.name}: sha256 {digest.hexdigest()} does not match the pinned {expected}"
+        )
 
 
 class MirroredModel(BaseModel):
@@ -118,6 +147,8 @@ class MirroredModel(BaseModel):
                 url = _pin_url(f.src, self.revision)
                 print(f"  Downloading {url} ...")
                 urllib.request.urlretrieve(url, dst_path)
+                if f.sha256 is not None:
+                    _verify_sha256(dst_path, f.sha256)
                 size_mb = dst_path.stat().st_size / 1024 / 1024
                 print(f"    -> {dst_path} ({size_mb:.1f} MB)")
 

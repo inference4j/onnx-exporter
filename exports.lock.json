@@ -845,8 +845,8 @@
     },
     "published": {
       "README.md": {
-        "size": 2348,
-        "blob_id": "47525606b82d0de5b6460442c3ace7b29a185f4f"
+        "size": 2806,
+        "blob_id": "c3d318198a4e5fd48d299cd6d58b4a6d23ffe5ac"
       },
       "config.json": {
         "size": 6663,
@@ -889,8 +889,8 @@
     },
     "published": {
       "README.md": {
-        "size": 2356,
-        "blob_id": "f626940daa6f24477ab74ca34bfb0e4ba1d8d5f6"
+        "size": 2816,
+        "blob_id": "f49926278bd337e7d97e78bf4592de0ad3913766"
       },
       "config.json": {
         "size": 6657,
@@ -933,8 +933,8 @@
     },
     "published": {
       "README.md": {
-        "size": 2464,
-        "blob_id": "8d2d1e14c7ad4aa2edf2f115d401126ab4bfe9a2"
+        "size": 3026,
+        "blob_id": "415952bde414b851f229f74764fe6fafd66e3d4a"
       },
       "config.json": {
         "size": 6570,
@@ -977,8 +977,8 @@
     },
     "published": {
       "README.md": {
-        "size": 2288,
-        "blob_id": "0c45686d22d93ead7056331ac836f4a5ca1eb5c8"
+        "size": 2806,
+        "blob_id": "cd617d12d65054d22299b836278f4093d43abef6"
       },
       "config.json": {
         "size": 6656,
@@ -2505,6 +2505,60 @@
     },
     "exported_at": "2026-10-11T23:14:04+00:00"
   },
+  "picodet-m": {
+    "repo_id": "inference4j/picodet-m",
+    "source": {
+      "type": "url",
+      "repo": "https://paddledet.bj.bcebos.com/deploy/third_engine/picodet_m_416_coco_lcnet.onnx",
+      "revision": null
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {
+      "https://paddledet.bj.bcebos.com/deploy/third_engine/picodet_m_416_coco_lcnet.onnx": {
+        "size": 13879463,
+        "sha256": "73175223e66d458a341be0443cb469d8ae1d83a86c1a0fe4d29b85e0770830d6"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 3878,
+        "blob_id": "9ccffda1c5410ce2293d963d28772de044da4d29"
+      },
+      "model.onnx": {
+        "size": 13872684,
+        "sha256": "b2a83430eec58390fddada816ea1a0d67ae9019bed0a399ff4c4528bb2fc5753",
+        "blob_id": "223c13be6288f7cc0f94cd5895d48ea772c9ac9b"
+      }
+    },
+    "exported_at": "2026-11-22T01:16:02+00:00"
+  },
+  "picodet-s": {
+    "repo_id": "inference4j/picodet-s",
+    "source": {
+      "type": "url",
+      "repo": "https://paddledet.bj.bcebos.com/deploy/third_engine/picodet_s_416_coco_lcnet.onnx",
+      "revision": null
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {
+      "https://paddledet.bj.bcebos.com/deploy/third_engine/picodet_s_416_coco_lcnet.onnx": {
+        "size": 4781221,
+        "sha256": "d080f8d9931bf9164934a7863e989605c7b3aa7751e35be406e20aa6b68256a7"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 3878,
+        "blob_id": "f1877f9611dabfea3b464ec7839ce34f2405933f"
+      },
+      "model.onnx": {
+        "size": 4775446,
+        "sha256": "c71d289dccb5dc6ba77420110c7fe3f6d575dd18f06005376015dfef443fb043",
+        "blob_id": "29933d2c9c4661675b080d0312c73b73a94e6c41"
+      }
+    },
+    "exported_at": "2026-11-22T01:15:49+00:00"
+  },
   "pp-ocrv6-small-det": {
     "repo_id": "inference4j/pp-ocrv6-small-det",
     "source": {
@@ -2904,8 +2958,8 @@
     },
     "published": {
       "README.md": {
-        "size": 2273,
-        "blob_id": "22971e1310ebb1d87e0bf13bb4f46640f4b00885"
+        "size": 2779,
+        "blob_id": "a0908cbba2fb5f224ab02baceba5a572efedd5f2"
       },
       "config.json": {
         "size": 5731,
@@ -3650,6 +3704,14 @@
       }
     },
     "published": {
+      "LICENSE": {
+        "size": 34523,
+        "blob_id": "be3f7b28e564e7dd05eaf59d64adba1a4065ac0e"
+      },
+      "README.md": {
+        "size": 2222,
+        "blob_id": "76673fdb0e999b8f10fa2ba04e9575af511dccd2"
+      },
       "model.onnx": {
         "size": 9890454,
         "sha256": "cda08d9440217e243e075ee839f40383c59b3f973e493f9f6c7452922a69436e",
@@ -3674,6 +3736,14 @@
       }
     },
     "published": {
+      "LICENSE": {
+        "size": 34523,
+        "blob_id": "be3f7b28e564e7dd05eaf59d64adba1a4065ac0e"
+      },
+      "README.md": {
+        "size": 2066,
+        "blob_id": "76c52391f03aca54d6ca37701c7cf7214ba2df84"
+      },
       "model.onnx": {
         "size": 12834838,
         "sha256": "65158dad735be799c2466fa15e260c09558080bd530b42a8d0c3d1b419afd8b5",
@@ -3681,5 +3751,86 @@
       }
     },
     "exported_at": null
+  },
+  "yolox-nano": {
+    "repo_id": "inference4j/yolox-nano",
+    "source": {
+      "type": "url",
+      "repo": "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_nano.onnx",
+      "revision": "0.1.1rc0"
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {
+      "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_nano.onnx": {
+        "size": 3659407,
+        "sha256": "c789161ed43c8269fcd4e67c67eeeb4e80c622da2eb296a20bc6007bd18a0b7d"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 3180,
+        "blob_id": "7ecd9c14c09da143a3a64d800bddd07cc6ff078b"
+      },
+      "model.onnx": {
+        "size": 3659407,
+        "sha256": "c789161ed43c8269fcd4e67c67eeeb4e80c622da2eb296a20bc6007bd18a0b7d",
+        "blob_id": "75579ee566ff35121cf7f1de81ef18874bb0119e"
+      }
+    },
+    "exported_at": "2026-11-22T01:04:39+00:00"
+  },
+  "yolox-s": {
+    "repo_id": "inference4j/yolox-s",
+    "source": {
+      "type": "url",
+      "repo": "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_s.onnx",
+      "revision": "0.1.1rc0"
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {
+      "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_s.onnx": {
+        "size": 35858002,
+        "sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 3155,
+        "blob_id": "6f2df2d3b022298c873613ba6420fe72f2661520"
+      },
+      "model.onnx": {
+        "size": 35858002,
+        "sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+        "blob_id": "0a22cdd50d3c197d11509acea3ee192d18ea9ffe"
+      }
+    },
+    "exported_at": "2026-11-22T01:04:49+00:00"
+  },
+  "yolox-tiny": {
+    "repo_id": "inference4j/yolox-tiny",
+    "source": {
+      "type": "url",
+      "repo": "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_tiny.onnx",
+      "revision": "0.1.1rc0"
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {
+      "https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_tiny.onnx": {
+        "size": 20219662,
+        "sha256": "427cc366d34e27ff7a03e2899b5e3671425c262ea2291f88bb942bc1cc70b0f7"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 3180,
+        "blob_id": "d74f683689494ece489fc302981fe449feaa8fd1"
+      },
+      "model.onnx": {
+        "size": 20219662,
+        "sha256": "427cc366d34e27ff7a03e2899b5e3671425c262ea2291f88bb942bc1cc70b0f7",
+        "blob_id": "0e3b88ab7a358ce8f7ccecb50413f8822569013c"
+      }
+    },
+    "exported_at": "2026-11-22T01:04:47+00:00"
   }
 }

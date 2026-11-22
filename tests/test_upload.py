@@ -60,7 +60,7 @@ def test_direct_hf_mirror_uses_atomic_server_side_copy(monkeypatch, tmp_path):
     staging = _fixed_staging(monkeypatch, tmp_path)
     copies = []
     monkeypatch.setattr(upload, "HfApi", lambda: api)
-    monkeypatch.setattr(upload, "_copy_mirror", lambda model, card: copies.append((model, card)))
+    monkeypatch.setattr(upload, "_copy_mirror", lambda model, card, license=None: copies.append((model, card)))
     monkeypatch.setattr(upload, "_record", lambda *args: None)
 
     upload.process(DirectMirror())
@@ -124,3 +124,29 @@ def test_successful_generated_upload_cleans_staging(monkeypatch, tmp_path):
 
     assert api.upload_attempts == 1
     assert not staging.exists()
+
+
+def test_publish_card_commits_readme_and_license_only(monkeypatch, tmp_path):
+    commits = []
+
+    class CardApi:
+        def create_commit(self, **kwargs):
+            commits.append(kwargs)
+
+    model = DirectMirror()
+    model.license_file = "AGPL-3.0"
+    monkeypatch.setattr(upload, "HfApi", lambda: CardApi())
+    monkeypatch.setattr(upload, "_refresh_published", lambda *args: None)
+
+    upload.publish_card(model)
+
+    assert len(commits) == 1
+    paths = [op.path_in_repo for op in commits[0]["operations"]]
+    assert paths == ["README.md", "LICENSE"]
+
+
+def test_license_path_points_at_a_bundled_text():
+    model = DirectMirror()
+    assert model.license_path() is None
+    model.license_file = "AGPL-3.0"
+    assert model.license_path().read_text().startswith("                    GNU AFFERO GENERAL PUBLIC LICENSE")
