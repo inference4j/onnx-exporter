@@ -1,0 +1,61 @@
+{
+  "name": "two-points-fg-bg",
+  "image": "images/square.png",
+  "mask": "masks/two-points-fg-bg.png",
+  "original_image_size": [
+    512,
+    512
+  ],
+  "prompt_original_coordinates": {
+    "points": [
+      [
+        180.0,
+        260.0
+      ],
+      [
+        390.0,
+        120.0
+      ]
+    ],
+    "labels": [
+      1,
+      0
+    ],
+    "boxes": []
+  },
+  "onnx_prompt_shapes": {
+    "input_points": [
+      1,
+      1,
+      2,
+      2
+    ],
+    "input_labels": [
+      1,
+      1,
+      2
+    ],
+    "input_boxes": [
+      1,
+      0,
+      4
+    ]
+  },
+  "iou_scores": [
+    0.742595374584198,
+    0.9724228382110596,
+    0.9437704682350159
+  ],
+  "selected_mask_index": 1,
+  "object_score_logits": [
+    23.96347427368164
+  ],
+  "parity": {
+    "contract_pytorch_iou_scores_max_abs_diff": 1.0728836059570312e-06,
+    "contract_pytorch_mask_logits_max_abs_diff": 9.5367431640625e-05,
+    "contract_pytorch_object_score_max_abs_diff": 0.0,
+    "contract_pytorch_binary_mask_iou": 1.0,
+    "canonical_processor_pytorch_iou_scores_max_abs_diff": 1.0728836059570312e-06,
+    "canonical_processor_pytorch_binary_mask_iou": 1.0
+  }
+}

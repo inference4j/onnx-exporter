@@ -52,3 +52,4 @@ from exporter.models import rtdetr_v2  # noqa: F401
 from exporter.models import dfine  # noqa: F401
 from exporter.models import deberta_v3_zeroshot  # noqa: F401
 from exporter.models import gliner  # noqa: F401
+from exporter.models import sam2  # noqa: F401

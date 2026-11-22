@@ -1,0 +1,56 @@
+{
+  "name": "one-box",
+  "image": "images/square.png",
+  "mask": "masks/one-box.png",
+  "original_image_size": [
+    512,
+    512
+  ],
+  "prompt_original_coordinates": {
+    "points": [],
+    "labels": [],
+    "boxes": [
+      [
+        70.0,
+        115.0,
+        295.0,
+        405.0
+      ]
+    ]
+  },
+  "onnx_prompt_shapes": {
+    "input_points": [
+      1,
+      1,
+      0,
+      2
+    ],
+    "input_labels": [
+      1,
+      1,
+      0
+    ],
+    "input_boxes": [
+      1,
+      1,
+      4
+    ]
+  },
+  "iou_scores": [
+    0.8867747783660889,
+    0.19010284543037415,
+    0.8146049976348877
+  ],
+  "selected_mask_index": 0,
+  "object_score_logits": [
+    19.59559440612793
+  ],
+  "parity": {
+    "contract_pytorch_iou_scores_max_abs_diff": 3.2782554626464844e-06,
+    "contract_pytorch_mask_logits_max_abs_diff": 5.14984130859375e-05,
+    "contract_pytorch_object_score_max_abs_diff": 1.71661376953125e-05,
+    "contract_pytorch_binary_mask_iou": 1.0,
+    "canonical_processor_pytorch_iou_scores_max_abs_diff": 0.0006542801856994629,
+    "canonical_processor_pytorch_binary_mask_iou": 1.0
+  }
+}
