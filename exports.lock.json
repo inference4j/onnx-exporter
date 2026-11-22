@@ -820,6 +820,94 @@
     },
     "exported_at": null
   },
+  "dfine-large-coco": {
+    "repo_id": "inference4j/dfine-large-coco",
+    "source": {
+      "type": "hf",
+      "repo": "onnx-community/dfine_l_coco-ONNX",
+      "revision": "e09b218185400510b68d067bbd0c9379d905ffcd"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "config.json": {
+        "size": 6663,
+        "blob_id": "87c71ad459978464dd610cbd784fbfca6c7270e4"
+      },
+      "onnx/model.onnx": {
+        "size": 125348332,
+        "sha256": "d678f3baebfb909d3a20f21d1d807544d0172ed47fa1ab88e7fcdec7e365b236",
+        "blob_id": "62b29b4c7d2a85831c897066f260f88fdb35fb0c"
+      },
+      "preprocessor_config.json": {
+        "size": 444,
+        "blob_id": "fcdff16b42e5ebc51d28f59184490c6eff91a88b"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 2348,
+        "blob_id": "47525606b82d0de5b6460442c3ace7b29a185f4f"
+      },
+      "config.json": {
+        "size": 6663,
+        "blob_id": "87c71ad459978464dd610cbd784fbfca6c7270e4"
+      },
+      "model.onnx": {
+        "size": 125348332,
+        "sha256": "d678f3baebfb909d3a20f21d1d807544d0172ed47fa1ab88e7fcdec7e365b236",
+        "blob_id": "62b29b4c7d2a85831c897066f260f88fdb35fb0c"
+      },
+      "preprocessor_config.json": {
+        "size": 444,
+        "blob_id": "fcdff16b42e5ebc51d28f59184490c6eff91a88b"
+      }
+    },
+    "exported_at": "2026-11-21T22:44:13+00:00"
+  },
+  "dfine-medium-coco": {
+    "repo_id": "inference4j/dfine-medium-coco",
+    "source": {
+      "type": "hf",
+      "repo": "onnx-community/dfine_m_coco-ONNX",
+      "revision": "489756db2825cb068a588fe930af239a656d1fe1"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "config.json": {
+        "size": 6657,
+        "blob_id": "0397e5c68b6243f90cc674d91fd93ad228324f12"
+      },
+      "onnx/model.onnx": {
+        "size": 78624257,
+        "sha256": "70aaa837978a06ba44ad17398c7079ae5a1a7b1a9032b5d7053981e1ada02d6b",
+        "blob_id": "81832dba3e1d87f491b67404243d0bb08531e514"
+      },
+      "preprocessor_config.json": {
+        "size": 444,
+        "blob_id": "fcdff16b42e5ebc51d28f59184490c6eff91a88b"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 2356,
+        "blob_id": "f626940daa6f24477ab74ca34bfb0e4ba1d8d5f6"
+      },
+      "config.json": {
+        "size": 6657,
+        "blob_id": "0397e5c68b6243f90cc674d91fd93ad228324f12"
+      },
+      "model.onnx": {
+        "size": 78624257,
+        "sha256": "70aaa837978a06ba44ad17398c7079ae5a1a7b1a9032b5d7053981e1ada02d6b",
+        "blob_id": "81832dba3e1d87f491b67404243d0bb08531e514"
+      },
+      "preprocessor_config.json": {
+        "size": 444,
+        "blob_id": "fcdff16b42e5ebc51d28f59184490c6eff91a88b"
+      }
+    },
+    "exported_at": "2026-11-21T22:44:12+00:00"
+  },
   "dfine-nano-coco": {
     "repo_id": "inference4j/dfine-nano-coco",
     "source": {

@@ -127,5 +127,103 @@ try (DFine model = DFine.fromPretrained("inference4j/dfine-small-coco")) {
     )
 
 
+class DFineMediumCoco(MirroredModel):
+    name = "dfine-medium-coco"
+    repo_id = "inference4j/dfine-medium-coco"
+    source_repo = "onnx-community/dfine_m_coco-ONNX"
+    source_type = "hf"
+    revision = "489756db2825cb068a588fe930af239a656d1fe1"
+    files = list(_FILES)
+    card = ModelCard(
+        title="D-FINE Medium (COCO) — ONNX",
+        description=(
+            "ONNX export of [ustc-community/dfine-medium-coco](https://huggingface.co/ustc-community/dfine-medium-coco), "
+            "the medium variant of D-FINE (Redefine Bounding Box Regression for DETR-based Object Detection) "
+            "trained on COCO (80 classes). "
+            "Licensed under Apache-2.0, providing a commercially permissive, non-copyleft alternative to "
+            "AGPL-licensed YOLOv8 and YOLO26 models."
+        ),
+        license="apache-2.0",
+        pipeline_tag="object-detection",
+        tags=["dfine", "object-detection", "coco", "computer-vision", "apache-2.0"],
+        original_source_url="https://huggingface.co/ustc-community/dfine-medium-coco",
+        original_author="USTC / onnx-community (D-FINE)",
+        java_usage="""\
+try (ObjectDetector detector = DetrDetector.dfineMedium().build()) {
+    List<Detection> detections = detector.detect(Path.of("street.jpg"));
+    detections.forEach(d -> System.out.printf("%s (%.0f%%) at [%.0f, %.0f, %.0f, %.0f]%n",
+        d.label(), d.confidence() * 100,
+        d.box().x1(), d.box().y1(), d.box().x2(), d.box().y2()));
+}""",
+        model_details={
+            "Architecture": "D-FINE Medium (transformer object detector)",
+            "Task": "Object detection (COCO 80 classes)",
+            "COCO AP": "52.3 (val2017, as reported by the D-FINE authors)",
+            "License note": "Apache-2.0 (permissive non-AGPL alternative to YOLOv8/YOLO26)",
+            "Input": "`pixel_values`: `[batch, 3, 640, 640]` — RGB, normalized 0-1 (bilinear resize, no letterbox)",
+            "Output": "`logits`: `[batch, 300, 80]` (raw logits, apply sigmoid) and `pred_boxes`: `[batch, 300, 4]` (normalized [cx, cy, w, h])",
+            "Post-processing": "Convert [cx, cy, w, h] to [x1, y1, x2, y2] scaled to image dimensions; filter by score threshold (> 0.5). No NMS required.",
+            "Original framework": "PyTorch (USTC D-FINE)",
+        },
+        license_text=(
+            "This model is licensed under the [Apache License 2.0]"
+            "(https://www.apache.org/licenses/LICENSE-2.0). Original model by "
+            "[USTC / Peng et al.](https://github.com/Peterande/D-FINE), "
+            "hosted by [ustc-community](https://huggingface.co/ustc-community/dfine-medium-coco) "
+            "and converted by [onnx-community](https://huggingface.co/onnx-community/dfine_m_coco-ONNX)."
+        ),
+    )
+
+
+class DFineLargeCoco(MirroredModel):
+    name = "dfine-large-coco"
+    repo_id = "inference4j/dfine-large-coco"
+    source_repo = "onnx-community/dfine_l_coco-ONNX"
+    source_type = "hf"
+    revision = "e09b218185400510b68d067bbd0c9379d905ffcd"
+    files = list(_FILES)
+    card = ModelCard(
+        title="D-FINE Large (COCO) — ONNX",
+        description=(
+            "ONNX export of [ustc-community/dfine-large-coco](https://huggingface.co/ustc-community/dfine-large-coco), "
+            "the large variant of D-FINE (Redefine Bounding Box Regression for DETR-based Object Detection) "
+            "trained on COCO (80 classes). "
+            "Licensed under Apache-2.0, providing a commercially permissive, non-copyleft alternative to "
+            "AGPL-licensed YOLOv8 and YOLO26 models."
+        ),
+        license="apache-2.0",
+        pipeline_tag="object-detection",
+        tags=["dfine", "object-detection", "coco", "computer-vision", "apache-2.0"],
+        original_source_url="https://huggingface.co/ustc-community/dfine-large-coco",
+        original_author="USTC / onnx-community (D-FINE)",
+        java_usage="""\
+try (ObjectDetector detector = DetrDetector.dfineLarge().build()) {
+    List<Detection> detections = detector.detect(Path.of("street.jpg"));
+    detections.forEach(d -> System.out.printf("%s (%.0f%%) at [%.0f, %.0f, %.0f, %.0f]%n",
+        d.label(), d.confidence() * 100,
+        d.box().x1(), d.box().y1(), d.box().x2(), d.box().y2()));
+}""",
+        model_details={
+            "Architecture": "D-FINE Large (transformer object detector)",
+            "Task": "Object detection (COCO 80 classes)",
+            "COCO AP": "54.0 (val2017, as reported by the D-FINE authors)",
+            "License note": "Apache-2.0 (permissive non-AGPL alternative to YOLOv8/YOLO26)",
+            "Input": "`pixel_values`: `[batch, 3, 640, 640]` — RGB, normalized 0-1 (bilinear resize, no letterbox)",
+            "Output": "`logits`: `[batch, 300, 80]` (raw logits, apply sigmoid) and `pred_boxes`: `[batch, 300, 4]` (normalized [cx, cy, w, h])",
+            "Post-processing": "Convert [cx, cy, w, h] to [x1, y1, x2, y2] scaled to image dimensions; filter by score threshold (> 0.5). No NMS required.",
+            "Original framework": "PyTorch (USTC D-FINE)",
+        },
+        license_text=(
+            "This model is licensed under the [Apache License 2.0]"
+            "(https://www.apache.org/licenses/LICENSE-2.0). Original model by "
+            "[USTC / Peng et al.](https://github.com/Peterande/D-FINE), "
+            "hosted by [ustc-community](https://huggingface.co/ustc-community/dfine-large-coco) "
+            "and converted by [onnx-community](https://huggingface.co/onnx-community/dfine_l_coco-ONNX)."
+        ),
+    )
+
+
 register(DFineNanoCoco())
 register(DFineSmallCoco())
+register(DFineMediumCoco())
+register(DFineLargeCoco())
