@@ -1839,6 +1839,42 @@
     },
     "exported_at": null
   },
+  "nomic-embed-text-v1.5": {
+    "repo_id": "inference4j/nomic-embed-text-v1.5",
+    "source": {
+      "type": "hf",
+      "repo": "nomic-ai/nomic-embed-text-v1.5",
+      "revision": "e9b6763023c676ca8431644204f50c2b100d9aab"
+    },
+    "provenance": "verified",
+    "tracked": {
+      "onnx/model.onnx": {
+        "size": 547310275,
+        "sha256": "147d5aa88c2101237358e17796cf3a227cead1ec304ec34b465bb08e9d952965",
+        "blob_id": "916b2917782049a5e223d6cf561c142e1e4b03fc"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 1944,
+        "blob_id": "23a6661f892ba32a03a6ffff65a6a53640d812fd"
+      },
+      "model.onnx": {
+        "size": 547310275,
+        "sha256": "147d5aa88c2101237358e17796cf3a227cead1ec304ec34b465bb08e9d952965",
+        "blob_id": "916b2917782049a5e223d6cf561c142e1e4b03fc"
+      },
+      "vocab.txt": {
+        "size": 231508,
+        "blob_id": "fb140275c155a9c7c5a3b3e0e77a9e839594a938"
+      }
+    },
+    "exported_at": "2026-11-09T23:51:03+00:00"
+  },
   "opus-mt-en-de": {
     "repo_id": "inference4j/opus-mt-en-de",
     "source": {
