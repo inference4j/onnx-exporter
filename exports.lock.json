@@ -2965,6 +2965,87 @@
     },
     "exported_at": "2026-10-17T16:08:59+00:00"
   },
+  "rtmo-l-coco": {
+    "repo_id": "inference4j/rtmo-l-coco",
+    "source": {
+      "type": "url",
+      "repo": "https://download.openmmlab.com/mmpose/v1/projects/rtmo/rtmo-l_16xb16-600e_coco-640x640-516a421f_20231211.pth",
+      "revision": null
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {
+      "https://download.openmmlab.com/mmpose/v1/projects/rtmo/rtmo-l_16xb16-600e_coco-640x640-516a421f_20231211.pth": {
+        "size": 179230193,
+        "sha256": "516a421f8717548300c3ee6356a3444ac539083d4a9912f8ca1619ee63d0986d"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 4245,
+        "blob_id": "6e5125f9e567b9610aba90aa699a2645640a9987"
+      },
+      "model.onnx": {
+        "size": 176005535,
+        "sha256": "5100a6db7bc18b16377c7761b9b796bd0cc5093660f7fcd181d3b4465b17ae44",
+        "blob_id": "e6ab71a4693c9f0c232a918aadd4315bc3449b2f"
+      }
+    },
+    "exported_at": "2026-11-23T03:36:37+00:00"
+  },
+  "rtmo-m-coco": {
+    "repo_id": "inference4j/rtmo-m-coco",
+    "source": {
+      "type": "url",
+      "repo": "https://download.openmmlab.com/mmpose/v1/projects/rtmo/rtmo-m_16xb16-600e_coco-640x640-6f4e0306_20231211.pth",
+      "revision": null
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {
+      "https://download.openmmlab.com/mmpose/v1/projects/rtmo/rtmo-m_16xb16-600e_coco-640x640-6f4e0306_20231211.pth": {
+        "size": 90450154,
+        "sha256": "6f4e03062fb24263b93bf3f916284643dd76e93665d3cac2a645b619873f3053"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 4291,
+        "blob_id": "cd6860a318e86172fa69365d76c50c0ea0adf88a"
+      },
+      "model.onnx": {
+        "size": 89363197,
+        "sha256": "1546f4d0ec896b437f09ff23456051ab65bb0f55f40132adea47ed05e195a774",
+        "blob_id": "3e2994c8a5d83c48f3dfe08a17e9bf57e80921d2"
+      }
+    },
+    "exported_at": "2026-11-23T03:36:25+00:00"
+  },
+  "rtmo-s-coco": {
+    "repo_id": "inference4j/rtmo-s-coco",
+    "source": {
+      "type": "url",
+      "repo": "https://download.openmmlab.com/mmpose/v1/projects/rtmo/rtmo-s_8xb32-600e_coco-640x640-8db55a59_20231211.pth",
+      "revision": null
+    },
+    "provenance": "pinned-by-hash",
+    "tracked": {
+      "https://download.openmmlab.com/mmpose/v1/projects/rtmo/rtmo-s_8xb32-600e_coco-640x640-8db55a59_20231211.pth": {
+        "size": 39718803,
+        "sha256": "8db55a5974d4d31164cc327805c57932cc7b4f79874b5e5bfbbfa32a7d4e5b05"
+      }
+    },
+    "published": {
+      "README.md": {
+        "size": 4240,
+        "blob_id": "3b5322343fd7771af0279465e49214b96fd1ab0a"
+      },
+      "model.onnx": {
+        "size": 39699134,
+        "sha256": "f86d9a1f2231dc824eee971901ad7d6700ec219a8a41d50ec6035b795726b7f1",
+        "blob_id": "913094f42544aa689b8d7e82c0dbf7c837b9cef7"
+      }
+    },
+    "exported_at": "2026-11-23T03:36:18+00:00"
+  },
   "sam2.1-hiera-tiny": {
     "repo_id": "inference4j/sam2.1-hiera-tiny",
     "source": {

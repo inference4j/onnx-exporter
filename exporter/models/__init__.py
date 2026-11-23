@@ -56,3 +56,4 @@ from exporter.models import picodet  # noqa: F401
 from exporter.models import deberta_v3_zeroshot  # noqa: F401
 from exporter.models import gliner  # noqa: F401
 from exporter.models import sam2  # noqa: F401
+from exporter.models import rtmo  # noqa: F401

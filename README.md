@@ -68,6 +68,9 @@ Export and mirror ONNX models for the [inference4j](https://github.com/inference
 | `deberta-v3-large-zeroshot-v2.0-c` | [MoritzLaurer/deberta-v3-large-zeroshot-v2.0-c](https://huggingface.co/MoritzLaurer/deberta-v3-large-zeroshot-v2.0-c) | [inference4j/deberta-v3-large-zeroshot-v2.0-c](https://huggingface.co/inference4j/deberta-v3-large-zeroshot-v2.0-c) |
 | `gliner-small-v2.1` | [onnx-community/gliner_small-v2.1](https://huggingface.co/onnx-community/gliner_small-v2.1) | [inference4j/gliner-small-v2.1](https://huggingface.co/inference4j/gliner-small-v2.1) |
 | `gliner-pii-base-v1.0` | [knowledgator/gliner-pii-base-v1.0](https://huggingface.co/knowledgator/gliner-pii-base-v1.0) | [inference4j/gliner-pii-base-v1.0](https://huggingface.co/inference4j/gliner-pii-base-v1.0) |
+| `rtmo-s-coco` | [MMPose RTMO-S COCO checkpoint](https://download.openmmlab.com/mmpose/v1/projects/rtmo/rtmo-s_8xb32-600e_coco-640x640-8db55a59_20231211.pth) (exported, `.venv-rtmo`) | [inference4j/rtmo-s-coco](https://huggingface.co/inference4j/rtmo-s-coco) |
+| `rtmo-m-coco` | [MMPose RTMO-M COCO checkpoint](https://download.openmmlab.com/mmpose/v1/projects/rtmo/rtmo-m_16xb16-600e_coco-640x640-6f4e0306_20231211.pth) (exported, `.venv-rtmo`) | [inference4j/rtmo-m-coco](https://huggingface.co/inference4j/rtmo-m-coco) |
+| `rtmo-l-coco` | [MMPose RTMO-L COCO checkpoint](https://download.openmmlab.com/mmpose/v1/projects/rtmo/rtmo-l_16xb16-600e_coco-640x640-516a421f_20231211.pth) (exported, `.venv-rtmo`) | [inference4j/rtmo-l-coco](https://huggingface.co/inference4j/rtmo-l-coco) |
 
 
 ## Setup
@@ -83,6 +86,11 @@ Publishing an unchanged Hugging Face mirror copies its files inside the Hub inst
 downloading and re-uploading the model. On first use, the exporter creates the small
 `.venv-hub-uploader` helper environment required for that operation. Keeping it separate
 preserves compatibility with the Transformers 4.x ONNX export toolchain.
+
+The RTMO pose exports (`rtmo-*-coco`) need MMPose, MMDeploy and torch 2.1, which do not fit the main
+environment. On first use the exporter creates `.venv-rtmo` (Python 3.10, via [`uv`](https://docs.astral.sh/uv/))
+from the pins in `exporter/rtmo_requirements.txt`; see `exporter/rtmo_builder.py` and the RTMO section of
+[RUNBOOK.md](RUNBOOK.md#rtmo-pose-exports-pinned-mmpose-environment). The main `.venv` is not touched.
 
 ## Usage
 
