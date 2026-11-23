@@ -271,6 +271,47 @@ and a breaking change for anyone relying on current behaviour.
 
 ---
 
+## RTMO pose exports: pinned MMPose environment
+
+`rtmo-s-coco`, `rtmo-m-coco` and `rtmo-l-coco` are exported from MMPose `.pth` checkpoints with MMDeploy, which
+only works with old PyTorch. The export never runs in the main `.venv`; `exporter/rtmo_builder.py` creates
+`.venv-rtmo` on first use and rebuilds it whenever `exporter/rtmo_requirements.txt` changes.
+
+| Component | Pin | How it is installed |
+|---|---|---|
+| Python | 3.10 | `uv venv --python 3.10` (`uv` is required) |
+| torch / torchvision | 2.1.2 / 0.16.2 | wheel, from `rtmo_requirements.txt` |
+| numpy | 1.26.4 | wheel |
+| mmcv | 2.1.0 | **built from the sdist** with `MMCV_WITH_OPS=1` and `-Wno-invalid-specialization` (no macOS wheel; recent clang rejects torch 2.1 headers without the flag). About a minute on an M-series Mac |
+| mmengine / mmpose / mmdet | 0.10.4 / 1.3.2 / 3.2.0 | wheels, `--no-deps` |
+| MMDeploy | 1.3.1 | GitHub source tarball (sha256 pinned in `rtmo_builder.py`), put on `sys.path`; its setup.py compiles extensions we do not need and there is no macOS wheel |
+| onnx / onnxruntime | 1.16.2 / 1.19.2 | wheels |
+
+Everything else is pinned in `exporter/rtmo_requirements.txt` (a `uv pip freeze` of the working venv) and
+installed with `--no-deps`, so nothing is re-resolved.
+
+Inputs live in `~/.cache/inference4j/rtmo/`: the checkpoints (sha256-verified against the pins in
+`exporter/models/rtmo.py`; the zoo's file names carry the first 8 hex digits) and the MMDeploy tarball. The
+export uses MMDeploy's `pose-detection_rtmo_onnxruntime_dynamic.py` (opset 11, batch dynamic, NMS in the graph)
+with one override in `exporter/rtmo_export_script.py`: the padding row MMDeploy appends scores 0 instead of
+repeating the last anchor. The export is deterministic: re-running it reproduces the same `model.onnx` bytes.
+
+```bash
+SCRATCH=output/rtmo-candidate
+python -m exporter run rtmo-s-coco rtmo-m-coco rtmo-l-coco --stage-to $SCRATCH   # builds .venv-rtmo if needed
+.venv-rtmo/bin/python -I validation/rtmo_validate.py $SCRATCH                      # parity + Java reference JSON
+```
+
+`validation/rtmo_validate.py` compares the ONNX graph with the PyTorch model on the same tensor (expect
+< 1e-3 px and identical person counts) and with MMPose's own `inference_bottomup` pipeline, and rewrites
+`validation/reference/rtmo-*-coco.json`, the reference the Java `RtmoPoseDetector` tests compare against.
+
+There is no upstream revision to drift: the checkpoints are pinned by sha256 and the lock entry is written
+(`pinned-by-hash`) on the first publish. To move to new checkpoints, change the URL and sha256 in
+`exporter/models/rtmo.py`, re-run the commands above, and diff the contract.
+
+---
+
 ## Quick reference
 
 ```bash
